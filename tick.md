@@ -62,9 +62,6 @@ Schneller Angriff      | Schnell     | Schwierigkeit ist 0 bei einem Überraschu
 Gezielter Angriff      | Langsam     | Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 1
 Schwerer Angriff       | Langsam     | Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 2. Verursacht doppelten Schmerz. Benötigt **1 Stamina**
 Konter                 | Schnell + 2 | Kann vor Gegnerangriff durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Schwierigkeit entspricht \#Gegnererfolge+1. Schaden ist dann (A-B)-1, nicht negativ.
-
-
-
 Entwaffnen            | 5 + Waffe  | Den Gegner entwaffnen. Schwierigkeit +2. Verbraucht **1 Stamina**. Bei Fehlschlag kann ggf. ein normaler Nahkampftreffer gelandet werden, wenn dafür genug Erfolge erzielt wurden.
 Knockout              | 10 + Waffe | Den Gegner ausknocken, oder direkt töten. Schwierigkeit +3. Wahlweise tödlich oder nur KO. Verbraucht **1 Stamina**. Bei Fehlschlag kann ggf. ein normaler Nahkampftreffer gelandet werden, wenn dafür genug Erfolge erzielt wurden.
 Verteidigungsstellung | 3          | Einnehmen einer Verteidigungsstellung gegenüber einem Ziel, erhöht die Schwierigkeit für den Angreifer um 1

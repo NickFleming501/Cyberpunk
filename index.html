@@ -1,0 +1,4825 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>index Regelwerk</title>
+      
+  <style>
+
+:root {
+
+--font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+--font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+--font-monospace: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+--radius-sm: 4px;
+--radius-md: 6px;
+--radius-lg: 10px;
+--shadow-soft: 0 0 0 1px var(--color-border-subtle), 0 12px 30px rgba(0,0,0,0.35);
+
+--space-1: 0.25rem;
+--space-2: 0.5rem;
+--space-3: 0.75rem;
+--space-4: 1rem;
+--space-5: 1.5rem;
+--space-6: 2rem;
+--space-header: 3rem;
+--sidebar-width: 280px;
+
+--z-header: 20;
+--z-sidebar: 15;
+--z-overlay: 10;
+
+--transition-fast: 150ms ease-out;
+--transition-med: 220ms ease-out;
+
+--color-bg: #050609;
+--color-bg-alt: #080a10;
+--color-bg-elevated: #10121b;
+--color-header-bg: rgba(5, 6, 9, 0.92);
+--color-fg: #e5f0ff;
+--color-fg-muted: #9ca7c6;
+--color-border-strong: #2b3348;
+--color-border-subtle: #1a1f30;
+--color-accent: #39d2ff;
+--color-accent-soft: #123743;
+--color-accent-soft-hover: #194858;
+--color-accent-contrast: #021319;
+--color-sidebar-bg: #04050a;
+--color-sidebar-border: #151827;
+--color-sidebar-active: #182234;
+--color-code-bg: #080b13;
+--color-code-border: #1b2133;
+--color-inline-code-bg: #101527;
+--color-blockquote-border: #39d2ff;
+--color-hr: #1b2133;
+--color-scrollbar-track: #050609;
+--color-scrollbar-thumb: #394155;
+--color-link: #39d2ff;
+--color-link-hover: #7ee0ff;
+
+--color-admonition-note-bg: #0e1424;
+--color-admonition-note-border: #39d2ff;
+--color-admonition-tip-bg: #071910;
+--color-admonition-tip-border: #38e09b;
+--color-admonition-warning-bg: #1b1407;
+--color-admonition-warning-border: #f5a623;
+--color-admonition-danger-bg: #1b0707;
+--color-admonition-danger-border: #ff5c5c;
+
+--color-accordion-border: #22273a;
+--color-accordion-header-bg: #0b0f1c;
+--color-accordion-header-hover-bg: #141a2a;
+--color-accordion-body-bg: #05070f;
+
+--color-sidepanel-bg: #0b0f1c;
+--color-sidepanel-border: #2b3348;
+--color-sidepanel-title: #39d2ff;
+
+--color-search-bg: #050609;
+--color-search-border: #1b2133;
+--color-search-result-bg: #0b0f1c;
+--color-search-result-hover-bg: #151b2a;
+--color-search-highlight-bg: #27313f;
+
+--color-tag-bg: #10121b;
+--color-tag-fg: #a0aec0;
+
+--color-focus-ring: #39d2ff;
+}
+[data-theme="light"] {
+--color-bg: #f5f7fb;
+--color-bg-alt: #e7ebf5;
+--color-bg-elevated: #ffffff;
+--color-header-bg: rgba(245, 247, 251, 0.9);
+--color-fg: #121621;
+--color-fg-muted: #4a5568;
+--color-border-strong: #c3cfde;
+--color-border-subtle: #d5deea;
+--color-accent: #0f8bbd;
+--color-accent-soft: #d3ebf6;
+--color-accent-soft-hover: #bedff0;
+--color-accent-contrast: #02151f;
+--color-sidebar-bg: #e0e5f2;
+--color-sidebar-border: #c3cfde;
+--color-sidebar-active: #c3d4f0;
+--color-code-bg: #f0f3fb;
+--color-code-border: #c3cfde;
+--color-inline-code-bg: #e3e8f5;
+--color-blockquote-border: #0f8bbd;
+--color-hr: #c3cfde;
+--color-scrollbar-track: #e5e9f4;
+--color-scrollbar-thumb: #c3cfde;
+--color-link: #0f8bbd;
+--color-link-hover: #0a688d;
+--color-admonition-note-bg: #edf5ff;
+--color-admonition-note-border: #0f8bbd;
+--color-admonition-tip-bg: #e6f7ef;
+--color-admonition-tip-border: #2f855a;
+--color-admonition-warning-bg: #fff6e5;
+--color-admonition-warning-border: #dd6b20;
+--color-admonition-danger-bg: #ffecec;
+--color-admonition-danger-border: #e53e3e;
+--color-accordion-border: #c3cfde;
+--color-accordion-header-bg: #e3e8f5;
+--color-accordion-header-hover-bg: #d5deea;
+--color-accordion-body-bg: #f5f7fb;
+--color-sidepanel-bg: #eef3fb;
+--color-sidepanel-border: #c3cfde;
+--color-sidepanel-title: #0f8bbd;
+--color-search-bg: #f5f7fb;
+--color-search-border: #c3cfde;
+--color-search-result-bg: #e3e8f5;
+--color-search-result-hover-bg: #d5deea;
+--color-search-highlight-bg: #c3d4f0;
+--color-tag-bg: #e3e8f5;
+--color-tag-fg: #4a5568;
+--color-focus-ring: #0f8bbd;
+}
+[id] {
+scroll-margin-top: var(--space-header); 
+}
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+html {
+scroll-behavior: smooth;
+}
+body {
+margin: 0;
+min-height: 100vh;
+font-family: var(--font-body);
+background-color: var(--color-bg);
+color: var(--color-fg);
+line-height: 1.6;
+-webkit-font-smoothing: antialiased;
+}
+a {
+color: var(--color-link);
+text-decoration: none;
+}
+a:hover,
+a:focus {
+color: var(--color-link-hover);
+text-decoration: underline;
+}
+img {
+max-width: 100%;
+height: auto;
+}
+code,
+pre {
+font-family: var(--font-monospace);
+font-size: 0.9em;
+}
+pre {
+background-color: var(--color-code-bg);
+border: 1px solid var(--color-code-border);
+border-radius: var(--radius-md);
+padding: var(--space-4);
+overflow-x: auto;
+}
+code {
+background-color: var(--color-inline-code-bg);
+padding: 0.1em 0.3em;
+border-radius: var(--radius-sm);
+}
+pre code {
+background: none;
+padding: 0;
+}
+blockquote {
+margin: var(--space-4) 0;
+padding: var(--space-3) var(--space-4);
+border-left: 3px solid var(--color-blockquote-border);
+background-color: var(--color-bg-alt);
+border-radius: 0 var(--radius-md) var(--radius-md) 0;
+color: var(--color-fg-muted);
+}
+blockquote p {
+margin: 0;
+}
+hr {
+border: none;
+border-top: 1px solid var(--color-hr);
+margin: var(--space-5) 0;
+}
+table {
+border-collapse: collapse;
+width: 100%;
+margin: var(--space-4) 0;
+background-color: var(--color-bg-alt);
+border-radius: var(--radius-md);
+overflow: hidden;
+}
+th,
+td {
+padding: var(--space-2) var(--space-3);
+border-bottom: 1px solid var(--color-border-subtle);
+}
+thead th {
+text-align: left;
+font-weight: 600;
+background-color: var(--color-bg-elevated);
+}
+tbody tr:nth-child(even) {
+background-color: var(--color-bg);
+}
+.cp-table-wrap {
+width: 100%;
+overflow-x: auto;
+margin: var(--space-4) 0;
+-webkit-overflow-scrolling: touch;
+}
+.cp-table-wrap table {
+margin: 0;
+}
+ul,
+ol {
+padding-left: 1.2rem;
+}
+ul.task-list {
+list-style: none;
+padding-left: 0;
+}
+ul.task-list > li {
+display: flex;
+align-items: center;
+gap: var(--space-2);
+padding: 0.1rem 0;
+}
+ul.task-list input[type="checkbox"] {
+margin: 0 var(--space-2) 0 0;
+accent-color: var(--color-accent);
+}
+dl {
+margin: var(--space-4) 0;
+}
+dt {
+font-weight: 600;
+margin-top: var(--space-3);
+}
+dd {
+margin: 0 0 0.5rem 0;
+}
+p {
+margin: 0 0 0.75rem 0;
+text-align: justify;
+hyphens: auto;
+}
+.line-block {
+white-space: pre-line;
+}
+
+.cp-root {
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+.cp-header {
+position: sticky;
+top: 0;
+z-index: var(--z-header);
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0.5rem 1rem;
+background-color: var(--color-header-bg);
+backdrop-filter: blur(10px);
+border-bottom: 1px solid var(--color-border-subtle);
+height: var(--space-header);
+}
+.cp-header-left {
+display: flex;
+align-items: center;
+gap: 0.75rem;
+min-width: 0;
+flex: 1;
+}
+.cp-header-title {
+font-family: var(--font-heading);
+font-size: 0.95rem;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--color-fg-muted);
+min-width: 0;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+.cp-header-title span {
+color: var(--color-accent);
+}
+.cp-header-right {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+flex-shrink: 0;
+}
+.cp-icon-button {
+border: 1px solid var(--color-border-subtle);
+background-color: var(--color-bg-alt);
+color: var(--color-fg-muted);
+border-radius: 999px;
+padding: 0.25rem 0.6rem;
+font-size: 0.8rem;
+display: inline-flex;
+align-items: center;
+gap: 0.35rem;
+cursor: pointer;
+transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform 80ms ease-out;
+}
+.cp-icon-button:hover,
+.cp-icon-button:focus-visible {
+background-color: var(--color-accent-soft);
+border-color: var(--color-accent);
+color: var(--color-accent);
+outline: none;
+}
+.cp-icon-button:active {
+transform: translateY(1px);
+}
+.cp-icon-button svg {
+width: 1rem;
+height: 1rem;
+flex-shrink: 0;
+}
+
+.cp-heading-wrap {
+position: relative;
+margin-left: -1.3rem;
+padding-left: 1.3rem;
+}
+.cp-heading-anchor {
+position: absolute;
+left: 0;
+top: 0.3rem;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 1rem;
+height: 1rem;
+color: var(--color-fg-muted);
+visibility: hidden;
+text-decoration: none;
+}
+.cp-heading-anchor svg {
+width: 0.8rem;
+height: 0.8rem;
+}
+.cp-heading-wrap:hover .cp-heading-anchor,
+.cp-heading-wrap:focus-within .cp-heading-anchor {
+visibility: visible;
+}
+.cp-heading-anchor:hover,
+.cp-heading-anchor:focus-visible {
+color: var(--color-accent);
+outline: none;
+}
+.cp-heading-anchor.is-copied::after {
+content: "Copied";
+position: absolute;
+left: 100%;
+top: 50%;
+transform: translateY(-50%);
+margin-left: 0.4em;
+padding: 0.1em 0.5em;
+border-radius: var(--radius-sm);
+background-color: var(--color-accent);
+color: var(--color-accent-contrast);
+font-size: 0.7rem;
+white-space: nowrap;
+}
+@media (max-width: 900px) {
+.cp-heading-wrap {
+margin-left: 0;
+padding-left: 0;
+}
+.cp-heading-anchor {
+position: static;
+float: left;
+visibility: visible;
+margin: 0.3rem 0.4em 0 0;
+}
+}
+
+.cp-back-to-top {
+position: fixed;
+right: var(--space-4);
+bottom: var(--space-4);
+z-index: var(--z-overlay);
+width: 2.5rem;
+height: 2.5rem;
+border-radius: 999px;
+border: 1px solid var(--color-border-subtle);
+background-color: var(--color-bg-elevated);
+color: var(--color-fg-muted);
+box-shadow: var(--shadow-soft);
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+opacity: 0;
+visibility: hidden;
+transform: translateY(0.5rem);
+transition: opacity var(--transition-fast), transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+.cp-back-to-top.is-visible {
+opacity: 1;
+visibility: visible;
+transform: translateY(0);
+}
+.cp-back-to-top:hover,
+.cp-back-to-top:focus-visible {
+background-color: var(--color-accent-soft);
+border-color: var(--color-accent);
+color: var(--color-accent);
+outline: none;
+}
+.cp-back-to-top svg {
+width: 1.1rem;
+height: 1.1rem;
+}
+
+.sidepanel,
+.sidepanel-left,
+.sidepanel-right {
+width: min(18rem, 42%);
+margin: 0 0 var(--space-4) var(--space-4);
+padding: var(--space-3) var(--space-4);
+border: 1px solid var(--color-sidepanel-border);
+border-radius: var(--radius-md);
+background-color: var(--color-sidepanel-bg);
+box-shadow: var(--shadow-soft);
+font-size: 0.95rem;
+}
+.sidepanel,
+.sidepanel-right {
+float: right;
+clear: right;
+}
+.sidepanel-left {
+float: left;
+clear: left;
+margin: 0 var(--space-4) var(--space-4) 0;
+}
+.sidepanel-title {
+display: block;
+margin: 0 0 var(--space-2);
+font-size: 0.78rem;
+font-weight: 700;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--color-sidepanel-title);
+}
+.sidepanel > :first-child,
+.sidepanel-left > :first-child,
+.sidepanel-right > :first-child {
+margin-top: 0;
+}
+.sidepanel > :last-child,
+.sidepanel-left > :last-child,
+.sidepanel-right > :last-child {
+margin-bottom: 0;
+}
+
+.sidepanel-note {
+border-left: 3px solid var(--color-admonition-note-border);
+}
+.sidepanel-tip {
+border-left: 3px solid var(--color-admonition-tip-border);
+}
+.sidepanel-warning {
+border-left: 3px solid var(--color-admonition-warning-border);
+}
+.sidepanel-danger {
+border-left: 3px solid var(--color-admonition-danger-border);
+}
+
+.clear-float {
+clear: both;
+}
+@media (max-width: 900px) {
+.sidepanel,
+.sidepanel-left,
+.sidepanel-right {
+float: none;
+clear: none;
+width: 100%;
+margin: 0 0 var(--space-4);
+}
+}
+.cp-layout {
+display: grid;
+grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+align-items: stretch;
+min-height: 0;
+flex: 1;
+overflow-x: clip;
+transition: grid-template-columns var(--transition-med);
+background: radial-gradient(circle at top left, rgba(57,210,255,0.08), transparent 55%),
+radial-gradient(circle at bottom right, rgba(90,255,190,0.06), transparent 55%),
+var(--color-bg);
+}
+.cp-sidebar {
+position: sticky;
+top: var(--space-header);
+align-self: flex-start;
+height: calc(100vh - var(--space-header));
+min-width: 0;
+padding: var(--space-4) var(--space-3);
+background-color: var(--color-sidebar-bg);
+border-right: 1px solid var(--color-sidebar-border);
+display: flex;
+flex-direction: column;
+gap: var(--space-4);
+overflow: hidden;
+opacity: 1;
+transition: opacity var(--transition-fast), transform var(--transition-med);
+z-index: var(--z-sidebar);
+}
+@media (min-width: 901px) {
+body.sidebar-collapsed .cp-layout {
+grid-template-columns: 0px minmax(0, 1fr);
+}
+body.sidebar-collapsed .cp-sidebar {
+opacity: 0;
+pointer-events: none;
+}
+}
+.cp-sidebar-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: var(--space-2);
+margin-bottom: var(--space-2);
+}
+.cp-sidebar-title {
+font-size: 0.8rem;
+text-transform: uppercase;
+letter-spacing: 0.12em;
+color: var(--color-fg-muted);
+}
+.cp-sidebar-toggle-small {
+display: none;
+}
+.cp-sidebar-section-title {
+font-size: 0.7rem;
+text-transform: uppercase;
+letter-spacing: 0.14em;
+color: var(--color-fg-muted);
+margin-bottom: var(--space-2);
+}
+.cp-search {
+padding: var(--space-3);
+border-radius: var(--radius-md);
+background-color: var(--color-search-bg);
+border: 1px solid var(--color-search-border);
+}
+.cp-search-input-wrapper {
+position: relative;
+display: flex;
+align-items: center;
+}
+.cp-search-input {
+width: 100%;
+padding: 0.35rem 0.6rem 0.35rem 1.6rem;
+border-radius: 999px;
+border: 1px solid var(--color-search-border);
+background-color: var(--color-bg-alt);
+color: var(--color-fg);
+font-size: 0.85rem;
+}
+.cp-search-input::placeholder {
+color: var(--color-fg-muted);
+}
+.cp-search-input:focus-visible {
+outline: 2px solid var(--color-focus-ring);
+outline-offset: 1px;
+border-color: var(--color-focus-ring);
+}
+.cp-search-icon {
+position: absolute;
+left: 0.55rem;
+width: 0.9rem;
+height: 0.9rem;
+color: var(--color-fg-muted);
+pointer-events: none;
+}
+.cp-search-results {
+margin-top: var(--space-3);
+max-height: 14rem;
+overflow-y: auto;
+padding: 0;
+list-style: none;
+}
+.cp-search-result-item {
+padding: 0.3rem 0.4rem;
+border-radius: var(--radius-sm);
+background-color: var(--color-search-result-bg);
+border: 1px solid transparent;
+margin-bottom: 0.2rem;
+cursor: pointer;
+font-size: 0.8rem;
+}
+.cp-search-result-item:hover,
+.cp-search-result-item:focus-visible,
+.cp-search-result-item.is-keyboard-active {
+background-color: var(--color-search-result-hover-bg);
+border-color: var(--color-accent);
+outline: none;
+}
+.cp-search-status {
+margin: var(--space-2) 0 0;
+font-size: 0.75rem;
+color: var(--color-fg-muted);
+}
+.cp-search-result-item-title {
+font-weight: 600;
+color: var(--color-fg);
+}
+.cp-search-result-item-snippet {
+color: var(--color-fg-muted);
+margin-top: 0.1rem;
+font-size: 0.78rem;
+line-height: 1.45;
+}
+.cp-toc a.is-active {
+color: var(--color-accent);
+background-color: var(--color-accent-soft);
+}
+.cp-search-highlight {
+background-color: var(--color-search-highlight-bg);
+border-radius: 2px;
+padding: 0 0.1em;
+}
+.cp-toc {
+flex: 1;
+min-height: 0;
+overflow-y: auto;
+padding-right: 0.2rem;
+}
+.cp-toc nav {
+font-size: 0.85rem;
+}
+.cp-toc ul {
+list-style: none;
+padding-left: 0.4rem;
+}
+.cp-toc li {
+margin: 0.15rem 0;
+}
+.cp-toc a {
+color: var(--color-fg-muted);
+text-decoration: none;
+border-radius: var(--radius-sm);
+padding: 0.1rem 0.3rem;
+display: inline-block;
+max-width: 100%;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+.cp-toc a:hover,
+.cp-toc a:focus-visible {
+color: var(--color-accent);
+background-color: var(--color-accent-soft);
+outline: none;
+}
+.cp-toc .toc-active > a {
+color: var(--color-accent);
+background-color: var(--color-accent-soft);
+}
+.cp-main {
+min-width: 0;
+padding: var(--space-5) min(max(6vw, 1.5rem), 5rem);
+}
+.cp-main-inner {
+max-width: 60rem;
+margin: 0 auto var(--space-5);
+background-color: var(--color-bg-elevated);
+border-radius: var(--radius-lg);
+padding: var(--space-5);
+box-shadow: var(--shadow-soft);
+border: 1px solid var(--color-border-strong);
+}
+.cp-meta {
+display: flex;
+flex-wrap: wrap;
+gap: 0.4rem 0.8rem;
+margin-bottom: var(--space-3);
+color: var(--color-fg-muted);
+font-size: 0.75rem;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+}
+.cp-document-title {
+margin: 0 0 var(--space-5);
+padding: var(--space-4) 0 var(--space-4);
+border-top: 1px solid var(--color-border-subtle);
+border-bottom: 1px solid var(--color-border-subtle);
+}
+.cp-document-kicker {
+margin: 0 0 var(--space-2);
+font-size: 0.72rem;
+text-transform: uppercase;
+letter-spacing: 0.16em;
+color: var(--color-accent);
+}
+.cp-document-title-text {
+margin: 0;
+font-family: var(--font-heading);
+font-size: clamp(2rem, 3vw + 1.2rem, 3.2rem);
+line-height: 1.1;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: var(--color-fg);
+text-wrap: balance;
+}
+.cp-document-subtitle {
+margin: var(--space-2) 0 0;
+max-width: 48rem;
+color: var(--color-fg-muted);
+font-size: 1rem;
+}
+.cp-tag {
+background-color: var(--color-tag-bg);
+color: var(--color-tag-fg);
+border-radius: 999px;
+padding: 0.1rem 0.6rem;
+border: 1px solid var(--color-border-subtle);
+}
+#title-block-header {
+margin-bottom: var(--space-4);
+border-bottom: 1px solid var(--color-border-subtle);
+padding-bottom: var(--space-3);
+}
+#title-block-header .title {
+font-family: var(--font-heading);
+font-size: clamp(1.8rem, 2.3vw + 1.5rem, 2.6rem);
+letter-spacing: 0.12em;
+text-transform: uppercase;
+margin: 0 0 var(--space-2);
+}
+#title-block-header .subtitle {
+margin: 0;
+color: var(--color-fg-muted);
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: var(--font-heading);
+margin: var(--space-4) 0 var(--space-2);
+line-height: 1.3;
+}
+h1 {
+font-size: 1.7rem;
+border-bottom: 1px solid var(--color-border-subtle);
+padding-bottom: 0.2rem;
+}
+h2 {
+font-size: 1.3rem;
+border-left: 2px solid var(--color-accent);
+padding-left: 0.5rem;
+}
+h3 {
+font-size: 1.1rem;
+}
+h4 {
+font-size: 1rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+color: var(--color-fg-muted);
+}
+figure {
+margin: var(--space-4) 0;
+}
+figcaption {
+font-size: 0.8rem;
+color: var(--color-fg-muted);
+margin-top: 0.35rem;
+}
+img.banner {
+width: 100%;
+display: block;
+border-radius: var(--radius-md);
+border: 1px solid var(--color-border-subtle);
+}
+.img-left,
+.img-right {
+display: flex;
+gap: var(--space-3);
+align-items: flex-start;
+margin: var(--space-4) 0;
+}
+.img-left img,
+.img-right img {
+max-width: 40%;
+border-radius: var(--radius-md);
+border: 1px solid var(--color-border-subtle);
+}
+.img-left .img-body,
+.img-right .img-body {
+flex: 1;
+}
+.img-right {
+flex-direction: row-reverse;
+}
+.img-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: var(--space-3);
+margin: var(--space-4) 0;
+}
+.img-grid img {
+border-radius: var(--radius-md);
+border: 1px solid var(--color-border-subtle);
+width: 100%;
+height: auto;
+object-fit: cover;
+}
+
+.admonition-note,
+.admonition-info,
+.admonition-tip,
+.admonition-warning,
+.admonition-danger {
+border-radius: var(--radius-md);
+padding: var(--space-3) var(--space-4);
+margin: var(--space-3) 0;
+border-width: 1px;
+border-style: solid;
+position: relative;
+}
+.admonition-note p,
+.admonition-info p,
+.admonition-tip p,
+.admonition-warning p,
+.admonition-danger p {
+margin: 0;
+}
+.admonition-note {
+background-color: var(--color-admonition-note-bg);
+border-color: var(--color-admonition-note-border);
+}
+.admonition-info {
+background-color: var(--color-admonition-note-bg);
+border-color: var(--color-admonition-note-border);
+}
+.admonition-tip {
+background-color: var(--color-admonition-tip-bg);
+border-color: var(--color-admonition-tip-border);
+}
+.admonition-warning {
+background-color: var(--color-admonition-warning-bg);
+border-color: var(--color-admonition-warning-border);
+}
+.admonition-danger {
+background-color: var(--color-admonition-danger-bg);
+border-color: var(--color-admonition-danger-border);
+}
+.admonition-note::before,
+.admonition-info::before,
+.admonition-tip::before,
+.admonition-warning::before,
+.admonition-danger::before {
+content: attr(data-title);
+position: absolute;
+top: -0.7rem;
+left: var(--space-4);
+padding: 0 0.4rem;
+font-size: 0.7rem;
+text-transform: uppercase;
+letter-spacing: 0.14em;
+background-color: var(--color-bg-elevated);
+border-radius: 999px;
+}
+.admonition-note[data-title=""],
+.admonition-info[data-title=""],
+.admonition-tip[data-title=""],
+.admonition-warning[data-title=""],
+.admonition-danger[data-title=""] {
+padding-top: var(--space-3);
+}
+.admonition-note[data-title=""]::before,
+.admonition-info[data-title=""]::before,
+.admonition-tip[data-title=""]::before,
+.admonition-warning[data-title=""]::before,
+.admonition-danger[data-title=""]::before {
+content: none;
+}
+
+.accordion {
+border-radius: var(--radius-md);
+border: 1px solid var(--color-accordion-border);
+margin: var(--space-3) 0;
+overflow: hidden;
+background-color: var(--color-accordion-header-bg);
+}
+.accordion-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0.5rem 0.9rem;
+background-color: var(--color-accordion-header-bg);
+cursor: pointer;
+width: 100%;
+border: 0;
+box-shadow: none;
+appearance: none;
+-webkit-appearance: none;
+border-radius: 0
+;font: inherit
+}
+.accordion-header:hover,
+.accordion-header:focus-visible {
+background-color: var(--color-accordion-header-hover-bg);
+outline: none;
+}
+.accordion-title {
+font-size: 0.9rem;
+font-weight: 500;
+color: var(--color-fg);
+}
+.accordion-indicator {
+font-size: 0.9rem;
+margin-left: 0.5rem;
+}
+.accordion-panel {
+padding: 0 0.9rem;
+background-color: var(--color-accordion-body-bg);
+max-height: 0;
+overflow: hidden;
+opacity: 0;
+transition:
+max-height 220ms ease,
+opacity 180ms ease,
+padding-top 220ms ease,
+padding-bottom 220ms ease;
+}
+.accordion[data-open="true"] .accordion-panel {
+padding-top: 0.6rem;
+padding-bottom: 0.8rem;
+opacity: 1;
+}
+.accordion[data-open="true"] .accordion-indicator {
+transform: rotate(90deg);
+}
+
+.roll-table {
+margin: var(--space-4) 0;
+padding: var(--space-4);
+border: 1px solid var(--color-sidepanel-border);
+border-radius: var(--radius-md);
+background-color: var(--color-sidepanel-bg);
+}
+.roll-table-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: var(--space-3);
+margin-bottom: var(--space-3);
+}
+.roll-table-title {
+font-size: 0.78rem;
+font-weight: 700;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--color-sidepanel-title);
+}
+.roll-table-button {
+border: 1px solid var(--color-border-subtle);
+background-color: var(--color-bg-alt);
+color: var(--color-fg);
+border-radius: 999px;
+padding: 0.3rem 0.8rem;
+font-size: 0.85rem;
+cursor: pointer;
+transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+.roll-table-button:hover,
+.roll-table-button:focus-visible {
+background-color: var(--color-accent-soft);
+border-color: var(--color-accent);
+color: var(--color-accent);
+outline: none;
+}
+.roll-table-result {
+min-height: 1.2em;
+margin-bottom: var(--space-3);
+font-size: 0.9rem;
+color: var(--color-fg-muted);
+}
+.roll-table table {
+margin: 0;
+}
+.roll-table .cp-table-wrap {
+margin: 0;
+}
+.roll-table tr.is-rolled {
+background-color: var(--color-accent-soft);
+}
+
+.cp-glossary-term {
+position: relative;
+color: var(--color-link);
+text-decoration: underline dotted;
+cursor: help;
+}
+.cp-glossary-term:hover,
+.cp-glossary-term:focus-visible {
+color: var(--color-link-hover);
+outline: none;
+}
+.cp-glossary-tooltip {
+position: absolute;
+left: 50%;
+bottom: 100%;
+transform: translate(-50%, -0.4rem);
+width: max-content;
+max-width: 16rem;
+padding: var(--space-2) var(--space-3);
+border-radius: var(--radius-sm);
+background-color: var(--color-bg-elevated);
+border: 1px solid var(--color-border-strong);
+box-shadow: var(--shadow-soft);
+color: var(--color-fg);
+font-size: 0.8rem;
+font-weight: 400;
+line-height: 1.4;
+text-align: left;
+opacity: 0;
+visibility: hidden;
+pointer-events: none;
+transition: opacity var(--transition-fast);
+z-index: var(--z-overlay);
+}
+.cp-glossary-term:hover .cp-glossary-tooltip,
+.cp-glossary-term:focus-visible .cp-glossary-tooltip {
+opacity: 1;
+visibility: visible;
+}
+@media (max-width: 900px) {
+.cp-glossary-tooltip {
+display: none;
+}
+}
+
+.cp-footer {
+padding: 0.75rem 1rem;
+font-size: 0.75rem;
+color: var(--color-fg-muted);
+display: flex;
+justify-content: space-between;
+gap: 0.5rem;
+border-top: 1px solid var(--color-border-subtle);
+background-color: var(--color-bg-alt);
+}
+
+.cp-sidebar-toggle-main {
+display: inline-flex;
+}
+@media (max-width: 900px) {
+.cp-layout {
+grid-template-columns: minmax(0, 1fr);
+}
+.cp-sidebar {
+position: fixed;
+top: var(--space-header);
+bottom: 0;
+left: 0;
+width: min(80vw, 320px);
+transform: translateX(-100%);
+border-right: 1px solid var(--color-sidebar-border);
+box-shadow: 0 0 40px rgba(0,0,0,0.65);
+}
+body.sidebar-open .cp-sidebar {
+transform: translateX(0);
+}
+.cp-sidebar-toggle-main {
+display: inline-flex;
+}
+.cp-main {
+padding: var(--space-4) var(--space-3);
+}
+.cp-main-inner {
+padding: var(--space-4) var(--space-3);
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+* {
+scroll-behavior: auto !important;
+animation-duration: 0.001ms !important;
+animation-iteration-count: 1 !important;
+transition-duration: 0.001ms !important;
+}
+}
+
+::-webkit-scrollbar {
+width: 0.45rem;
+height: 0.45rem;
+}
+::-webkit-scrollbar-track {
+background-color: var(--color-scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+background-color: var(--color-scrollbar-thumb);
+border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+background-color: var(--color-accent);
+}
+@media print {
+.cp-header,
+.cp-sidebar,
+.cp-footer {
+display: none !important;
+}
+body {
+background: #ffffff;
+color: #000000;
+}
+.cp-layout {
+display: block;
+background: none;
+}
+.cp-main {
+padding: 0;
+}
+.cp-main-inner {
+max-width: none;
+margin: 0;
+padding: 0;
+box-shadow: none;
+border: none;
+background: none;
+}
+a {
+color: #000000;
+text-decoration: underline;
+}
+pre,
+code {
+background: #f5f5f5;
+border-color: #ccc;
+color: #000000;
+}
+.admonition-note,
+.admonition-info,
+.admonition-tip,
+.admonition-warning,
+.admonition-danger,
+.sidepanel,
+.sidepanel-left,
+.sidepanel-right {
+background: #f5f5f5 !important;
+border-color: #999 !important;
+color: #000000 !important;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.sidepanel,
+.sidepanel-left,
+.sidepanel-right {
+float: none;
+width: 100%;
+margin: 0 0 var(--space-4);
+}
+.accordion-panel {
+max-height: none !important;
+opacity: 1 !important;
+padding-top: 0.6rem !important;
+padding-bottom: 0.8rem !important;
+overflow: visible !important;
+}
+.accordion-indicator {
+display: none;
+}
+.cp-search-highlight {
+background: none;
+color: inherit;
+}
+}
+</style>
+</head>
+<body data-theme="dark">
+  <div class="cp-root">
+    <header class="cp-header" role="banner">
+      <div class="cp-header-left">
+        <button class="cp-icon-button cp-sidebar-toggle-main" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="cp-sidebar">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M2 4h16v2H2V4zm0 5h16v2H2V9zm0 5h16v2H2v-2z" /></svg>
+          <span>Menu</span>
+        </button>
+        <div class="cp-header-title" aria-label="Document type">
+          <span>index</span> Regelwerk
+        </div>
+      </div>
+      <div class="cp-header-right">
+        <button class="cp-icon-button" type="button" id="cp-print-button" aria-label="Print document">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6h1a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-3v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h1zm2-2h8V4H8v3zm8 9H8v4h8v-4zm2-2h1v-4H5v4h1v-2a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2z" /></svg>
+        </button>
+        <button class="cp-icon-button" type="button" id="cp-theme-toggle" aria-label="Toggle light and dark mode">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 12.79A9 9 0 0 1 11.21 3 7 7 0 1 0 21 12.79z" /></svg>
+          <span class="cp-theme-toggle-label">Dark</span>
+        </button>
+      </div>
+    </header>
+    <div id="cp-top-sentinel" aria-hidden="true"></div>
+    <div class="cp-layout">
+      <aside id="cp-sidebar" class="cp-sidebar" aria-label="Document navigation">
+        <div class="cp-sidebar-header">
+          <div class="cp-sidebar-title">Navigation</div>
+        </div>
+
+        <section class="cp-search" aria-label="Full text search">
+          <div class="cp-sidebar-section-title">Suche</div>
+          <div class="cp-search-input-wrapper">
+            <svg class="cp-search-icon" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M12.9 14.32a8 8 0 1 1 1.41-1.41l4.39 4.39-1.41 1.41-4.39-4.39zM8 14a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" /></svg>
+            <input id="cp-search-input" class="cp-search-input" type="search" placeholder="Suche..." autocomplete="off"></input>
+          </div>
+          <ul id="cp-search-results" class="cp-search-results" aria-label="Search results"></ul>
+          <p id="cp-search-status" class="cp-search-status">Tippe um zu suchen.</p>
+        </section>
+
+                <section class="cp-toc" aria-label="Table of contents">
+          <div class="cp-sidebar-section-title">Inhalt</div>
+          <ul>
+          <li><a href="#einleitung" id="toc-einleitung">Einleitung</a></li>
+          <li><a href="#system" id="toc-system">System</a>
+          <ul>
+          <li><a href="#attribute" id="toc-attribute">Attribute</a>
+          <ul>
+          <li><a href="#zähigkeit" id="toc-zähigkeit">Zähigkeit</a></li>
+          <li><a href="#wille" id="toc-wille">Wille</a></li>
+          <li><a href="#athletik" id="toc-athletik">Athletik</a></li>
+          <li><a href="#intuition" id="toc-intuition">Intuition</a></li>
+          </ul></li>
+          <li><a href="#fähigkeiten" id="toc-fähigkeiten">Fähigkeiten</a>
+          <ul>
+          <li><a href="#basisfähigkeiten" id="toc-basisfähigkeiten">Basisfähigkeiten</a></li>
+          <li><a href="#probe" id="toc-probe">Probe</a></li>
+          </ul></li>
+          <li><a href="#schmerz-und-stress" id="toc-schmerz-und-stress">Schmerz und Stress</a>
+          <ul>
+          <li><a href="#schmerz" id="toc-schmerz">Schmerz</a></li>
+          <li><a href="#stress" id="toc-stress">Stress</a></li>
+          </ul></li>
+          <li><a href="#ruhepausen" id="toc-ruhepausen">Ruhepausen</a></li>
+          </ul></li>
+          <li><a href="#fähigkeiten-1" id="toc-fähigkeiten-1">Fähigkeiten</a>
+          <ul>
+          <li><a href="#übersicht" id="toc-übersicht">Übersicht</a></li>
+          </ul></li>
+          <li><a href="#mission" id="toc-mission">Mission</a>
+          <ul>
+          <li><a href="#zeit" id="toc-zeit">Zeit</a>
+          <ul>
+          <li><a href="#erkundungs-ticks" id="toc-erkundungs-ticks">Erkundungs-Ticks</a></li>
+          </ul></li>
+          <li><a href="#verdacht" id="toc-verdacht">Verdacht</a>
+          <ul>
+          <li><a href="#verdachtsstufen" id="toc-verdachtsstufen">Verdachtsstufen</a></li>
+          </ul></li>
+          </ul></li>
+          <li><a href="#kampf" id="toc-kampf">Kampf</a>
+          <ul>
+          <li><a href="#reihenfolge" id="toc-reihenfolge">Reihenfolge</a></li>
+          <li><a href="#bewegung-und-zonen" id="toc-bewegung-und-zonen">Bewegung und Zonen</a></li>
+          <li><a href="#angriffe" id="toc-angriffe">Angriffe</a>
+          <ul>
+          <li><a href="#ablauf" id="toc-ablauf">Ablauf</a></li>
+          <li><a href="#treffer" id="toc-treffer">Treffer</a></li>
+          <li><a href="#trefferzone" id="toc-trefferzone">Trefferzone</a></li>
+          <li><a href="#rüstung" id="toc-rüstung">Rüstung</a></li>
+          </ul></li>
+          </ul></li>
+          <li><a href="#aktionsdauer" id="toc-aktionsdauer">Aktionsdauer</a>
+          <ul>
+          <li><a href="#bewegung" id="toc-bewegung">Bewegung</a></li>
+          <li><a href="#gegenstände" id="toc-gegenstände">Gegenstände</a></li>
+          <li><a href="#schusswaffen" id="toc-schusswaffen">Schusswaffen</a></li>
+          <li><a href="#nahkampf" id="toc-nahkampf">Nahkampf</a></li>
+          <li><a href="#psi" id="toc-psi">PSI</a></li>
+          <li><a href="#verschiedenes" id="toc-verschiedenes">Verschiedenes</a></li>
+          </ul></li>
+          <li><a href="#charakter-erstellung" id="toc-charakter-erstellung">Charakter-Erstellung</a></li>
+          <li><a href="#ausrüstung" id="toc-ausrüstung">Ausrüstung</a>
+          <ul>
+          <li><a href="#auffälligkeit" id="toc-auffälligkeit">Auffälligkeit</a></li>
+          <li><a href="#rüstung-1" id="toc-rüstung-1">Rüstung</a>
+          <ul>
+          <li><a href="#exoskelett" id="toc-exoskelett">Exoskelett</a></li>
+          </ul></li>
+          <li><a href="#schusswaffen-1" id="toc-schusswaffen-1">Schusswaffen</a>
+          <ul>
+          <li><a href="#spezialmunition" id="toc-spezialmunition">Spezialmunition</a></li>
+          </ul></li>
+          <li><a href="#nahkampfwaffen" id="toc-nahkampfwaffen">Nahkampfwaffen</a></li>
+          <li><a href="#psi-verstärker" id="toc-psi-verstärker">PSI-Verstärker</a></li>
+          <li><a href="#verbrauchsgegenstände" id="toc-verbrauchsgegenstände">Verbrauchsgegenstände</a>
+          <ul>
+          <li><a href="#granaten-minen" id="toc-granaten-minen">Granaten &amp; Minen</a></li>
+          <li><a href="#stims" id="toc-stims">Stims</a></li>
+          <li><a href="#wanzen" id="toc-wanzen">Wanzen</a></li>
+          </ul></li>
+          <li><a href="#drohnen" id="toc-drohnen">Drohnen</a></li>
+          <li><a href="#cyberware" id="toc-cyberware">Cyberware</a>
+          <ul>
+          <li><a href="#energiequelle" id="toc-energiequelle">Energiequelle</a></li>
+          <li><a href="#cyborg-körperteil" id="toc-cyborg-körperteil">Cyborg-Körperteil</a></li>
+          <li><a href="#erweiterungen" id="toc-erweiterungen">Erweiterungen</a></li>
+          </ul></li>
+          </ul></li>
+          </ul>
+        </section>
+              </aside>
+
+      <main class="cp-main" role="main">
+        <div class="cp-main-inner" id="main-content">
+          <div class="cp-meta">
+                                              </div>
+
+                    <section class="cp-document-title" aria-labelledby="cp-document-title-text">
+            <p class="cp-document-kicker">Regelwerk</p>
+            <h1 id="cp-document-title-text" class="cp-document-title-text">index</h1>
+                      </section>
+          
+          <section id="einleitung" class="level1">
+          <h1>Einleitung</h1>
+          <p>Dies ist Version 11 des Cyberpunk-Systems. <a href="#charakter-erstellung">Hier geht es zur Charaktererstellung</a></p>
+          </section>
+          <section id="system" class="level1">
+          <h1>System</h1>
+          <section id="attribute" class="level2">
+          <h2>Attribute</h2>
+          <p>Attribute definieren den Charakter indem sie die Resistenz und Flexibilität von Körper und Geist beschreiben. Attribute dienen als Basis für spezielle Würfe und werden ähnlich zu Checks von Fähigkeiten gehandhabt.</p>
+          <table>
+          <thead>
+          <tr>
+          <th style="text-align: center;">Attribut</th>
+          <th style="text-align: center;">Beschreibung</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td style="text-align: center;">Zähigkeit</td>
+          <td style="text-align: center;">Körperliche Resistenz, Stamina</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">Wille</td>
+          <td style="text-align: center;">Mentale Resistenz</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">Athletik</td>
+          <td style="text-align: center;">Bewegungsfähigkeit und Stärke</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">Wahrnehmung</td>
+          <td style="text-align: center;">Wahrnehmung und Reaktionsgeschwindigkeit</td>
+          </tr>
+          </tbody>
+          </table>
+          <section id="zähigkeit" class="level3">
+          <h3>Zähigkeit</h3>
+          <p>Zähigkeit stellt die körperliche Resistenz des Charakters dar. Charaktere müssen Zähigkeitsproben bestehen, um starken Schmerzen widerstehen zu können oder um in physisch anstrengenden Situationen durchzuhalten.</p>
+          </section>
+          <section id="wille" class="level3">
+          <h3>Wille</h3>
+          <p>Wille stellt die mentale Resistenz des Charakters dar. Charaktere müssen Willensproben bestehen, um mentale Anstrengungen zu überwinden. Dies können beispielsweise Situationen sein, in denen der Charakter ein hohes Stresslevel erreicht, oder sich gegen Beeinflussung in Gesprächen oder mentale Angriffe behaupten muss.</p>
+          </section>
+          <section id="athletik" class="level3">
+          <h3>Athletik</h3>
+          <p>Athletik stellt die körperliche Beweglichkeit und Stärke eines Charakters dar.</p>
+          <p>Ein Charakter hat ⎣Athletik/2⎦+1 <strong>Stamina</strong> (1 → 1, 2,3 → 2, 4,5 → 3, 6 → 4), die für bestimmte Aktionen verbraucht werden. Ausruhen regeneriert verbrauchte <strong>Stamina</strong> wieder.</p>
+          </section>
+          <section id="intuition" class="level3">
+          <h3>Intuition</h3>
+          <p>Intuition stellt die Wahrnehmung und geistige Kraft eines Charakters dar.</p>
+          <p>Ein Charakter hat ⎣Intuition/2⎦+1 <strong>Fokus</strong> (1 → 1, 2,3 → 2, 4,5 → 3, 6 → 4), die für bestimmte Aktionen verbraucht werden. Ausruhen regeneriert verbrauchte <strong>Fokus</strong> wieder.</p>
+          </section>
+          </section>
+          <section id="fähigkeiten" class="level2">
+          <h2>Fähigkeiten</h2>
+          <p>Alle Fähigkeiten werden in Fähigkeitsstufen unterteilt:</p>
+          <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>…</li>
+          </ul>
+          <section id="basisfähigkeiten" class="level3">
+          <h3>Basisfähigkeiten</h3>
+          <p>Alle Charaktere besitzen ein gewisses Maß an Basisfähigkeiten (Kompetenz), die nicht explizit erwähnt werden müssen.</p>
+          </section>
+          <section id="probe" class="level3">
+          <h3>Probe</h3>
+          <p>In einer Situation in der Zweifel über das Auskommen einer versuchten Handlung eines Charakters bestehen wird eine Probe durchgeführt.</p>
+          <p>Proben außerhalb eines Kampfes können nicht wiederholt werden, Proben im Kampf können nach Ablauf der Tickzeit wiederholt werden.</p>
+          <section id="schwierigkeit" class="level4">
+          <h4>Schwierigkeit</h4>
+          <p>Jede Probe besitzt eine Schwierigkeit, die angibt, wie viele Erfolge mindestens erzielt werden müssen, um einen Fehlschlag zu vermeiden.</p>
+          </section>
+          <section id="wurf" class="level4">
+          <h4>Wurf</h4>
+          <p>Gemäß der Fähigkeitsstufe des Charakters werden folgende Würfel geworfen:</p>
+          <ul>
+          <li>1: d4</li>
+          <li>2: d4 und d6</li>
+          <li>3: d4, d6 und d8</li>
+          <li>4: d4, d6, d8 und d10</li>
+          <li>5: d4, d6, d8, d10 und d12</li>
+          <li>6: d4, d6, d8, d10, d12 und d20</li>
+          <li>6+: d4, d6, d8, d10, d12 und (Fähigkeitsstufe-5)d20, d.h. für jede weitere Fähigkeitsstufe über 6 wird ein weiterer d20 hinzugefügt.</li>
+          </ul>
+          <p>Ein Würfelergebnis zählt als Erfolg, wenn der Wert kleiner gleich 3 ist. Wenn eine 1 geworfen wird, zählt der Erfolg und der Würfel kann erneut geworfen werden. Dies gilt für alle Würfel mit einer 1 und auch für neue 1en.</p>
+          <p>Aufgaben erfordern eine bestimmte Anzahl an Erfolgen ja nach Schwierigkeit. Dabei erfordert eine einfache Aufgabe mindestens einen Erfolg, eine mittlere Aufgabe mindestens 2 Erfolge und eine schwere Aufgabe mindestens 3 Erfolge.</p>
+          <p>Weitere Erfolge zusätzlich zu den benötigten Erfolgen zählen als Bonuserfolge. Bonuserfolge können das Ergebnis positiv beeinflussen.</p>
+          </section>
+          <section id="vor--und-nachteil" class="level4">
+          <h4>Vor- und Nachteil</h4>
+          <p>Bei einem Wurf kann durch Vor- oder Nachteile der Fähigkeitswert für den Wurf temporär erhöht oder gesenkt werden. Vorteile können beispielsweise durch Ausrüstung, spezielles Wissen/Fähigkeiten oder Charakterhintergrund entstehen. Nachteile entstehen durch Vorteile eines Gegners, Stress oder besondere Umstände. Vor- und Nachteile werden zusammenaddiert, d.h. ein Vorteil gleicht einen Nachteil aus und mehrere Vorteile führen zu einem größeren Vorteil, mehrere Nachteile zu einem größeren Nachteil.</p>
+          <p>Für jeden Vorteil wird für den Wurf eine um 1 erhöhte Fähigkeitsstufe angenommen, für jeden Nachteil eine um 1 niedrigere. Vor- und Nachteile gleichen sich daher paarweise aus. Durch Vor- bzw. Nachteile kann für einen Wurf eine Fähigkeitsstufe unter 1 erreicht werden. Diese werden wie folgt geworfen:</p>
+          <ul>
+          <li>0: d6</li>
+          <li>-1: d8</li>
+          <li>-2: d10</li>
+          <li>-3: d12</li>
+          <li>-4: d20</li>
+          <li>-5: d100</li>
+          </ul>
+          <p>Ab -5 ist der Wurf immer ein d100.</p>
+          </section>
+          <section id="auf-gut-glück" class="level4">
+          <h4>Auf Gut Glück</h4>
+          <p>Ein Charakter kann versuchen, eine Probe, die spezielles Wissen oder Ausbildung (aber keine spezielle Ausrüstung) benötigt, ohne die entsprechende Fähigkeit Auf Gut Glück zu probieren. Dafür wird Wert von -5 angenommen. Entsprechend der Schwierigkeit der Aufgabe kann diese trotzdem mehrere Erfolge benötigen, es ist also mitunter extrem unwahrscheinlich bestimmte Aufgaben Auf Gut Glück zu schaffen.</p>
+          <p><strong>Tätigkeiten die spezielle Ausrüstung benötigen können nicht Auf Gut Glück versucht werden.</strong></p>
+          <div class="accordion" data-title="Beispiele">
+          <ul>
+          <li>Fähigkeitsstufe 2:
+          <ul>
+          <li>Wurf: d4 und d6</li>
+          <li>Ergebnis des Wurfes: 2,4</li>
+          <li>Ergebnis: 1 Erfolg</li>
+          </ul></li>
+          <li>Fähigkeitsstufe 3:
+          <ul>
+          <li>Wurf: d4, d6 und d8</li>
+          <li>Ergebnis des Wurfes: 4,2,3</li>
+          <li>Ergebnis: 2 Erfolge</li>
+          </ul></li>
+          <li>Fähigkeitsstufe 4 mit Vorteil +1 (insgesamt 5):
+          <ul>
+          <li>Wurf: d4, d6, d8, d10 und d12</li>
+          <li>Ergebnis des Wurfes: 3,6,1,2,11</li>
+          <li>Ergebnis des erneuten Wurfes des d8: 3</li>
+          <li>Ergebnis: 3 + 1 Erfolge, insgesamt 4 Erfolge</li>
+          </ul></li>
+          <li>Fähigkeitsstufe 1 mit Nachteil -3 (ingesamt -2):
+          <ul>
+          <li>Wurf: d10</li>
+          <li>Ergebnis des Wurfes: 4</li>
+          <li>Ergebnis: 0 Erfolge</li>
+          </ul></li>
+          <li>Fähigkeitsstufe 6 mit Vorteil +2 (ingesamt 8):
+          <ul>
+          <li>Wurf: d4, d6, d8, d10, d12 und 3d20</li>
+          <li>Ergebnis des Wurfes: 4,1,7,10,7,9,2,20</li>
+          <li>Ergebnis des erneuten Wurfes des d6: 3</li>
+          <li>Ergebnis: 2 + 1 Erfolge, insgesamt 3 Erfolge</li>
+          </ul></li>
+          </ul>
+          </div>
+          </section>
+          <div class="accordion" data-title="Wahrscheinlichkeiten">
+          <section id="wahrscheinlichkeit-x-oder-mehr-erfolge-zu-werfen" class="level4">
+          <h4>Wahrscheinlichkeit X oder mehr Erfolge zu werfen</h4>
+          <!-- Troll: (count ((accumulate x:= d4 while x = 1) keep {1..3})) -->
+          <table>
+          <colgroup>
+          <col style="width: 5%" />
+          <col style="width: 9%" />
+          <col style="width: 9%" />
+          <col style="width: 9%" />
+          <col style="width: 9%" />
+          <col style="width: 9%" />
+          <col style="width: 9%" />
+          <col style="width: 8%" />
+          <col style="width: 8%" />
+          <col style="width: 8%" />
+          <col style="width: 8%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Stufe</th>
+          <th>=0<a href="#wahrscheinlichkeiten-1">¹</a></th>
+          <th>≥1</th>
+          <th>≥2</th>
+          <th>≥3</th>
+          <th>≥4</th>
+          <th>≥5</th>
+          <th>≥6</th>
+          <th>≥7</th>
+          <th>≥8</th>
+          <th>≥9</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>-5</td>
+          <td>97,00%</td>
+          <td>3,00%</td>
+          <td>0,03%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          </tr>
+          <tr>
+          <td>-4</td>
+          <td>85,00%</td>
+          <td>15,00%</td>
+          <td>0,75%</td>
+          <td>0,04%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          </tr>
+          <tr>
+          <td>-3</td>
+          <td>75,00%</td>
+          <td>25,00%</td>
+          <td>2,08%</td>
+          <td>0,17%</td>
+          <td>0,01%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          </tr>
+          <tr>
+          <td>-2</td>
+          <td>70,00%</td>
+          <td>30,00%</td>
+          <td>3,00%</td>
+          <td>0,30%</td>
+          <td>0,03%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          </tr>
+          <tr>
+          <td>-1</td>
+          <td>62,50%</td>
+          <td>37,50%</td>
+          <td>4.69%</td>
+          <td>0,59%</td>
+          <td>0,07%</td>
+          <td>0,01%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          </tr>
+          <tr>
+          <td>0</td>
+          <td>50,00%</td>
+          <td>50,00%</td>
+          <td>8,33%</td>
+          <td>1,39%</td>
+          <td>0,23%</td>
+          <td>0,04%</td>
+          <td>0,01%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          </tr>
+          <tr>
+          <td>1</td>
+          <td>25,00%</td>
+          <td>75,00%</td>
+          <td>18,75%</td>
+          <td>4,69%</td>
+          <td>1,17%</td>
+          <td>0,29%</td>
+          <td>0,07%</td>
+          <td>0,02%</td>
+          <td>0,00%</td>
+          <td>0,00%</td>
+          </tr>
+          <tr>
+          <td>2</td>
+          <td>12,50%</td>
+          <td>87,50%</td>
+          <td>48,96%</td>
+          <td>16,75%</td>
+          <td>4,94%</td>
+          <td>1,36%</td>
+          <td>0,36%</td>
+          <td>0,09%</td>
+          <td>0,02%</td>
+          <td>0,01%</td>
+          </tr>
+          <tr>
+          <td>3</td>
+          <td>7,81%</td>
+          <td>92,19%</td>
+          <td>64,00%</td>
+          <td>30,71%</td>
+          <td>11,12%</td>
+          <td>3,47%</td>
+          <td>1,00%</td>
+          <td>0,27%</td>
+          <td>0,07%</td>
+          <td>0,02%</td>
+          </tr>
+          <tr>
+          <td>4</td>
+          <td>5,47%</td>
+          <td>94,53%</td>
+          <td>72,69%</td>
+          <td>41,57%</td>
+          <td>18,08%</td>
+          <td>6,46%</td>
+          <td>2,04%</td>
+          <td>0,60%</td>
+          <td>0,17%</td>
+          <td>0,04%</td>
+          </tr>
+          <tr>
+          <td>5</td>
+          <td>4,10%</td>
+          <td>95,90%</td>
+          <td>78,26%</td>
+          <td>49,81%</td>
+          <td>24,64%</td>
+          <td>9,91%</td>
+          <td>3,43%</td>
+          <td>1,07%</td>
+          <td>0,31%</td>
+          <td>0,09%</td>
+          </tr>
+          <tr>
+          <td>6</td>
+          <td>3,49%</td>
+          <td>96,51%</td>
+          <td>80,94%</td>
+          <td>54,21%</td>
+          <td>28,63%</td>
+          <td>12,32%</td>
+          <td>4,53%</td>
+          <td>1,48%</td>
+          <td>0,45%</td>
+          <td>0,13%</td>
+          </tr>
+          </tbody>
+          </table>
+          <div id="wahrscheinlichkeiten-1">
+          <p><em>¹ Wahrscheinlichkeit, keine Erfolge zu werfen</em></p>
+          </div>
+          </section>
+          <section id="durchschnittliche-anzahl-erfolge" class="level4">
+          <h4>Durchschnittliche Anzahl Erfolge</h4>
+          <table>
+          <thead>
+          <tr>
+          <th>Stufe</th>
+          <th>Durchschnitt</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>-5</td>
+          <td>0,03030</td>
+          </tr>
+          <tr>
+          <td>-4</td>
+          <td>0,15789</td>
+          </tr>
+          <tr>
+          <td>-3</td>
+          <td>0,27273</td>
+          </tr>
+          <tr>
+          <td>-2</td>
+          <td>0,33333</td>
+          </tr>
+          <tr>
+          <td>-1</td>
+          <td>0,42857</td>
+          </tr>
+          <tr>
+          <td>0</td>
+          <td>0,60000</td>
+          </tr>
+          <tr>
+          <td>1</td>
+          <td>1,00000</td>
+          </tr>
+          <tr>
+          <td>2</td>
+          <td>1,60000</td>
+          </tr>
+          <tr>
+          <td>3</td>
+          <td>2,02857</td>
+          </tr>
+          <tr>
+          <td>4</td>
+          <td>2,36190</td>
+          </tr>
+          <tr>
+          <td>5</td>
+          <td>2,63463</td>
+          </tr>
+          <tr>
+          <td>6</td>
+          <td>2,79253</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          </div>
+          </section>
+          </section>
+          <section id="schmerz-und-stress" class="level2">
+          <h2>Schmerz und Stress</h2>
+          <p>Charaktere besitzen zwei separate Maße, für körperliche Wunden (Schmerz) und geistige Wunden (Stress).</p>
+          <section id="schmerz" class="level3">
+          <h3>Schmerz</h3>
+          <p>Wird ein Charakter verwundet wird eine der gegnerischer Erfolge (oder eigenem Fehlschlag) entsprechende Wunde verursacht. Dadurch entsteht Schmerz für den Charakter. Schmerz wird auf 2 unterschiedlichen Skalen eingetragen: Dem Gesamtschmerz und dem Körperteil-Schmerz.</p>
+          <section id="körperteil-schmerz" class="level4">
+          <h4>Körperteil-Schmerz</h4>
+          <p>Für einen Punkt Körperteil-Schmerz wird ein Kästchen einmal abgestrichen. Es werden erst grüne Kästchen abgestrichen, bevor rote Kästchen abgestrichen werden. Sind alle Kästchen einmal abgestrichen, zählt das Körperteil als verwundet, und beeinträchtigt entsprechende Aktionen. Weitere Treffer streichen bisherige Kästchen ein zweites mal ab, in der gleichen Reihenfolge (grün vor rot). Sind alle Kästchen zweimal abgestrichen, zählt das Körperteil als Zerstört, und muss ersetzt werden. Weitere Treffer erhöhen weder Körperteil noch Gesamtschmerz. Einmal abgestrichene rote Kästchen, sowie alle zweimal abgestrichenen grüne Kästchen zählen als Kritische Wunden.</p>
+          <p>Sind alle Kästchen von Torso oder Kopf mindestens einmal abgestrichen, verliert der Charakter das Bewusstsein. Sind alle Kästchen von Torso oder Kopf zweimal abgestrichen, ist der Charakter tot.</p>
+          </section>
+          <section id="gesamtschmerz" class="level4">
+          <h4>Gesamtschmerz</h4>
+          <p>Gesamtschmerz wird einfach hochgezählt. Übersteigt der Gesamtschmerz eine Schwelle (3*N), so muss der Charakter eine Zähigkeitsprobe pro überschrittener Schwelle machen, wobei die Schwierigkeit der Probe gleich der Schwellennummer ist (erste Schwelle hat Schwierigkeit 1, zweite Schwelle Schwierigkeit 2, usw.).</p>
+          <div class="accordion" data-title="Beispiel">
+          <p>Bob hat im Kampf bereits 4 Schmerz erlitten und eine Zähigkeitsprobe mit Schwierigkeit 1 bestanden. Nun erleidet Bob weitere 5 Schmerz, für einen Gesamtschmerz von 9. Bob muss nun eine Zähigkeitsprobe mit Schwierigkeit 2 bestehen, da 6 = 3*N → N = 2. Trotz der Tatsache dass Bob bei 9 Schmerz ist, was der nächsten Schwelle entspricht, muss keine weitere Zähigkeitsprobe abgelegt werden, sondern erst wenn diese Schwelle überschritten wird.</p>
+          </div>
+          </section>
+          </section>
+          <section id="stress" class="level3">
+          <h3>Stress</h3>
+          <p>Stress wird erhöht durch mentale Anstrengungen oder Angriffe, oder durch negative Ereignisse. Übersteigt der Gesamtstress 3*N, so muss der Charakter eine Willensprobe bestehen oder riskiert einen Zusammenbruch. Willensproben werden äquivalent zu Schmerzproben durchgeführt.</p>
+          <p>Bei einer gescheiterten Willensprobe erleidet der Charakter einen Zusammenbruch. Der Spieler kann entscheiden, welche Form der Zusammenbruch annimmt:</p>
+          <ul>
+          <li><strong>Flucht</strong>: Der Charakter rennt oder kriecht so gut es geht davon, wahlweise schreiend. Der Charakter geht dabei nicht in Deckung.</li>
+          <li><strong>Ohnmacht/Lähmung</strong>: Der Charakter wird bewegungs- und reaktionslos, oder wahlweise ohnmächtig. Der Charakter geht dabei nicht in Deckung.</li>
+          </ul>
+          </section>
+          </section>
+          <section id="ruhepausen" class="level2">
+          <h2>Ruhepausen</h2>
+          <p>Ruhepausen sind Situationen, in denen der Charakter keine Aktivität durchführt und keinem Risiko ausgesetzt ist, sondern sich nur ausruht. Eine <em>Kurze Ruhepause</em> dauert 5-10 Minuten. Eine <em>Lange Ruhepause</em> dauert mindestens eine Stunde. Ruhepausen können nur in Sicherheit durchgeführt werden.</p>
+          <section id="auswirkungen-auf-fokus-und-stamina" class="level4">
+          <h4>Auswirkungen auf Fokus und Stamina</h4>
+          <p>Fokus und Stamina werden in einer Ruhepause wieder komplett aufgefüllt.</p>
+          </section>
+          <section id="auswirkungen-auf-schmerz-und-stress" class="level4">
+          <h4>Auswirkungen auf Schmerz und Stress</h4>
+          <p>Schmerz wird in einer Ruhepausen nur reduziert, sofern der Charakter Medizin verwendet.</p>
+          <p>In einer <em>Kurzen Ruhepause</em> reduziert sich Stress um so viele Punkte, wie der Charakter in einer Willensprobe an Erfolge erzielt. In einer <em>Langen Ruhepause</em> reduziert sich Stress um so viele Punkte, wie der Charakter Willen besitzt</p>
+          </section>
+          </section>
+          </section>
+          <section id="fähigkeiten-1" class="level1">
+          <h1>Fähigkeiten</h1>
+          <section id="übersicht" class="level2">
+          <h2>Übersicht</h2>
+          <table>
+          <colgroup>
+          <col style="width: 12%" />
+          <col style="width: 19%" />
+          <col style="width: 67%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Kategorie</th>
+          <th>Fähigkeit</th>
+          <th>Verwendung</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Kommunikation</td>
+          <td>Beeinflussen</td>
+          <td>Verführen, Einschüchtern, Anfreunden, Ablenken, Nerven, etc.</td>
+          </tr>
+          <tr>
+          <td><br /></td>
+          <td>Täuschen</td>
+          <td>Lügen, Betrügen, Verstellen, Dinge fälschen</td>
+          </tr>
+          <tr>
+          <td><br /></td>
+          <td>Kontakte</td>
+          <td>Verfügbarkeit und Qualität von Kontaktpersonen, die der Charakter kennt</td>
+          </tr>
+          <tr>
+          <td>Kampf</td>
+          <td>Schusswaffen</td>
+          <td>Herumballern</td>
+          </tr>
+          <tr>
+          <td><br /></td>
+          <td>Nahkampf</td>
+          <td>Draufhauen</td>
+          </tr>
+          <tr>
+          <td><br /></td>
+          <td>Taktik</td>
+          <td>Taktiken überlegen, Befehle geben</td>
+          </tr>
+          <tr>
+          <td>Tech</td>
+          <td>Software<a href="#faehigkeiten-1">¹</a></td>
+          <td>Hacking an Computern</td>
+          </tr>
+          <tr>
+          <td><br /></td>
+          <td>Hardware<a href="#faehigkeiten-2">²</a></td>
+          <td>Cyborgs und Drohnen, Sicherheitstechnik</td>
+          </tr>
+          <tr>
+          <td><br /></td>
+          <td>Fahrzeuge</td>
+          <td>Fahrzeuge steuern, reparieren, verstehen</td>
+          </tr>
+          <tr>
+          <td>Wissen</td>
+          <td>Chemie<a href="#faehigkeiten-2">²</a></td>
+          <td>Sprengstoffe herstellen, Bomben entschärfen, Chemie-Gedöns</td>
+          </tr>
+          <tr>
+          <td><br /></td>
+          <td>Medizin<a href="#faehigkeiten-2">²</a></td>
+          <td>Wunden verarzten, Aufputschmittel herstellen</td>
+          </tr>
+          <tr>
+          <td><br /></td>
+          <td>Recherche</td>
+          <td>Sammeln und Auswerten von Informationen</td>
+          </tr>
+          <tr>
+          <td>PSI</td>
+          <td>Manipulation<a href="#faehigkeiten-3">³</a></td>
+          <td>Erinnerungen ändern, Gefühle auslösen, Kontrolle übernehmen</td>
+          </tr>
+          <tr>
+          <td><br /></td>
+          <td>Fühlen<a href="#faehigkeiten-3">³</a></td>
+          <td>Gedankenlesen, Emotionen wahrnehmen, Personen spüren</td>
+          </tr>
+          <tr>
+          <td><br /></td>
+          <td>Konzentration</td>
+          <td>Stress abbauen, Manipulation erschweren oder umkehren, Mentale Aufgaben erleichtern</td>
+          </tr>
+          <tr>
+          <td>???</td>
+          <td>Heimlichkeit</td>
+          <td>Verstecken, Schleichen, Taschendiebstahl</td>
+          </tr>
+          <tr>
+          <td><br /></td>
+          <td>Parkour</td>
+          <td>Klettern, Abseilen, Parkour</td>
+          </tr>
+          <tr>
+          <td><br /></td>
+          <td>?</td>
+          <td>?</td>
+          </tr>
+          </tbody>
+          </table>
+          <ul>
+          <li>Heimlichkeit?</li>
+          </ul>
+          <div id="faehigkeiten-1">
+          <p><em>¹ Benötigt einen entsprechenden Zugangspunkt</em></p>
+          </div>
+          <div id="faehigkeiten-2">
+          <p><em>² Benötigt entsprechendes Werkzeug oder ein Labor/Werkstatt</em></p>
+          </div>
+          <div id="faehigkeiten-3">
+          <p><em>³ Benötigt ein PSI-Implantat</em></p>
+          </div>
+          </section>
+          </section>
+          <section id="mission" class="level1">
+          <h1>Mission</h1>
+          <p>Wenn Charaktere in ein gegnerisches Gebiet eindringen, wird dies als Mission betrachtet. Während Missionen spielt Zeit eine kritische Rolle: Charaktere teilen sich auf um parallel unterschiedliche Ziele zu erreichen während Wachen patrouillieren und Leute langsam verdächtig werden.</p>
+          <section id="zeit" class="level2">
+          <h2>Zeit</h2>
+          <p>Zeit spielt eine kritische Rolle während Mission, besonders wenn sich Teams aufteilen. Je nach Aktion braucht ein Charakter unterschiedlich lange. Die Aktionen werden mit einer Dauer in <strong>Erkundungs-Ticks</strong> bemessen, wobei ein Erkundungs-Tick etwa 1 Minute dauert.</p>
+          <section id="erkundungs-ticks" class="level3">
+          <h3>Erkundungs-Ticks</h3>
+          <table>
+          <thead>
+          <tr>
+          <th>Aktion</th>
+          <th>Erkundungs-Ticks</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Sehr Kurz</td>
+          <td>1</td>
+          </tr>
+          <tr>
+          <td>Kurz</td>
+          <td>2</td>
+          </tr>
+          <tr>
+          <td>Mittel</td>
+          <td>4</td>
+          </tr>
+          <tr>
+          <td>Lang</td>
+          <td>8</td>
+          </tr>
+          </tbody>
+          </table>
+          <div class="accordion" data-title="Beispiele">
+          <table>
+          <thead>
+          <tr>
+          <th>Aktion</th>
+          <th>Dauer</th>
+          <th>Erkundungs-Ticks</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Bewegung</td>
+          <td>Sehr kurz</td>
+          <td>1</td>
+          </tr>
+          <tr>
+          <td>Klettern</td>
+          <td>Kurz</td>
+          <td>2</td>
+          </tr>
+          <tr>
+          <td>Schleichen</td>
+          <td>Kurz</td>
+          <td>2</td>
+          </tr>
+          <tr>
+          <td>Tür aufbrechen</td>
+          <td>Kurz</td>
+          <td>2</td>
+          </tr>
+          <tr>
+          <td>Raum durchsuchen</td>
+          <td>Mittel</td>
+          <td>4</td>
+          </tr>
+          <tr>
+          <td>Soziale Interaktion</td>
+          <td>Kurz</td>
+          <td>2</td>
+          </tr>
+          <tr>
+          <td>Schloss hacken</td>
+          <td>Kurz-Mittel</td>
+          <td>2-4</td>
+          </tr>
+          <tr>
+          <td>Computer hacken</td>
+          <td>Mittel</td>
+          <td>4</td>
+          </tr>
+          <tr>
+          <td>Informationen sammeln</td>
+          <td>Kurz</td>
+          <td>2</td>
+          </tr>
+          <tr>
+          <td>Wichtige Daten herunterladen</td>
+          <td>Lang</td>
+          <td>8</td>
+          </tr>
+          <tr>
+          <td>Backdoor installieren</td>
+          <td>Kurz</td>
+          <td>2</td>
+          </tr>
+          <tr>
+          <td>Verkleidung wecheln</td>
+          <td>Kurz</td>
+          <td>2</td>
+          </tr>
+          </tbody>
+          </table>
+          </div>
+          </section>
+          </section>
+          <section id="verdacht" class="level2">
+          <h2>Verdacht</h2>
+          <p>Aktionen, oder die Auswirkungen von Aktionen, können bemerkt werden. Dies führt zu wachsendem Verdacht.</p>
+          <p>Verdacht wird erhöht durch:</p>
+          <ul>
+          <li>Fehlgeschlagene Proben: Ein Fehlschlag um 1/2/3/4/5 usw., erhöht den Verdacht um 1/2/3/5/8</li>
+          <li>Vorkommnisse: Jede weitere Ungewöhnlichkeit erhöht den Verdacht um 1/2/3/4/5</li>
+          </ul>
+          <p>Vorkommnisse können einen Mindestverdacht verursachen:</p>
+          <table>
+          <colgroup>
+          <col style="width: 53%" />
+          <col style="width: 20%" />
+          <col style="width: 25%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Vorkommnis</th>
+          <th>Minimum</th>
+          <th>Beispiele</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Regelverstoß</td>
+          <td>5</td>
+          <td>Licht wo keins sein sollte, fehlende Person, Lokaler Alarm</td>
+          </tr>
+          <tr>
+          <td>Möglicher Eindringling</td>
+          <td>15</td>
+          <td>Spuren von Hacking/Schlossknacken, fehlende Wache, Alarm</td>
+          </tr>
+          <tr>
+          <td>Spuren von Gewalt</td>
+          <td>25</td>
+          <td>Aufgebrochene Tür, Waffen, Blutspuren, Schüsse in der Ferne</td>
+          </tr>
+          <tr>
+          <td>Bedrohung</td>
+          <td>35</td>
+          <td>Tote Person, Bombe, etc.</td>
+          </tr>
+          </tbody>
+          </table>
+          <section id="verdachtsstufen" class="level3">
+          <h3>Verdachtsstufen</h3>
+          <p>Je größer der Verdacht, um so aktiver werden Wachen:</p>
+          <table style="width:100%;">
+          <colgroup>
+          <col style="width: 12%" />
+          <col style="width: 8%" />
+          <col style="width: 33%" />
+          <col style="width: 30%" />
+          <col style="width: 16%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Stufe</th>
+          <th>Bereich</th>
+          <th>Wachen</th>
+          <th>Kommunikation mit anderen Wachen</th>
+          <th>Bei Sichtkontakt</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Routine</td>
+          <td>0-4</td>
+          <td>Normale Patrouillen</td>
+          <td>Keine Kommunikation</td>
+          <td>Beobachtet nur</td>
+          </tr>
+          <tr>
+          <td>Aufmerksam</td>
+          <td>5-14</td>
+          <td>Untersuchen Verdacht</td>
+          <td>Teilt Verdacht in der Nähe</td>
+          <td>Fragt nach ID</td>
+          </tr>
+          <tr>
+          <td>Misstrauisch</td>
+          <td>15-24</td>
+          <td>Checkpoints, Angepasste Patrouillen</td>
+          <td>Teilt Verdacht im Gebiet</td>
+          <td>Fragt nach ID und verifiziert</td>
+          </tr>
+          <tr>
+          <td>Alarmiert</td>
+          <td>25-34</td>
+          <td>Partieller Lockdown, Durchsuchung</td>
+          <td>Teilt Verdacht mit allen Wachen</td>
+          <td>Nimmt in Gewahrsam</td>
+          </tr>
+          <tr>
+          <td>Einsatzbereit</td>
+          <td>35-49</td>
+          <td>Kompletter Lockdown</td>
+          <td>Teilt Verdacht mit Autorität</td>
+          <td>Fordert Verstärkung an</td>
+          </tr>
+          <tr>
+          <td>Kampfbereit</td>
+          <td>50+</td>
+          <td>Externe Verstärkung</td>
+          <td>-</td>
+          <td>Eröffnet Feuer</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          </section>
+          </section>
+          <section id="kampf" class="level1">
+          <h1>Kampf</h1>
+          <section id="reihenfolge" class="level2">
+          <h2>Reihenfolge</h2>
+          <p>Alle Charaktere handeln zeitgleich. Dies wird gehandhabt, indem die Dauer der Aktionen aller Charaktere festgehalten werden. Sobald die Aktion eines Charakters beendet ist, kann dieser seine nächste Aktion durchführen. Während diese Aktion läuft, führen andere Charaktere ebenfalls ihre Aktionen durch und beginnen gegebenenfalls neue Aktionen.</p>
+          <p>Die Dauer einer Aktion wird in Ticks gemessen, wobei ein Tick etwa eine 1/2 Sekunde darstellt. Für jede Aktion ist eine Dauer in Ticks festgelegt. Der Charakter, der aktuell am wenigsten Ticks hat, kann eine Aktion durchführen. Die Aktionsdauer wird auf die Tickzeit des Charakters addiert. Es ist möglich, dass ein Charakter mehrere kurze Aktionen hintereinander ausführt, während ein anderer Charakter eine einzelne, lange Aktion durchführt. Betrifft die Aktion den Charakter selbst oder andere Akteure (z.B. Bewegung oder Angriffe), so wird der Effekt am Anfang der Tickzeit ausgelöst. Bei Aktionen die die Umgebung betreffen (z.B. Tür öffnen), wird der Effekt am Ende der Tickzeit ausgelöst.</p>
+          <!--
+          ### Team-Aktionen
+
+          Team-Aktionen können von mehr als einer Person durchgeführt werden, und erlauben koordinierte Aktionen durchzuführen, wie ein taktischer Eingang oder Deckungsfeuer.
+
+          Team-Aktionen werden unterteilt in einen Setup-Teil und den Team-Teil. Ein Charakter agiert als **Initiator**, und führt den Setup durch. Dies dauert eine gewisse Anzahl Ticks, je nach Team-Aktion. Während des Setups können andere Charakter der Aktion als **Mitwirkende** beitreten. Der Initiator kann auch nach Abschluss des Setups den Team-Teil herauszögern, um anderen Team-Mitgliedern das Beitreten zu ermöglichen. Wenn der Setup abgeschlossen ist und der Initiator den Team-Teil beginnt, agieren alle beteiligten Charaktere gemeinsam. Danach ist die Team-Aktion beendet.
+
+          #### Aufteilung der Aktionen und optionale Bestandteile
+
+          Je nach Team-Aktion ist gekennzeichnet ob eine Aktion nur vom Initiator (I), von Mitwirkenden (M) oder von Allen (A) durchgeführt wird. Team-Aktionen können auch optionale Bestandteile haben, die von Mitwirkenden durchgeführt werden können. Diese sind je nach Aktion unterschiedlich, und generell gekennzeichnet durch die Anzahl an Charakteren gekennzeichnet, die diese Aktion mindestens bis maximal durchführen können.
+
+          ::: {.accordion data-title="Beispiel"}
+
+          > <table><colgroup>
+                    <col style="width: 22%">
+                    <col style="width: 12%">
+                    <col style="width: 65%">
+                    </colgroup><tr><td>Taktischer Eingang</td><td>3+|5</td><td>(I) Tür öffnen und (A) hindurchgehen. Optional (1) Schild, (1-2) Deckungsfeuer und (1+) Granaten</td></tr></table>
+
+          Der Setup-Teil dieser Aktion dauert mindestens 3 Ticks und kann beliebig verlängert werden, um Charakteren die Möglichkeit zu geben, der Team-Aktion beizutreten. Danach dauert der Team-Teil genau 5 Ticks für alle Beteiligten, unabhängig davon was genau getan wird.
+
+          In dieser Aktion öffnet der Initiator (I) die Tür, und alle Beteiligten (A), also Initiator und Mitwirkende, gehen durch die Tür. Während der Initiator die Tür öffnet, können von den Mitwirkenden genau 1 Charakter mit einem Schild nach vorn treten um den Charakteren Deckung zu geben, 1-2 Charaktere können Deckungsfeuer geben, und beliebig viele Charaktere können Granaten werfen. Dies passiert alles gleichzeitig während des Team-Teils.
+          :::
+          -->
+          </section>
+          <section id="bewegung-und-zonen" class="level2">
+          <h2>Bewegung und Zonen</h2>
+          <p>Der Bereich in dem gekämpft wird, wird in <strong>Zonen</strong> unterteilt. Zonen stellen größere Bereiche dar, z.B. einzelne Gägne, Räume, oder Teile von Räumen. Zonen können auch dynamisch entstehen, z.B. kann eine Rauchgranate eine neue, mit Rauch gefüllte Zone erzeugen, nur für eine begrenzte Zeit existiert.</p>
+          <p>Innerhalb einer Zone können sich Charaktere positionieren, z.B., in dem sie Deckung suchen, flankieren oder zu einem Engpass, z.B. einer Tür, gehen.</p>
+          </section>
+          <section id="angriffe" class="level2">
+          <h2>Angriffe</h2>
+          <section id="ablauf" class="level3">
+          <h3>Ablauf</h3>
+          <ol type="1">
+          <li>Treffer</li>
+          <li>Trefferzone</li>
+          <li>Rüstung</li>
+          </ol>
+          </section>
+          <section id="treffer" class="level3">
+          <h3>Treffer</h3>
+          <p>Um einen Gegner zu treffen, muss sich das Ziel in Reichweite befinden und eine der Waffe entsprechende Fähigkeitsprobe durchgeführt werden. Bei Schusswaffen müssen so viele Erfolge erzielt werden, wie der Gegner Deckung hat. Bei Nahkampf hängt die Schwierigkeit von der Aktion ab.</p>
+          <section id="deckung" class="level4">
+          <h4>Deckung</h4>
+          <table>
+          <thead>
+          <tr>
+          <th>Deckung</th>
+          <th>Wert</th>
+          <th>Beispiele</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Leichte Deckung</td>
+          <td>1</td>
+          <td>Stuhl, Topfpflanze</td>
+          </tr>
+          <tr>
+          <td>Mittlere Deckung</td>
+          <td>2</td>
+          <td>Schreibtisch</td>
+          </tr>
+          <tr>
+          <td>Hohe Deckung</td>
+          <td>3</td>
+          <td>Wand</td>
+          </tr>
+          </tbody>
+          </table>
+          <p>Dieser Deckungswert geht davon aus, dass der Charakter Aktionen macht, die außerhalb der Deckung Auswirkung haben, z.B. selbst schießt. Ist dies nicht der Fall, erhält der Charakter +1 Deckung.</p>
+          <p>Sprintende Charaktere haben 1 Deckung, wenn der Winkel zwischen Laufrichtung und Schusslinie mehr als 45° beträgt.</p>
+          <p>Charaktere, die sich innerhalb in der Nähe des Schützen aus befinden, können Nahkampfdeckung haben. Die genaue Entfernung für Nahkampfdeckung hängt von der Reichweite der Waffe ab, der Deckungswert von der Nahkampffähigkeit des Ziels.</p>
+          <!--Range: (6 → 2, 12 → 3, 18 → 5, Unendlich → 6)-->
+          <!--Deckung: (1,2 → 1; 3,4 → 2; 5,6 → 3)-->
+          <p>Andere Charaktere können ebenfalls als Deckung benutzt werden, aber nur sofern diese keine Deckung haben. Die Deckung entspricht dann der Rüstung des Charakters + 1. Wenn ein Angreifer das Ziel hinter der Deckung verfehlt, wird das Ergebnis des Wurfs mit Schwierigkeit 0 gegen den Deckung gebenden Charakter verwendet.</p>
+          </section>
+          </section>
+          <section id="trefferzone" class="level3">
+          <h3>Trefferzone</h3>
+          <p>Um die Trefferzone zu bestimmen, wird vor der Fähigkeitenprobe eine Trefferzone festgelegt. Diese erhöht die benötigten Erfolge, um genau diese Trefferzone zu treffen, in Abhängigkeit von der gewählten Trefferzone. Schnelle Schüsse gehen immer Richtung Mittelpunkt des Gegners.</p>
+          <section id="trefferzonen-schwierigkeit" class="level4">
+          <h4>Trefferzonen Schwierigkeit</h4>
+          <table>
+          <thead>
+          <tr>
+          <th>Körperteil</th>
+          <th>Schwierigkeit</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Kopf</td>
+          <td>+2</td>
+          </tr>
+          <tr>
+          <td>Gliedmaße<a href="#trefferzone-1">¹</a></td>
+          <td>+1</td>
+          </tr>
+          <tr>
+          <td>Torso</td>
+          <td>+0</td>
+          </tr>
+          </tbody>
+          </table>
+          <div id="trefferzone-1">
+          <p><em>¹ Bei Gliedmaßen muss vorab entschieden werden, ob Beine oder Arme anvisiert werden. Es kann festgelegt werden, welches Bein anvisiert wird, oder ob der Waffenarm anvisiert wird. Alternativ kann auch ausgewürfelt werden ob links oder rechts getroffen wird.</em></p>
+          </div>
+          <p>Werden genug Erfolge erzielt, um den Gegner zu treffen, aber nicht genug um die Trefferzone zu treffen, wird statt dem anvisierten Körperteil der Torso getroffen.</p>
+          </section>
+          <section id="würfel-für-zufälligen-treffer" class="level4">
+          <h4>Würfel für zufälligen Treffer</h4>
+          <table>
+          <thead>
+          <tr>
+          <th>Fähigkeitsstufe</th>
+          <th>Würfel</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>≤ 1</td>
+          <td>d20</td>
+          </tr>
+          <tr>
+          <td>2</td>
+          <td>d12</td>
+          </tr>
+          <tr>
+          <td>3</td>
+          <td>d10</td>
+          </tr>
+          <tr>
+          <td>4</td>
+          <td>d8</td>
+          </tr>
+          <tr>
+          <td>5</td>
+          <td>d6</td>
+          </tr>
+          <tr>
+          <td>6+</td>
+          <td>d4</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          <section id="auswertung-eines-zufälligen-treffers" class="level4">
+          <h4>Auswertung eines zufälligen Treffers</h4>
+          <table>
+          <thead>
+          <tr>
+          <th style="text-align: center;">Wert</th>
+          <th style="text-align: center;">Körperteil</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td style="text-align: center;">1</td>
+          <td style="text-align: center;">Kopf</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">2</td>
+          <td style="text-align: center;">Torso</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">3</td>
+          <td style="text-align: center;">Torso</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">4</td>
+          <td style="text-align: center;">R. Arm</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">5</td>
+          <td style="text-align: center;">L. Arm</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">6</td>
+          <td style="text-align: center;">Torso</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">7</td>
+          <td style="text-align: center;">R. Bein</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">8</td>
+          <td style="text-align: center;">L. Bein</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">9</td>
+          <td style="text-align: center;">R. Arm</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">10</td>
+          <td style="text-align: center;">L. Arm</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">11</td>
+          <td style="text-align: center;">R. Bein</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">12</td>
+          <td style="text-align: center;">L. Bein</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">13</td>
+          <td style="text-align: center;">R. Arm</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">14</td>
+          <td style="text-align: center;">L. Arm</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">15</td>
+          <td style="text-align: center;">R. Arm</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">16</td>
+          <td style="text-align: center;">L. Arm</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">17</td>
+          <td style="text-align: center;">R. Bein</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">18</td>
+          <td style="text-align: center;">L. Bein</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">19</td>
+          <td style="text-align: center;">R. Bein</td>
+          </tr>
+          <tr>
+          <td style="text-align: center;">20</td>
+          <td style="text-align: center;">L. Bein</td>
+          </tr>
+          </tbody>
+          </table>
+          <p><em>Bei Linkshändern werden R. Arm und L. Arm ausgetauscht</em></p>
+          </section>
+          </section>
+          <section id="rüstung" class="level3">
+          <h3>Rüstung</h3>
+          <p>Wird ein durch Rüstung geschütztes Körperteil getroffen, wird der erhaltene Schmerz um den Rüstungswert reduziert. Der Schmerz kann dadurch auch komplett negiert werden.</p>
+          </section>
+          </section>
+          </section>
+          <section id="aktionsdauer" class="level1">
+          <h1>Aktionsdauer</h1>
+          <p>Definition: <strong>1 Tick = 1/2 Sekunde</strong></p>
+          <section id="bewegung" class="level2">
+          <h2>Bewegung</h2>
+          <table>
+          <colgroup>
+          <col style="width: 22%" />
+          <col style="width: 9%" />
+          <col style="width: 67%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Aktion</th>
+          <th>Dauer</th>
+          <th>Beschreibung</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Bewegen</td>
+          <td>3</td>
+          <td>Bewegung in eine angrenzende Zone</td>
+          </tr>
+          <tr>
+          <td>Positionieren</td>
+          <td>2</td>
+          <td>Bewegung zu einem bestimmten Punkt in der aktuellen Zone, z.B. Deckung, Engpass, Interaktionspunkt</td>
+          </tr>
+          <tr>
+          <td>Schleichen</td>
+          <td>5</td>
+          <td>Heimliche Bewegung zu einem bestimmten Punkt in der aktuellen Zone oder einer angrenzenden Zone</td>
+          </tr>
+          <tr>
+          <td>Klettern</td>
+          <td>8</td>
+          <td>Unter Dingen hindurch kriechen oder darüber klettern.</td>
+          </tr>
+          <tr>
+          <td>In die Hocke gehen</td>
+          <td>1</td>
+          <td>Gibt +1 Vorteil auf Schüsse</td>
+          </tr>
+          <tr>
+          <td>Hinlegen</td>
+          <td>2</td>
+          <td>Gibt +3 Vorteil auf Schüsse, erfordert Aufstehen</td>
+          </tr>
+          <tr>
+          <td>Aufstehen</td>
+          <td>2</td>
+          <td>Aufstehen aus dem Liegen</td>
+          </tr>
+          </tbody>
+          </table>
+          <!--
+          Aktion             | Dauer  |Beschreibung
+          -------------------|-----------|--------------------------------------------------------
+          Sprinten           | 3–5    | Bewegung um 3/2 (Kardinal/Diagonal) Felder. Dauer ist 6-⎡Athletik/2⎤ (1,2 → 5; 3,4 → 4; 5,6 → 3). Gibt Deckung 1 vor seitlichen Schüssen. Verbraucht **1 Stamina**
+          Gehen              | 2/3    | Kardinal/Diagonal pro Feld.
+          Schleichen         | 5/7    | Kardinal/Diagonal pro Feld. Schleichen ist lautlos.
+          Kriechen/Klettern           | 10   | Under Dingen hindurchkriechen oder darüber klettern, Leitern hoch- oder runterklettern, etc. Verbraucht **1 Stamina**
+          In die Hocke gehen | 4      | Gibt einen +1 Vorteil auf Schüsse
+          Hinlegen           | 8     | Gibt einen +3 Vorteil auf Schüsse
+          Aufstehen (Hocke)  | 4      |
+          Aufstehen (Liegen) | 8     |
+          In Deckung gehen   | 5      | Erhöht Deckungswert einmalig um 1, bis der Charakter die Deckung verlässt
+          -->
+          </section>
+          <section id="gegenstände" class="level2">
+          <h2>Gegenstände</h2>
+          <table>
+          <colgroup>
+          <col style="width: 22%" />
+          <col style="width: 12%" />
+          <col style="width: 65%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Aktion</th>
+          <th>Dauer</th>
+          <th>Beschreibung</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Gegenstand Fallen lassen</td>
+          <td>0</td>
+          <td>Gegenstand oder Waffe fallenlassen.</td>
+          </tr>
+          <tr>
+          <td>Gegenstand Aufheben</td>
+          <td>3</td>
+          <td>Gegenstand oder Waffe aufheben. Gegenstand ist danach sofort verwendbar.</td>
+          </tr>
+          <tr>
+          <td>Gegenstand Werfen</td>
+          <td>2</td>
+          <td>Gegenstand oder Waffe auf ein Ziel werfen. Reichweite ist (6 + Athletik)</td>
+          </tr>
+          <tr>
+          <td>Gegenstand benutzen</td>
+          <td>siehe Gegenstand</td>
+          <td>Benutzung eines Gegenstands, z.B. Spritzen o.ä.</td>
+          </tr>
+          <tr>
+          <td>Waffe ziehen (Holster)</td>
+          <td>1</td>
+          <td>Waffe aus einem Holster (z.B. am Gürtel) ziehen.</td>
+          </tr>
+          <tr>
+          <td>Waffe ziehen (Versteckt)</td>
+          <td>2</td>
+          <td>Eine versteckte Waffe ziehen.</td>
+          </tr>
+          <tr>
+          <td>Waffe wegstecken</td>
+          <td>1</td>
+          <td>Waffe wieder wegpacken</td>
+          </tr>
+          <tr>
+          <td>Gegenstand aus Gürtel/Weste hervorholen</td>
+          <td>4</td>
+          <td>Leicht erreichbare Gegenstände hervorholen.</td>
+          </tr>
+          <tr>
+          <td>Gegenstand aus Rucksack hervorholen</td>
+          <td>10</td>
+          <td>Schwer erreichbare Gegenstände hervorholen. Dauert mehrere Runden.</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          <section id="schusswaffen" class="level2">
+          <h2>Schusswaffen</h2>
+          <table>
+          <colgroup>
+          <col style="width: 25%" />
+          <col style="width: 14%" />
+          <col style="width: 60%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Aktion</th>
+          <th>Dauer</th>
+          <th>Beschreibung</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Schnelles Anvisieren</td>
+          <td>1</td>
+          <td>Die Waffe auf ein (neues) Ziel richten. Erhöhrt Schwierigkeit des nächsten Schuss um 1.</td>
+          </tr>
+          <tr>
+          <td>Schneller Schuss/Salve</td>
+          <td>Schnell</td>
+          <td>Schuss in die grobe Richtung des Gegners, trifft ein zufälliges Körperteil. Schwierigkeit = Deckung + 1</td>
+          </tr>
+          <tr>
+          <td>Ziel anvisieren</td>
+          <td>2</td>
+          <td>Die Waffe auf ein (neues) Ziel richten.</td>
+          </tr>
+          <tr>
+          <td>Gezielter Schuss/Salve</td>
+          <td>Langsam</td>
+          <td>Schwierigkeit = Deckung + (Kopf=2, Arm/Bein=1, Torso=0)</td>
+          </tr>
+          <tr>
+          <td>Sperrfeuer</td>
+          <td>5+</td>
+          <td>Deckt einen Bereich mit Sperrfeuer ab. Aus allen Zielen im Bereich des Sperrfeuers, die sich nicht in Deckung befinden, wird alle 5 Ticks ein zufälliges Ziel an einem zufälligen Körperteil getroffen. Alle Aktionen von Gegnern, die sich in Deckung befinden, werden um 1 erschwert, bei einem Fehlschlag erleiden diese einen zufälligen Treffer. Erfordert eine Waffe mit Tick-Malus kleiner gleich 4. Gegner im Bereich des Sperrfeuers bekommen einmalig 1 Stress.</td>
+          </tr>
+          <tr>
+          <td>Wache</td>
+          <td>2+</td>
+          <td>Einnehmen der Wachposition dauert 2 Ticks. Danach kann zu einem beliebigen Zeitpunkt in den bewachten Bereich geschossen (Schnell oder gezielt) werden, ohne anvisieren zu müssen. Die Wache kann jederzeit abgebrochen werden.</td>
+          </tr>
+          <tr>
+          <td>Magazin wechseln</td>
+          <td>Langsam/2</td>
+          <td>Füllt Ladungen wieder auf, kann optional Munitionstyp wechseln.</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          <section id="nahkampf" class="level2">
+          <h2>Nahkampf</h2>
+          <table>
+          <colgroup>
+          <col style="width: 25%" />
+          <col style="width: 14%" />
+          <col style="width: 60%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Aktion</th>
+          <th>Dauer</th>
+          <th>Beschreibung</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Schneller Angriff</td>
+          <td>Schnell</td>
+          <td>Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 2</td>
+          </tr>
+          <tr>
+          <td>Gezielter Angriff</td>
+          <td>Langsam</td>
+          <td>Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 1</td>
+          </tr>
+          <tr>
+          <td>Schwerer Angriff</td>
+          <td>Langsam</td>
+          <td>Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 2. Verursacht doppelten Schmerz. Benötigt <strong>1 Stamina</strong></td>
+          </tr>
+          <tr>
+          <td>Konter</td>
+          <td>Schnell + 2</td>
+          <td>Kann vor Gegnerangriff durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Schwierigkeit entspricht #Gegnererfolge+1. Schaden ist dann (A-B)-1, nicht negativ.</td>
+          </tr>
+          <tr>
+          <td>Entwaffnen</td>
+          <td>5 + Waffe</td>
+          <td>Den Gegner entwaffnen. Schwierigkeit +2. Verbraucht <strong>1 Stamina</strong>. Bei Fehlschlag kann ggf. ein normaler Nahkampftreffer gelandet werden, wenn dafür genug Erfolge erzielt wurden.</td>
+          </tr>
+          <tr>
+          <td>Knockout</td>
+          <td>10 + Waffe</td>
+          <td>Den Gegner ausknocken, oder direkt töten. Schwierigkeit +3. Wahlweise tödlich oder nur KO. Verbraucht <strong>1 Stamina</strong>. Bei Fehlschlag kann ggf. ein normaler Nahkampftreffer gelandet werden, wenn dafür genug Erfolge erzielt wurden.</td>
+          </tr>
+          <tr>
+          <td>Verteidigungsstellung</td>
+          <td>3</td>
+          <td>Einnehmen einer Verteidigungsstellung gegenüber einem Ziel, erhöht die Schwierigkeit für den Angreifer um 1</td>
+          </tr>
+          <tr>
+          <td>Tackle</td>
+          <td>2 + Waffe</td>
+          <td>Dauer entspricht Sprint + Angriff, Angreifer bewegt sich bis zu 3/2 Felder zum Ziel und führt zusätzlich einen Nahkampfangriff aus. Ist das Ziel in Verteidigungsstellung gibt es Nachteil -1, ansonsten Vorteil +1. Verbraucht <strong>1 Stamina</strong></td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          <section id="psi" class="level2">
+          <h2>PSI</h2>
+          <table>
+          <colgroup>
+          <col style="width: 34%" />
+          <col style="width: 9%" />
+          <col style="width: 10%" />
+          <col style="width: 44%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Aktion</th>
+          <th>Dauer</th>
+          <th>Fähigkeit</th>
+          <th>Beschreibung</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Generisches Einfühlen/Manipulieren</td>
+          <td>x1/x2/x3</td>
+          <td>F/M</td>
+          <td>Einfache/Mittlere/Schwere Aktionen</td>
+          </tr>
+          <tr>
+          <td>Konzentrieren</td>
+          <td>3<a href="#PSI-tick-1">¹</a></td>
+          <td>K</td>
+          <td>Stress abbauen, Manipulation erschweren oder umkehren, Bestimmte Aufgaben erleichtern.</td>
+          </tr>
+          <tr>
+          <td>Stress verursachen</td>
+          <td>x1</td>
+          <td>M</td>
+          <td>Ziel bekommt (Erfolge-Gegenerfolge(Wille))+1 Stress (nur wenn Erfolge &gt; Gegenerfolge)</td>
+          </tr>
+          <tr>
+          <td>Wahrnehmung übernehmen</td>
+          <td>x1+</td>
+          <td>F</td>
+          <td>Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich, dann kann der Übernehmende alles wahrnehmen, was das Ziel wahrnimmt</td>
+          </tr>
+          <tr>
+          <td>Körper Übernehmen</td>
+          <td>x2+</td>
+          <td>M</td>
+          <td>Schwierigkeit = 2+Gegenerfolge(Wille), wenn Erfolgreich, dann ist Gegner übernommen und agiert nach Anweisung des Übernehmenden. Verbraucht <strong>1 Fokus</strong></td>
+          </tr>
+          <tr>
+          <td>Betäuben</td>
+          <td>x2</td>
+          <td>M</td>
+          <td>Tickzeit des Ziels wird um 6+Erfolge*3 erhöht. Verbraucht <strong>1 Fokus</strong></td>
+          </tr>
+          <tr>
+          <td>Falsche Wahrnehmung</td>
+          <td>x3</td>
+          <td>M</td>
+          <td>Schwierigeit = 1+Gegenerfolge(Wille), wenn Erfolgreich dann nimmt das Ziel eine leicht andere Situation<a href="#PSI-tick-2">²</a> war. Verbraucht <strong>1 Fokus</strong></td>
+          </tr>
+          <tr>
+          <td>Aktionen erzwingen</td>
+          <td>x2</td>
+          <td>M</td>
+          <td>Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich kann der Angreifer die nächsten 2 (Tick)Aktion des Ziels festlegen, jeder zusätzliche Erfolg erlaubt 1 weitere Aktion zu spezifizieren.</td>
+          </tr>
+          </tbody>
+          </table>
+          <div id="PSI-tick-1">
+          <p><em>¹ Konzentrieren ist ohne PSI-Implantat oder -Verstärker möglich und hat konstante Dauer.</em></p>
+          </div>
+          <div id="PSI-tick-2">
+          <p><em>² Z.B. eine Person an einer anderen Position, etwas/jemand nicht da, mehr Gegner, etc.</em></p>
+          </div>
+          <!--
+          ## Team-Aktionen
+
+          Setup-Anteil | Team-Anteil
+
+          Aktion             | Dauer     | Beschreibung
+          -------------------|-----------|--------------------------------------------------------
+          Taktischer Eingang | 3+\|5      | (I) Tür öffnen und (A) hindurchgehen. Optional (1-2) Deckungsfeuer, (1+) Granaten und (1) Schild
+          Deckungsfeuer      | 3+\|3+     | (I) Wache und (M) Bewegung außerhalb des Wachbereichs, mit Deckung + 1.
+          -->
+          </section>
+          <section id="verschiedenes" class="level2">
+          <h2>Verschiedenes</h2>
+          <table>
+          <colgroup>
+          <col style="width: 25%" />
+          <col style="width: 20%" />
+          <col style="width: 53%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Aktion</th>
+          <th>Dauer</th>
+          <th>Beschreibung</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Fenster öffnen/schließen</td>
+          <td>4</td>
+          <td>Öffnen, aber ohne das Fenster zu beschädigen</td>
+          </tr>
+          <tr>
+          <td>Fenster einschlagen</td>
+          <td>2</td>
+          <td>Schneller öffnen, lässt sich aber nicht wieder schließen.</td>
+          </tr>
+          <tr>
+          <td>Tür öffnen</td>
+          <td>6</td>
+          <td>Eine nicht verschlossene Tür aufstoßen.</td>
+          </tr>
+          <tr>
+          <td>Tür eintreten</td>
+          <td>3</td>
+          <td>Eine verschlossene Tür auftreten. Erfordert Athletikprobe mit Schwierigkeit abhängig von der Türstärke. Verbraucht <strong>1 Stamina</strong></td>
+          </tr>
+          <tr>
+          <td>Interaktion</td>
+          <td>~</td>
+          <td>Abhängig von der Interaktion</td>
+          </tr>
+          <tr>
+          <td>Ausruhen</td>
+          <td>5</td>
+          <td>Regeneriert 1 Stamina ODER 1 Fokus</td>
+          </tr>
+          <tr>
+          <td>Überanstrengen</td>
+          <td>1</td>
+          <td>Regeneriert 1 Stamina ODER 1 Fokus. Verursacht 1 Schmerz</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          </section>
+          <section id="charakter-erstellung" class="level1">
+          <h1>Charakter-Erstellung</h1>
+          <ul>
+          <li><strong><a href="#attribute">Attribute</a></strong>: Alle Attribute starten auf 1, danach können 8 Attributs-Punkte verteilt werden, auf mindestens 2 Attribute. Maximalwert 6</li>
+          <li><strong><a href="#fähigkeiten-1">Fähigkeiten</a></strong>: 20 Fähigkeitspunkte können verteilt werden. In 4 der 6 Kategorien müssen mindestens 2 Punkte verteilt werden. Maximalwert 6</li>
+          <li>Ausrüstung: 40 Ausrüstungspunkte</li>
+          </ul>
+          <table>
+          <colgroup>
+          <col style="width: 42%" />
+          <col style="width: 14%" />
+          <col style="width: 12%" />
+          <col style="width: 30%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Ausrüstung</th>
+          <th>Einfach</th>
+          <th>Normal</th>
+          <th>Gut/Spezialisiert</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td><a href="#rüstung-1">Rüstung</a></td>
+          <td>4</td>
+          <td>8</td>
+          <td>12</td>
+          </tr>
+          <tr>
+          <td><a href="#schusswaffen-1">Schusswaffe</a></td>
+          <td>4</td>
+          <td>8</td>
+          <td>16</td>
+          </tr>
+          <tr>
+          <td><a href="#nahkampfwaffen">Nahkampfwaffe</a></td>
+          <td>4</td>
+          <td>8</td>
+          <td>16</td>
+          </tr>
+          <tr>
+          <td><a href="#psi-verstärker">Verstärker</a></td>
+          <td>4</td>
+          <td>8</td>
+          <td>16</td>
+          </tr>
+          <tr>
+          <td><a href="#verbrauchsgegenstände">Verbrauchsgegenstände</a> (x3)</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          </tr>
+          <tr>
+          <td><a href="#energiequelle">Energiequelle</a></td>
+          <td>2</td>
+          <td>4</td>
+          <td>6</td>
+          </tr>
+          <tr>
+          <td><a href="#cyborg-körperteil">Cyborg-Körperteil</a><a href="#chargen-1">¹</a></td>
+          <td>2</td>
+          <td>4</td>
+          <td>6</td>
+          </tr>
+          <tr>
+          <td>Cyborg-Komplettkörper<a href="#chargen-2">²</a></td>
+          <td>9</td>
+          <td>18</td>
+          <td>27</td>
+          </tr>
+          <tr>
+          <td>DiMES</td>
+          <td>0</td>
+          <td>1</td>
+          <td>2</td>
+          </tr>
+          </tbody>
+          </table>
+          <div id="chargen-1">
+          <p><em>¹ Für Cyborg-Beine kostet ein zweites dazu passendes, identisch gebautes Bein nur 1 Punkt.</em></p>
+          </div>
+          <div id="chargen-2">
+          <p><em>² Beinhaltet Arme, Beine, Torso und Kopf (aber keine Energiequelle), mit der selben Qualitätsstufe.</em></p>
+          </div>
+          <table>
+          <colgroup>
+          <col style="width: 37%" />
+          <col style="width: 17%" />
+          <col style="width: 44%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Sonstiges</th>
+          <th>Kosten</th>
+          <th>Info</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Kleidung</td>
+          <td>0</td>
+          <td>Einfache Kleidung ohne besondere Funktion</td>
+          </tr>
+          <tr>
+          <td><a href="#Erweiterungen">Erweiterung</a></td>
+          <td>1</td>
+          <td>(Cyber-)Erweiterung im Wert von ca. X Credits. Je nach Erweiterung kann/muss es in ein Cyborg-Körperteil eingebaut werden</td>
+          </tr>
+          <tr>
+          <td><a href="#spezialmunition">Spezialmunition</a></td>
+          <td>1</td>
+          <td>Jeder Munitionstyp kostet extra. Muss für jede Waffe separat gekauft werden.</td>
+          </tr>
+          </tbody>
+          </table>
+          <!--
+          <a href="#armor">Kampfanzug</a>                                           | 4       | 8      | 12
+          <a href="#pistol">Pistole</a>                                             | 2       | 4      | 8
+          <a href="#rifle">Gewehr</a>                                               | 4       | 8      | 16
+          <a href="#amplifier">Verstärker</a>                                       | 4       | 8      | 16
+          <a href="#omnitool">Omni-Tool</a>                                         | 4       | 8      | 16
+          <a href="#consumable">Verbrauchsgegenstand</a> (x3)                       | 1       | 2      | 3
+          <a href="#drone">Dronenbauplan</a>                                        | 2       | 4      | 8
+          <a href="#bayonett">Nahkampfwaffe</a>\*                                    | 2       | 4      | 8
+          -->
+          </section>
+          <section id="ausrüstung" class="level1">
+          <h1>Ausrüstung</h1>
+          <p>Gegenstände werden je nach Typ mit der entsprechenden Generatormatrix erstellt. Es muss aus jeder Spalte genau ein Eintrag gewählt werden, und insgesamt entsprechend der zur Verfügung stehenden P ausgewählt werden.</p>
+          <div class="accordion" data-title="Beispiele">
+          <ul>
+          <li>Eine Einfache Rüstung gibt 2x B und 2x C:
+          <ul>
+          <li>Stichfeste Weste: Gewöhnlich (B), Fernkampf-Rüstung: 0 (C), Nahkampf-Rüstung: 2 (B), Körperteile: Torso (C)</li>
+          <li>Leichte Rüstung: Auffällig (C), Fernkampf-Rüstung: 1 (B), Nahkampf-Rüstung: 1 (C), Körperteile: Torso + Kopf (B)</li>
+          </ul></li>
+          <li>Eine Normale Schusswaffe gibt 1x A, 2x B und 2x C:
+          <ul>
+          <li>SMG: Reichweite: Normal (B), Gewöhnlich (B), Schaden: 1 (C), Krit-Schaden: 0.5 (C), Tick: 2|4 (A)</li>
+          <li>Shotgun: Reichweite: Gering (C), Auffällig (C), Schaden: 2 (B), Krit-Schaden: 2 (A), Tick: 4|8 (B)</li>
+          </ul></li>
+          </ul>
+          </div>
+          <section id="auffälligkeit" class="level2">
+          <h2>Auffälligkeit</h2>
+          <p>Viele Gegenstände besitzen einen Auffälligkeitswert. Dieser beschreibt, welches Aufsehen die Waffe bei anderen Personen erregen, die den Umgang mit Waffen gewohnt sind, z.B., Gang-Mitglieder, andere Söldner oder Sicherheitskräften.</p>
+          <table>
+          <colgroup>
+          <col style="width: 21%" />
+          <col style="width: 16%" />
+          <col style="width: 62%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Auffälligkeit</th>
+          <th>Beispiel</th>
+          <th>Beschreibung</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Integriert / Getarnt</td>
+          <td>Gehstock-Pistole</td>
+          <td>Der Gegenstand ist in etwas anderem verborgen, z.B. in einem unauffälligem Gegenstand oder in einem Cyborg-Teil. Ein Integrierter Gegenstand wird auch bei einem Sicherheitscheck nicht gefunden (wohl aber der “behausende” Gegenstand)</td>
+          </tr>
+          <tr>
+          <td>Versteckt / Unauffällig</td>
+          <td>CCW Pistole</td>
+          <td>Der Gegenstand ist generell nicht zu sehen, und kann meist nur bei einem Sicherheitscheck gefunden werden</td>
+          </tr>
+          <tr>
+          <td>Gewöhnlich</td>
+          <td>Gewehr</td>
+          <td>Der Gegenstand ist generell offen sichtbar, sieht für Personen die an Waffen gewöhnt sind jedoch nicht bedrohlich aus. Ein Gewöhnlicher Gegenstand kann nur gegenüber Zivilisten verborgen werden und wird ansonsten auch ohne Sicherheitscheck bemerkt.</td>
+          </tr>
+          <tr>
+          <td>Auffällig</td>
+          <td>Minigun</td>
+          <td>Der Gegenstand ist für jeden zu sehen und kann nicht von einer Person verborgen getragen werden und gleichzeitig zugreifbar sein (aber z.B. in einem großen verschlossenen Behälter). Der Gegenstand sieht illegal aus und wird entsprechend kontrolliert, und löst generell Unmut aus.</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          <section id="rüstung-1" class="level2">
+          <h2>Rüstung</h2>
+          <table>
+          <thead>
+          <tr>
+          <th>P</th>
+          <th>Auffälligkeit</th>
+          <th>Fernkampf-Rüstung</th>
+          <th>Nahkampf-Rüstung</th>
+          <th>Körperteile</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>A</td>
+          <td>Versteckt</td>
+          <td>2</td>
+          <td>3</td>
+          <td>Alle</td>
+          </tr>
+          <tr>
+          <td>B</td>
+          <td>Gewöhnlich</td>
+          <td>1</td>
+          <td>2</td>
+          <td>Torso + Kopf</td>
+          </tr>
+          <tr>
+          <td>C</td>
+          <td>Auffällig</td>
+          <td>0</td>
+          <td>1</td>
+          <td>Torso</td>
+          </tr>
+          </tbody>
+          </table>
+          <ul>
+          <li>Körperteile: Bestimmt, welche Körperteile durch die Rüstung geschützt werden. Der Nah-/Fernkampf-Rüstungswert wird nur für diese Körperteile erhöht.</li>
+          <li>Fernkampf-Rüstung: Erhöht den Fernkampf-Rüstungswert, der von Fernkampfangriffen abgezogen wird</li>
+          <li>Nahkampf-Rüstung: Erhöht den Nahkampf-Rüstungswert, der von Nahkampfangriffen abgezogen wird</li>
+          </ul>
+          <table>
+          <thead>
+          <tr>
+          <th>Typ</th>
+          <th>P</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Einfach</td>
+          <td>2x B, 2x C</td>
+          </tr>
+          <tr>
+          <td>Normal</td>
+          <td>1x A, 2x B, 1x C</td>
+          </tr>
+          <tr>
+          <td>Gut</td>
+          <td>2x A, 2x B</td>
+          </tr>
+          </tbody>
+          </table>
+          <section id="exoskelett" class="level3">
+          <h3>Exoskelett</h3>
+          <p>Exoskelette können anstelle einer Rüstung getragen werden.</p>
+          <p>P | Fernkampf-Rüstung | Nahkampf-Rüstung | Kapazität | Athletik-Bonus –|——————-|——————|———–|————-— S | Immun | Immun | 30 | 10 A | 3 | 4 | 12 | 4 B | 2 | 3 | 8 | 2 C | 1 | 2 | 4 | 1</p>
+          <ul>
+          <li>Auffälligkeit: Ein Exoskelett ist immer Auffällig</li>
+          <li>Fernkampf-Rüstung: Erhöht den Fernkampf-Rüstungswert, der von Fernkampfangriffen abgezogen wird</li>
+          <li>Nahkampf-Rüstung: Erhöht den Nahkampf-Rüstungswert, der von Nahkampfangriffen abgezogen wird</li>
+          <li>Kapazität: Für Erweiterungen die in das Exoskelett eingebaut sind.</li>
+          <li>Atheltik-Bonus: Gibt Vorteil auf Athletik-Würfe bei denen das Exoskelett helfen kann.</li>
+          </ul>
+          </section>
+          </section>
+          <section id="schusswaffen-1" class="level2">
+          <h2>Schusswaffen</h2>
+          <table>
+          <thead>
+          <tr>
+          <th>P</th>
+          <th>Reichweite</th>
+          <th>Auffälligkeit</th>
+          <th>Schaden</th>
+          <th>Krit-Schaden</th>
+          <th>Tick</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>S</td>
+          <td>Unendlich</td>
+          <td>Integriert</td>
+          <td>8</td>
+          <td>4</td>
+          <td>1|2</td>
+          </tr>
+          <tr>
+          <td>A</td>
+          <td>Hoch</td>
+          <td>Versteckt</td>
+          <td>4</td>
+          <td>2</td>
+          <td>2|4</td>
+          </tr>
+          <tr>
+          <td>B</td>
+          <td>Normal</td>
+          <td>Gewöhnlich</td>
+          <td>2</td>
+          <td>1</td>
+          <td>4|8</td>
+          </tr>
+          <tr>
+          <td>C</td>
+          <td>Gering</td>
+          <td>Auffällig</td>
+          <td>1</td>
+          <td>0.5</td>
+          <td>8|12</td>
+          </tr>
+          </tbody>
+          </table>
+          <ul>
+          <li>Reichweite: Reichweite im Kampf
+          <ul>
+          <li>Gering: Selbe Zone, danach Nachteil von 2 pro weitere Zone. Nahkampfdeckung nur wenn bereits im Nahkampf verwickelt</li>
+          <li>Normal: Selbe oder benachbarte Zone, danach Nachteil von 2 pro weitere Zone. Nahkampfdeckung innerhalb der selben Zone</li>
+          <li>Hoch: Bis zu 3 Zonen entfernt (selbe Zone + 3 weitere), danach Nachteil von 1 pro weitere Zone. Nahkampfdeckung in der selben Zone</li>
+          <li>Unendlich: hinreichend unendlich, kein Angriffs-Nachteil durch Entfernung. Kann von einem Punkt außerhalb der Karte schießen. Nahkampfdeckung in der selben oder benachbarten Zone</li>
+          </ul></li>
+          <li>Schmerz: Schaden, die beim Ziel verursacht werden</li>
+          <li>Krit-Schaden: Bonus-Schaden pro Bonus Erfolg. Bei 0.5 wird aufgerundet.</li>
+          <li>Tick: Anzahl an Ticks (Schnell | Langsam), die das Feuern der Waffe bis zum nächsten Schuss dauert, bzw. wie lange das Nachladen dauert.</li>
+          </ul>
+          <!--
+
+              - Gering: bis zu 6/4 Felder entfernt (Kardinal/Diagonal), darüber hinaus gibt es einen Angriffs-Nachteil von 1 pro 1 weiteres Feld, Nahkampf-Deckung bei Entfernung <= 2
+              - Normal: bis zu 12/8 Felder entfernt (Kardinal/Diagonal), darüber hinaus gibt es einen Angriffs-Nachteil von 1 pro 2 weitere Felder, Nahkampf-Deckung bei Entfernung <= 3
+              - Hoch:  bis zu 18/12 Felder entfernt (Kardinal/Diagonal), darüber hinaus gibt es einen Angriffs-Nachteil von 1 pro 3 weitere Felder, Nahkampf-Deckung bei Entfernung <= 5
+              - Unendlich: hinreichend unendlich, keine Angriffs-Nachteil durch Entfernung. Kann von einem Punkt außerhalb der Karte schießen. Nahkampf-Deckung bei Entfernung <= 6
+
+          -->
+          <table>
+          <thead>
+          <tr>
+          <th>Type</th>
+          <th>P</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Einfach</td>
+          <td>2x B, 3x C</td>
+          </tr>
+          <tr>
+          <td>Normal</td>
+          <td>1x A, 2x B, 2x C</td>
+          </tr>
+          <tr>
+          <td>Gut</td>
+          <td>2x A, 2x B, 1x C</td>
+          </tr>
+          <tr>
+          <td>Spezial</td>
+          <td>1x S, 2x B, 2x C</td>
+          </tr>
+          </tbody>
+          </table>
+          <section id="spezialmunition" class="level3">
+          <h3>Spezialmunition</h3>
+          <p>Spezialmunition sorgt kann in bestimmten Situationen für bessern Effekt. Es kann nur ein Munitionstyp gleichzeitig aktiviert sein. Ein Wechsel des Munitionstyps dauert eine Nachladeaktion. Munition wird nicht verbraucht, muss aber für jede Waffe separat gekauft werden.</p>
+          <table>
+          <colgroup>
+          <col style="width: 18%" />
+          <col style="width: 81%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Munitionstyp</th>
+          <th>Effekt</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Ausbalanciert</td>
+          <td>Erhöht die Basis-Reichweite um 1 Zone.</td>
+          </tr>
+          <tr>
+          <td>Wundreißer</td>
+          <td>+1 Schaden, Rüstung wird, sofern vorhanden, als 1 höher behandelt</td>
+          </tr>
+          <tr>
+          <td>Panzerbrechend</td>
+          <td>Rüstung wird, sofern vorhanden, als um 1 verringert behandelt</td>
+          </tr>
+          <tr>
+          <td>Schock</td>
+          <td>+1 Schaden gegen Cyborgs / Drohnen</td>
+          </tr>
+          <tr>
+          <td>Leuchtspur</td>
+          <td>+1 Vorteil (kumulativ) pro konsekutiven Schuss auf das gleiche Ziel (Start +0)</td>
+          </tr>
+          <tr>
+          <td>Kryo</td>
+          <td>Addiert 1 Tick auf Tickzeit des Ziels</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          </section>
+          <section id="nahkampfwaffen" class="level2">
+          <h2>Nahkampfwaffen</h2>
+          <table>
+          <thead>
+          <tr>
+          <th>P</th>
+          <th>Auffälligkeit</th>
+          <th>Schmerz</th>
+          <th>Krit-Schaden</th>
+          <th>Tick</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>S</td>
+          <td>Integriert</td>
+          <td>8</td>
+          <td>5</td>
+          <td>1|2</td>
+          </tr>
+          <tr>
+          <td>A</td>
+          <td>Versteckt</td>
+          <td>4</td>
+          <td>3</td>
+          <td>2|4</td>
+          </tr>
+          <tr>
+          <td>B</td>
+          <td>Gewöhnlich</td>
+          <td>2</td>
+          <td>2</td>
+          <td>4|8</td>
+          </tr>
+          <tr>
+          <td>C</td>
+          <td>Auffällig</td>
+          <td>1</td>
+          <td>1</td>
+          <td>8|12</td>
+          </tr>
+          </tbody>
+          </table>
+          <ul>
+          <li>Für Angriffe muss sich generell der Angreifer an das Ziel heran positionieren.</li>
+          <li>Tick ist Wert, der auf die Tickzeit der Aktionen addiert wird.</li>
+          <li>Tick: Anzahl an Ticks (Schnell | Langsam), die ein Angriff mit der Waffe dauert.</li>
+          </ul>
+          <p>Rest siehe <a href="#schusswaffen-1">Schusswaffen</a>.</p>
+          <table>
+          <thead>
+          <tr>
+          <th>Typ</th>
+          <th>P</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Einfach</td>
+          <td>2x B, 2x C</td>
+          </tr>
+          <tr>
+          <td>Normal</td>
+          <td>1x A, 2x B, 1x C</td>
+          </tr>
+          <tr>
+          <td>Gut</td>
+          <td>2x A, 2x B</td>
+          </tr>
+          <tr>
+          <td>Spezial</td>
+          <td>1x S, 2x B, 1x C</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          <section id="psi-verstärker" class="level2">
+          <h2>PSI-Verstärker</h2>
+          <p>Ein PSI-Verstärker verstärkt PSI-Aktionen</p>
+          <table>
+          <thead>
+          <tr>
+          <th>P</th>
+          <th>Reichweite</th>
+          <th>Tick</th>
+          <th>Heimlichkeit</th>
+          <th>Fühlen-Erfolge</th>
+          <th>Manip.-Erfolge</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>S</td>
+          <td>Hoch</td>
+          <td>1</td>
+          <td>5</td>
+          <td>+2</td>
+          <td>+2</td>
+          </tr>
+          <tr>
+          <td>A</td>
+          <td>Normal</td>
+          <td>2</td>
+          <td>3</td>
+          <td>+1</td>
+          <td>+1</td>
+          </tr>
+          <tr>
+          <td>B</td>
+          <td>Gering</td>
+          <td>3</td>
+          <td>2</td>
+          <td>0</td>
+          <td>0</td>
+          </tr>
+          <tr>
+          <td>C</td>
+          <td>Berührung</td>
+          <td>4</td>
+          <td>1</td>
+          <td>-1</td>
+          <td>-1</td>
+          </tr>
+          </tbody>
+          </table>
+          <ul>
+          <li>Reichweite
+          <ul>
+          <li>Berührung: Wie Nahkampfwaffe, oder mit Nachteil von 2 innerhalb der selben Zone</li>
+          <li>Gering: Selbe Zone, danach Nachteil von 2 pro weitere Zone</li>
+          <li>Normal: Selbe oder benachbarte Zone, danach Nachteil von 1 pro weitere Zone</li>
+          <li>Hoch: Bis zu 3 Zonen entfernt (selbe Zone + 3 weitere), danach Nachteil von 1 pro weitere Zone</li>
+          </ul></li>
+          <li>Tick: Tickzeit für PSI-Aktionen im Kampf</li>
+          <li>Heimlichkeit: Schwierigkeit für das Ziel, die PSI-Aktion zu Bemerken</li>
+          <li>Fühlen/Manipulation-Erfolge: Senkt/Erhöht die Anzahl der erzielten Erfolge einer PSI-Aktion.</li>
+          </ul>
+          <!--
+
+          S| 24/18         | 1        | 5            | +2             | +2
+          A| 12/8          | 2        | 3            | +1             | +1
+          B| 8/6           | 3        | 2            | 0              | 0
+          C| 4/3           | 4        | 1            | -1             | -1
+
+          - Reichweite: Entfernung ohne Nachteil, danach für jedes Vielfache der Reichweite -1
+
+          -->
+          <table>
+          <thead>
+          <tr>
+          <th>Typ</th>
+          <th>P</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td><em>Ohne</em></td>
+          <td>5x C</td>
+          </tr>
+          <tr>
+          <td>Einfach</td>
+          <td>2x B, 3x C</td>
+          </tr>
+          <tr>
+          <td>Normal</td>
+          <td>1x A, 2x B, 2x C</td>
+          </tr>
+          <tr>
+          <td>Gut</td>
+          <td>2x A, 2x B, 1x C</td>
+          </tr>
+          <tr>
+          <td>Spezial</td>
+          <td>1x S, 2x B, 2x C</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          <section id="verbrauchsgegenstände" class="level2">
+          <h2>Verbrauchsgegenstände</h2>
+          <p>Verbrauchsgegenstände werden einmalig gekauft, und stehen dann während einer Mission in entsprechender Anzahl zur Verfügung. Zwischen Missionen können die Verbrauchsgegenstände kostenlos wieder aufgefüllt werden.</p>
+          <section id="granaten-minen" class="level3">
+          <h3>Granaten &amp; Minen</h3>
+          <p>Eine Granate können wahlweise als Minen erstellt werden, welche den Effekt der Granate über den Zünder einer Mine auslöst.</p>
+          <table>
+          <thead>
+          <tr>
+          <th>P</th>
+          <th>Effektstärke</th>
+          <th>Radius</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>A</td>
+          <td>3</td>
+          <td>d5+3</td>
+          </tr>
+          <tr>
+          <td>B</td>
+          <td>2</td>
+          <td>d3+1</td>
+          </tr>
+          <tr>
+          <td>C</td>
+          <td>1</td>
+          <td>d2</td>
+          </tr>
+          </tbody>
+          </table>
+          <ul>
+          <li>Effekt:
+          <ul>
+          <li>Rauch: Gibt Deckung und versteckt alle Charaktere im Rauch vor Sicht (inkl. Nacht- u. Wärmesicht). Effekt gilt in beide Richtungen (in Rauch rein/heraus)</li>
+          <li>Fragment: Explosion</li>
+          <li>Spezial: Flash, AP, EMP</li>
+          </ul></li>
+          <li>Effektstärke (N):
+          <ul>
+          <li>Rauch*: Erhöhte Deckung &amp; Schwierigkeit für Wahrnehmung (der Rauch selbst ist offensichtlich)</li>
+          <li>Fragment: x3 Schaden, Rüstung wird um 1 höher betrachtet</li>
+          <li>Spezial:
+          <ul>
+          <li>Flash: x8 Ticks, die Charaktere ausgeknockt werden</li>
+          <li>EMP: x3 Schaden gegen Cyborgs/Drohnen, sonst 0 Schaden</li>
+          <li>AP: x2 Schaden, Rüstung wird um 1 niedriger betrachtet</li>
+          </ul></li>
+          </ul></li>
+          <li>Radius: Es können nur Charaktere innerhalb einer Zone oder in der Nähe eines Interaktionspunktes getroffen werden. Anzahl der Charaktere die vom Effekt maximal betroffen sein können. Bei Rauchgranaten beschränkt dies die Größe der entstehenden Rauch-Zone, bei anderen Effekten ist es die maximale Anzahl betroffener Charaktere. Welche Charaktere genau getroffenen werden, wird vom Spielleiter final entschieden.</li>
+          </ul>
+          <table>
+          <thead>
+          <tr>
+          <th>Typ</th>
+          <th>P</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Einfach</td>
+          <td>1x B, 1x C</td>
+          </tr>
+          <tr>
+          <td>Normal</td>
+          <td>2x B</td>
+          </tr>
+          <tr>
+          <td>Gut</td>
+          <td>1x A, 1x B</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          <section id="stims" class="level3">
+          <h3>Stims</h3>
+          <p>Im Kampf einsetzbare Medizin/Aufputschmittel. Können auch als Tabletten, Pillen oder in anderen Formen auftreten.</p>
+          <table>
+          <thead>
+          <tr>
+          <th>P</th>
+          <th>Effektstärke</th>
+          <th>Aktivierungsdauer</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>A</td>
+          <td>6</td>
+          <td>2</td>
+          </tr>
+          <tr>
+          <td>B</td>
+          <td>4</td>
+          <td>4</td>
+          </tr>
+          <tr>
+          <td>C</td>
+          <td>2</td>
+          <td>8</td>
+          </tr>
+          </tbody>
+          </table>
+          <ul>
+          <li>Effekt
+          <ul>
+          <li>Stressreduktion: Reduziert Stress (nicht unter Basisstress)</li>
+          <li>Schmerzreduktion: Reduziert Gesamtschmerz, aber keinen Körperteilschmerz</li>
+          <li>Fokus-Boost: Stellt Effektstärke Fokus sofort her, auch über das Maximum heraus</li>
+          <li>Stamina-Boost: Stellt Effektstärke Stamina sofort her, auch über das Maximum heraus</li>
+          </ul></li>
+          <li>Effektstärke: Menge an Stress/Gesamtschmerz/Fokus/Stamina die reduziert/wiederhergestellt wird</li>
+          <li>Aktivierungsdauer: Ticks die zum Einsetzen benötigt werden.</li>
+          </ul>
+          <table>
+          <thead>
+          <tr>
+          <th>Typ</th>
+          <th>P</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Einfach</td>
+          <td>1x B, 1x C</td>
+          </tr>
+          <tr>
+          <td>Normal</td>
+          <td>2x B</td>
+          </tr>
+          <tr>
+          <td>Gut</td>
+          <td>1x A, 1x B</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          <section id="wanzen" class="level3">
+          <h3>Wanzen</h3>
+          <p>Sehr kleine, unauffällige Sensoren die an verschiedenen Oberflächen angebracht werden können.</p>
+          <table>
+          <thead>
+          <tr>
+          <th>P</th>
+          <th>Anzahl Sensoren</th>
+          <th>Unauffälligkeit</th>
+          <th>Senderadius</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>A</td>
+          <td>3</td>
+          <td>5</td>
+          <td>Stadtweit</td>
+          </tr>
+          <tr>
+          <td>B</td>
+          <td>2</td>
+          <td>3</td>
+          <td>Distriktweit</td>
+          </tr>
+          <tr>
+          <td>C</td>
+          <td>1</td>
+          <td>2</td>
+          <td>ca. 2 Häuserblöcke weit</td>
+          </tr>
+          </tbody>
+          </table>
+          <ul>
+          <li>Anzahl Sensoren: bestimmt wie viele Sensoren bzw. Verbesserungen eingebaut sind
+          <ul>
+          <li>Mikrophon</li>
+          <li>Kamera
+          <ul>
+          <li>Nachtsicht (zählt als extra Sensor zusätzlich zu Kamera)</li>
+          <li>Wärmebild (zählt als extra Sensor zusätzlich zu Kamera)</li>
+          </ul></li>
+          <li>GPS</li>
+          <li>Anderes</li>
+          </ul></li>
+          <li>Unauffälligkeit: Schwierigkeit für eine Wahrnehmungsprobe, um die Wanze zu entdecken</li>
+          <li>Senderadius: Bereich in dem auf die Sensoren der Wanze zugegriffen werden kann.</li>
+          </ul>
+          <table>
+          <thead>
+          <tr>
+          <th>Typ</th>
+          <th>P</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Einfach</td>
+          <td>2x B, 1x C</td>
+          </tr>
+          <tr>
+          <td>Normal</td>
+          <td>1x A, 1x B, 1x C</td>
+          </tr>
+          <tr>
+          <td>Gut</td>
+          <td>2x A, 1x B</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          </section>
+          <section id="drohnen" class="level2">
+          <h2>Drohnen</h2>
+          <table>
+          <thead>
+          <tr>
+          <th>P</th>
+          <th>Auffälligkeit</th>
+          <th>Bewegung</th>
+          <th>Kapazität</th>
+          <th>Stabilität</th>
+          <th>???</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>S</td>
+          <td>Getarnt</td>
+          <td>Schwarm</td>
+          <td>12</td>
+          <td>24</td>
+          <td></td>
+          </tr>
+          <tr>
+          <td>A</td>
+          <td>Unauffällig</td>
+          <td>Fliegend</td>
+          <td>8</td>
+          <td>12</td>
+          <td></td>
+          </tr>
+          <tr>
+          <td>B</td>
+          <td>Gewöhnlich</td>
+          <td>Kletternd</td>
+          <td>4</td>
+          <td>9</td>
+          <td></td>
+          </tr>
+          <tr>
+          <td>C</td>
+          <td>Auffällig</td>
+          <td>Boden</td>
+          <td>2</td>
+          <td>6</td>
+          <td></td>
+          </tr>
+          </tbody>
+          </table>
+          <ul>
+          <li>Bewegung:
+          <ul>
+          <li>Boden: Erlaubt bodengebundene, horizontale Bewegung, sowie. Treppen o.ä.</li>
+          <li>Kletternd: Erlaubt Bewegung entlang beliebiger Oberflächen.</li>
+          <li>Fliegend: Erlaubt Bewegung durch die Luft.</li>
+          <li>Schwarm: Statt einer einzelnen Drone handelt es sich um einen kleinen Schwarm fliegender Dronen. Der Schwarm kann sich aufteilen, aber Stabilität und Fähigkeiten werden ebenfalls aufgeteilt.</li>
+          </ul></li>
+          <li>Systeme: Anzahl einbaubarer Systeme:
+          <ul>
+          <li>Waffensystem: Drone kann mit einer Waffe ausgestattet werden und besitzt die dafür notwendige Fähigkeit auf Stufe 2. Zusätzliche Waffensysteme können diesen Wert um 2 erhöhen.</li>
+          <li>Sensorsystem: Drone besitzt spezielle Wahrnehmung, die auch übertragen werden kann. Die Wahrnehmung entspricht entweder der des Betrachters, oder 2*(Anzahl Sensorsysteme)</li>
+          <li>Panzerung: Erhöht Rüstung um 1, bis zu einem Maximum von 3</li>
+          <li>Kapazität: Erhöht Erweiterungs-Kapazität der Drone um 1</li>
+          <li>Werkzeug: Besitzt Werkzeug und die dafür notwendige Fähigkeit auf Stufe 2. Zusätzliche Werkzeugsysteme können diesen Wert um 2 erhöhen.</li>
+          <li>Anderes</li>
+          </ul></li>
+          <li>Stabilität: Trefferpunkte der Drone. Dronen haben nur eine einzige Trefferzone und keinen Gesamtschmerz.
+          <ul>
+          <li>Erleidet die Drone Schaden größergleich dem Stabilitätswert und kleiner als der doppelte Stabilitätswert, so zählt sie als beschädigt und ist aktionsunfähig</li>
+          <li>Erleidet die Drone Schaden größergleich dem doppelten Stabilitätswert. so ist sie irreperabel zerstört.</li>
+          </ul></li>
+          <li>???</li>
+          </ul>
+          <table>
+          <thead>
+          <tr>
+          <th>Type</th>
+          <th>P</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Einfach</td>
+          <td>2x B, 3x C</td>
+          </tr>
+          <tr>
+          <td>Normal</td>
+          <td>1x A, 2x B, 2x C</td>
+          </tr>
+          <tr>
+          <td>Gut</td>
+          <td>2x A, 2x B, 1x C</td>
+          </tr>
+          <tr>
+          <td>Spezial</td>
+          <td>1x S, 2x B, 2x C</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          <section id="cyberware" class="level2">
+          <h2>Cyberware</h2>
+          <section id="energiequelle" class="level3">
+          <h3>Energiequelle</h3>
+          <table>
+          <colgroup>
+          <col style="width: 7%" />
+          <col style="width: 20%" />
+          <col style="width: 10%" />
+          <col style="width: 61%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Typ</th>
+          <th>Energiequelle</th>
+          <th>Kapazität</th>
+          <th>Beschreibung</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Einfach</td>
+          <td>Batterie</td>
+          <td>12</td>
+          <td>Muss nach maximal 20h wieder aufgeladen werden, was bis zu 6h dauert.</td>
+          </tr>
+          <tr>
+          <td>Normal</td>
+          <td>Bioreaktor</td>
+          <td>25</td>
+          <td>Erzeugt Energie durch mehr Essen. Etwa 5x soviel, wie eine normale Person isst. Es gibt spezielle “Energieriegel”, die besonders viele Nährstoffe für Bioreaktoren beinhalten</td>
+          </tr>
+          <tr>
+          <td>Gut</td>
+          <td>Radionuklidbatterie</td>
+          <td>40</td>
+          <td>Erzeugt Energie ohne weitere Vorraussetzungen. Die Batterie muss alle paar Jahre ausgetauscht werden.</td>
+          </tr>
+          <tr>
+          <td>Spezial</td>
+          <td>Superkondensator</td>
+          <td>20 | 99</td>
+          <td>Erzeugt begrenzte Energie im Normalbetrieb, aber kann bei Bedarf für ca. 10 Minuten nahezu unbegrenzt Energie produzieren. Danach muss der Superkondensator wieder aufgeladen, was bis zu 1h dauert. Dies erlaubt selektive Aktivierung<a href="#cyber-energy-1">¹</a> von zusätzlicher Cyberware</td>
+          </tr>
+          </tbody>
+          </table>
+          <div id="cyber-energy-1">
+          <p><em>¹ Basisstress besteht auch für deaktivierte Cyberware.</em></p>
+          </div>
+          </section>
+          <section id="cyborg-körperteil" class="level3">
+          <h3>Cyborg-Körperteil</h3>
+          <table>
+          <thead>
+          <tr>
+          <th>P</th>
+          <th>Auffälligkeit</th>
+          <th>Rüstung</th>
+          <th>Kapazität</th>
+          <th>Basisstress</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>A</td>
+          <td>Versteckt</td>
+          <td>1</td>
+          <td>+1</td>
+          <td>0</td>
+          </tr>
+          <tr>
+          <td>B</td>
+          <td>Gewöhnlich</td>
+          <td>0</td>
+          <td>-1</td>
+          <td>1</td>
+          </tr>
+          <tr>
+          <td>C</td>
+          <td>Auffällig</td>
+          <td>-1</td>
+          <td>-2</td>
+          <td>2</td>
+          </tr>
+          </tbody>
+          </table>
+          <ul>
+          <li>Auffälligkeit: Gilt für alle in den Körperteil eingebauten Erweiterungen</li>
+          <li>Rüstung: Eingebaute Rüstung für Nah-/Fernkampf. Negative Rüstung erhöht den eingehenden Schaden</li>
+          <li>Kapazität: Kapazität für das Körperteil (negative Kapazität senkt die Gesamtkapazität)</li>
+          <li>Basisstress: Erhöht den Basisstress</li>
+          </ul>
+          <table>
+          <thead>
+          <tr>
+          <th>Typ</th>
+          <th>P</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Einfach</td>
+          <td>2x B, 2x C</td>
+          </tr>
+          <tr>
+          <td>Normal</td>
+          <td>1x A, 1x B, 2x C</td>
+          </tr>
+          <tr>
+          <td>Gut</td>
+          <td>2x A, 1x B, 1x C</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          <section id="erweiterungen" class="level3">
+          <h3>Erweiterungen</h3>
+          <table>
+          <colgroup>
+          <col style="width: 28%" />
+          <col style="width: 71%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Erweiterungstyp</th>
+          <th>Anwendbarkeit</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Beliebig</td>
+          <td>Kann (nahezu) überall eingebaut werden.</td>
+          </tr>
+          <tr>
+          <td>Sicht</td>
+          <td>Cyborg-Kopf, Implantat(Auge), Rüstung(Kopf), Schusswaffen, DiMES, Exoskelett, Drone</td>
+          </tr>
+          <tr>
+          <td>Werkzeug</td>
+          <td>Cyborg-Arme, DiMES, Exoskelett, Drone</td>
+          </tr>
+          <tr>
+          <td>Körper</td>
+          <td>Cyborg-Komplettkörper, Rüstung, Exoskelett, Drone</td>
+          </tr>
+          <tr>
+          <td>Atmung</td>
+          <td>Cyborg-Torso, Rüstung(Kopf), Exoskelett</td>
+          </tr>
+          <tr>
+          <td>Spezifisch</td>
+          <td>Hängt von genauer Verwendung ab, z.B. ein Fähigkeitsbooster für Schusswaffen kann in einer Schusswaffe eingebaut sein, ein Fähigkeitsbooster für Heimlichkeit aber nicht.</td>
+          </tr>
+          <tr>
+          <td>Arme</td>
+          <td>Cyborg-Arme, Exoskelett, Drone</td>
+          </tr>
+          </tbody>
+          </table>
+          <table>
+          <colgroup>
+          <col style="width: 24%" />
+          <col style="width: 8%" />
+          <col style="width: 14%" />
+          <col style="width: 53%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Erweiterung</th>
+          <th>Kapazität</th>
+          <th>Typ</th>
+          <th>Beschreibung</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Kommunikator</td>
+          <td>1</td>
+          <td>Beliebig</td>
+          <td>Erlaubt Kommunikation mit anderen Kommunikatoren</td>
+          </tr>
+          <tr>
+          <td>Restlichtverstärker</td>
+          <td>1</td>
+          <td>Sicht</td>
+          <td>Erlaubt Sicht in Dunkelheit, passiv</td>
+          </tr>
+          <tr>
+          <td>Hacking-Werkzeug</td>
+          <td>1</td>
+          <td>Werkzeug</td>
+          <td>Ermöglicht Software-Hacking</td>
+          </tr>
+          <tr>
+          <td>Aktive Camouflage</td>
+          <td>6</td>
+          <td>Körper</td>
+          <td>Macht den Körper transparent</td>
+          </tr>
+          <tr>
+          <td>Gasfilter</td>
+          <td>2</td>
+          <td>Atmung</td>
+          <td>Filtert (giftige) Gase aus der Atemluft</td>
+          </tr>
+          <tr>
+          <td>Optische Vergrößerung</td>
+          <td>1</td>
+          <td>Sicht</td>
+          <td>Erlaubt an entfernte oder kleine Dinge heranzuzoomen</td>
+          </tr>
+          <tr>
+          <td>Stauraum</td>
+          <td>0</td>
+          <td>Beliebig</td>
+          <td>Ermöglicht kleine Gegenstände getarnt zu verstauen</td>
+          </tr>
+          <tr>
+          <td>Jammer</td>
+          <td>2</td>
+          <td>Beliebig</td>
+          <td>Blockiert Kommunikation</td>
+          </tr>
+          <tr>
+          <td>Eingebaute Waffe</td>
+          <td>2&gt;4&gt;6</td>
+          <td>Beliebig</td>
+          <td>Erlaubt eine einfache|normale&gt;gute/spezielle Waffe zu verbauen</td>
+          </tr>
+          <tr>
+          <td>Geigerzähler</td>
+          <td>1</td>
+          <td>Beliebig</td>
+          <td>Meldet Radioaktivität</td>
+          </tr>
+          <tr>
+          <td>Sauerstoff-Tanks</td>
+          <td>4</td>
+          <td>Atmung</td>
+          <td>Bietet Sauerstoff für ca. 10 Minuten</td>
+          </tr>
+          <tr>
+          <td>Kamera</td>
+          <td>1</td>
+          <td>Sicht</td>
+          <td>Erlaubt Fotos und Videos der aktuellen Sicht zu machen</td>
+          </tr>
+          <tr>
+          <td>Audio-Rekorder</td>
+          <td>1</td>
+          <td>Beliebig</td>
+          <td>Erlaubt aktuelle Geräusche aufzunehmen</td>
+          </tr>
+          <tr>
+          <td>Scheinwerfer</td>
+          <td>1</td>
+          <td>Beliebig</td>
+          <td>Macht helles Licht</td>
+          </tr>
+          <tr>
+          <td>Automatische Spritze</td>
+          <td>3</td>
+          <td>Atmung</td>
+          <td>Ermöglicht Spritzen zu laden, die bei Bedarf automatisch injiziert werden</td>
+          </tr>
+          <tr>
+          <td>Fähigkeitsbooster</td>
+          <td>2</td>
+          <td>Spezifisch</td>
+          <td>Gibt einen +1 Vorteil auf einen bestimmten Fähigkeitswert der den Booster involviert. Die genaue Art des Boosters sowie die dadurch verbesserte Fähigkeit müssen bei Erwerb festgelegt werden. Beispiel: Fähigkeitsbooster für Schusswaffen könnte ein Ziellaser sein.</td>
+          </tr>
+          <tr>
+          <td>Richtmikrophon</td>
+          <td>1</td>
+          <td>Sicht</td>
+          <td>Ermöglicht Hören in Sichtlinie</td>
+          </tr>
+          <tr>
+          <td>Infrarotsicht</td>
+          <td>1</td>
+          <td>Sicht</td>
+          <td>Ermöglicht Sehen im Infrarotbereich</td>
+          </tr>
+          <tr>
+          <td>Nachtsicht</td>
+          <td>1</td>
+          <td>Sicht</td>
+          <td>Erlaubt Sicht in Dunkelheit, aktiv</td>
+          </tr>
+          <tr>
+          <td>GPS</td>
+          <td>1</td>
+          <td>Beliebig</td>
+          <td>Erlaubt die genaue Position festzustellen</td>
+          </tr>
+          <tr>
+          <td>Holographische Maske</td>
+          <td>4</td>
+          <td>Cyborg-Kopf,DiMES</td>
+          <td>Erlaubt freies Anpassen von Gesicht</td>
+          </tr>
+          <tr>
+          <td>Datenbank</td>
+          <td>1</td>
+          <td>Beliebig</td>
+          <td></td>
+          </tr>
+          <tr>
+          <td>Bionische Stimmbänder</td>
+          <td>2</td>
+          <td>Cyborg-Kopf</td>
+          <td></td>
+          </tr>
+          <tr>
+          <td>Kraftbooster</td>
+          <td>4</td>
+          <td>Arme</td>
+          <td>Athletik +1, Erlaubt es sehr schwere Dinge zu heben.</td>
+          </tr>
+          </tbody>
+          </table>
+          <p>Mega-Bohrer Kletterhände Seilwinde Geräuschabsorber Sprung-Beine Zähigkeitsbooster LIDAR-Scanner Automatische Blende (protection for flashbangs) Auto-Ausweicher (Fernkampf-Deckung) Subvocal-Kommunikator (Kommunikator ohne laut zu reden) Blackbox-Recorder Eingebaute KI Holographische Projektion Typhoon (Eingebaute Granate, die um Nutzer herum auslöst) Bionische Finger(-abdrücke) Offensiv-Injektor (Spritzt Gifte/Substanzen in andere) Magnete Automatische Reparatur Schockabsorber (Kein Fallschaden) Neodymium-Schild Temperatur-Isolierung Schmerzfilter Sprinter-Beine Gleitmembran Schwimmflossen-Kit 3D-Drucker Schweißbrenner Dokumentenscanner Druckregulator (high/low pressure, e.g. on outside of plane or deep on the ocean floor) Gedächtnis-Backup Stimmanalysator (Lügendetektor) Disko-Modus Gehirn-Swap (Erlaubt Tausch mit anderen Körpern mit Gehirn-Swap) Micro-Deassembler Durch-Wände-Sehen-Dingens Loot-Scanner Notfall-Defibrilator (erlaubt wieder aufstehen nach gescheiterter Zähigkeitsprobe, einmal pro kampf) Reflexbooster | ? | ? | ?</p>
+          <!--
+          ## TODO
+
+          - Cyberware
+          - Drohnen/Roboter
+          - Hacking-Spike (Verbrauchsgegenstand)
+          - Stationäre Geschütze
+          - Exo-Skelett
+          - Fahrzeuge
+          - AIs
+          - Firewalls
+          -->
+          </section>
+          </section>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <button class="cp-back-to-top" type="button" id="cp-back-to-top" aria-label="Back to top">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 4a1 1 0 0 1 .7.29l5 5a1 1 0 0 1-1.4 1.42L11 7.41V15a1 1 0 1 1-2 0V7.41l-3.3 3.3a1 1 0 1 1-1.4-1.42l5-5A1 1 0 0 1 10 4z" /></svg>
+    </button>
+
+    <!--<footer class="cp-footer" role="contentinfo">
+      <div>Generated with Pandoc</div>
+      <div>Theme: Cyber rules layout</div>
+    </footer>-->
+  </div>
+
+  <script>
+    (function() {
+      const body = document.body;
+      const themeToggle = document.getElementById('cp-theme-toggle');
+      const themeLabel = themeToggle ? themeToggle.querySelector('.cp-theme-toggle-label') : null;
+      const sidebarToggle = document.querySelector('.cp-sidebar-toggle-main');
+      const sidebar = document.getElementById('cp-sidebar');
+      const mobileQuery = window.matchMedia('(max-width: 900px)');
+      const printButton = document.getElementById('cp-print-button');
+
+      if (printButton) {
+        printButton.addEventListener('click', function () {
+          window.print();
+        });
+      }
+
+      function applyTheme(theme) {
+        body.setAttribute('data-theme', theme);
+        if (themeLabel) {
+          themeLabel.textContent = theme === 'dark' ? 'Dark' : 'Light';
+        }
+      }
+
+      const stored = window.localStorage ? localStorage.getItem('cp-theme') : null;
+      if (stored === 'light' || stored === 'dark') {
+        applyTheme(stored);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        applyTheme('light');
+      } else {
+        applyTheme('dark');
+      }
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          const current = body.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+          const next = current === 'light' ? 'dark' : 'light';
+          applyTheme(next);
+          if (window.localStorage) {
+            localStorage.setItem('cp-theme', next);
+          }
+        });
+      }
+
+if (sidebarToggle && sidebar) {
+  function syncSidebarAria() {
+    const expanded = mobileQuery.matches
+      ? body.classList.contains('sidebar-open')
+      : !body.classList.contains('sidebar-collapsed');
+
+    sidebarToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  }
+
+  sidebarToggle.addEventListener('click', function () {
+    if (mobileQuery.matches) {
+      body.classList.toggle('sidebar-open');
+    } else {
+      body.classList.toggle('sidebar-collapsed');
+    }
+    syncSidebarAria();
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!mobileQuery.matches || !body.classList.contains('sidebar-open')) return;
+    if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
+      body.classList.remove('sidebar-open');
+      syncSidebarAria();
+    }
+  });
+
+  mobileQuery.addEventListener('change', function () {
+    body.classList.remove('sidebar-open');
+    syncSidebarAria();
+  });
+
+  syncSidebarAria();
+}
+
+      const backToTopButton = document.getElementById('cp-back-to-top');
+      const topSentinel = document.getElementById('cp-top-sentinel');
+
+      if (backToTopButton) {
+        backToTopButton.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        if (topSentinel && window.IntersectionObserver) {
+          const backToTopObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              backToTopButton.classList.toggle('is-visible', !entry.isIntersecting);
+            });
+          });
+
+          backToTopObserver.observe(topSentinel);
+        }
+      }
+
+      function enhanceAccordions() {
+        const nodes = document.querySelectorAll('.accordion');
+        nodes.forEach(function(node, index) {
+          if (node.dataset.enhanced === 'true') return;
+          const title = node.getAttribute('data-title') || 'Details';
+          const content = Array.from(node.childNodes);
+          node.textContent = '';
+          const header = document.createElement('button');
+          header.type = 'button';
+          header.className = 'accordion-header';
+          const titleSpan = document.createElement('span');
+          titleSpan.className = 'accordion-title';
+          titleSpan.textContent = title;
+          const indicator = document.createElement('span');
+          indicator.className = 'accordion-indicator';
+          indicator.setAttribute('aria-hidden', 'true');
+          indicator.textContent = '\u25B6';
+          header.appendChild(titleSpan);
+          header.appendChild(indicator);
+          const panel = document.createElement('div');
+          panel.className = 'accordion-panel';
+          const panelId = 'accordion-panel-' + index;
+          panel.id = panelId;
+          panel.setAttribute('role', 'region');
+          panel.setAttribute('aria-labelledby', panelId + '-header');
+          header.id = panelId + '-header';
+          header.setAttribute('aria-controls', panelId);
+          header.setAttribute('aria-expanded', 'false');
+          content.forEach(function(child) { panel.appendChild(child); });
+          node.appendChild(header);
+          node.appendChild(panel);
+          node.dataset.open = 'false';
+          node.dataset.enhanced = 'true';
+          panel.style.maxHeight = '0px';
+          header.addEventListener('click', function() {
+          const isOpen = node.dataset.open === 'true';
+
+          if (isOpen) {
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+            requestAnimationFrame(function() {
+              node.dataset.open = 'false';
+              header.setAttribute('aria-expanded', 'false');
+              panel.style.maxHeight = '0px';
+            });
+          } else {
+            node.dataset.open = 'true';
+            header.setAttribute('aria-expanded', 'true');
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+          }
+        });
+                });
+                panel.addEventListener('transitionend', function(event) {
+          if (event.propertyName !== 'max-height') return;
+
+          if (node.dataset.open === 'true') {
+            panel.style.maxHeight = 'none';
+          }
+        });
+              }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', enhanceAccordions);
+      } else {
+        enhanceAccordions();
+      }
+
+      function wrapTables() {
+        const tables = document.querySelectorAll('#main-content table');
+        tables.forEach(function (table) {
+          if (table.closest('.cp-table-wrap')) return;
+          const wrapper = document.createElement('div');
+          wrapper.className = 'cp-table-wrap';
+          table.parentNode.insertBefore(wrapper, table);
+          wrapper.appendChild(table);
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', wrapTables);
+      } else {
+        wrapTables();
+      }
+
+      /* Heading collection (shared by copy-link anchors + search indexing) */
+      const main = document.getElementById("main-content");
+      const headingSelector = "h1, h2, h3, h4, h5, h6";
+      const headings = main ? Array.from(main.querySelectorAll(headingSelector)) : [];
+
+      /* Resolve the id Pandoc generated for a heading: on the heading itself,
+         on an empty anchor inside it, or (with --section-divs) on the
+         enclosing <section> whose first heading this is. Only headings
+         without any Pandoc id get a generated fallback. */
+      const headingIds = new Map();
+
+      function findPandocHeadingId(heading) {
+        if (heading.id) return heading.id;
+
+        const innerAnchor = heading.querySelector("a[id], span[id]");
+        if (innerAnchor && !innerAnchor.textContent.trim()) return innerAnchor.id;
+
+        const section = heading.parentElement;
+        if (section && section.tagName === "SECTION" && section.id &&
+            section.querySelector(headingSelector) === heading) {
+          return section.id;
+        }
+        return "";
+      }
+
+      headings.forEach(function (heading, idx) {
+        let id = findPandocHeadingId(heading);
+        if (!id) {
+          id = "search-heading-" + (idx + 1);
+          heading.id = id;
+        }
+        headingIds.set(heading, id);
+      });
+
+      const cpHeadingAnchorIcon =
+        '<svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M7.05 12.95a1 1 0 0 1 0-1.41l4.5-4.5a1 1 0 1 1 1.41 1.41l-4.5 4.5a1 1 0 0 1-1.41 0zm-2.83-.71a3.5 3.5 0 0 1 0-4.95l2.12-2.12a1 1 0 1 1 1.41 1.41L5.64 8.7a1.5 1.5 0 0 0 0 2.12 1.5 1.5 0 0 0 2.12 0l2.12-2.12a1 1 0 1 1 1.41 1.41l-2.12 2.12a3.5 3.5 0 0 1-4.95 0zm10.6-2.83a1 1 0 0 1-1.41-1.41l2.12-2.12a1.5 1.5 0 0 0 0-2.12 1.5 1.5 0 0 0-2.12 0l-2.12 2.12a1 1 0 1 1-1.41-1.41l2.12-2.12a3.5 3.5 0 0 1 4.95 4.95l-2.12 2.12z"/></svg>';
+
+      headings.forEach(function (heading) {
+        const headingId = headingIds.get(heading);
+        const anchor = document.createElement("a");
+        anchor.className = "cp-heading-anchor";
+        anchor.href = "#" + encodeURIComponent(headingId);
+        anchor.setAttribute("aria-label", "Copy link to this section");
+        anchor.innerHTML = cpHeadingAnchorIcon;
+
+        anchor.addEventListener("click", function () {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            const url = window.location.href.split("#")[0] + "#" + encodeURIComponent(headingId);
+            navigator.clipboard.writeText(url).then(function () {
+              anchor.classList.add("is-copied");
+              setTimeout(function () {
+                anchor.classList.remove("is-copied");
+              }, 1200);
+            }).catch(function () {});
+          }
+        });
+
+        const wrap = document.createElement("div");
+        wrap.className = "cp-heading-wrap";
+        heading.parentNode.insertBefore(wrap, heading);
+        wrap.appendChild(anchor);
+        wrap.appendChild(heading);
+      });
+
+      /* TOC activation + FULL TEXT SEARCH */
+      const tocRoot = document.querySelector(".cp-toc");
+      const tocAnchors = tocRoot
+        ? Array.from(tocRoot.querySelectorAll('a[href^="#"]'))
+        : [];
+
+      const tocItems = tocAnchors
+        .map(function (anchor) {
+          const id = decodeURIComponent(anchor.getAttribute("href").slice(1));
+          const heading = document.getElementById(id);
+          if (!heading) return null;
+          return { anchor: anchor, heading: heading };
+        })
+        .filter(Boolean);
+
+      if (tocItems.length) {
+        const observer = new IntersectionObserver(
+          function (entries) {
+            let activeEntry = null;
+
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                if (!activeEntry || entry.boundingClientRect.top < activeEntry.boundingClientRect.top) {
+                  activeEntry = entry;
+                }
+              }
+            });
+
+            if (!activeEntry) return;
+
+            tocItems.forEach(function (item) {
+              item.anchor.classList.remove("is-active");
+              if (item.anchor.parentElement) {
+                item.anchor.parentElement.classList.remove("toc-active");
+              }
+            });
+
+            const activeItem = tocItems.find(function (item) {
+              return item.heading === activeEntry.target;
+            });
+
+            if (activeItem) {
+              activeItem.anchor.classList.add("is-active");
+              if (activeItem.anchor.parentElement) {
+                activeItem.anchor.parentElement.classList.add("toc-active");
+              }
+            }
+          },
+          {
+            root: null,
+            rootMargin: "0px 0px -70% 0px",
+            threshold: 0.1
+          }
+        );
+
+        tocItems.forEach(function (item) {
+          if (!item.heading.hasAttribute("tabindex")) {
+            item.heading.setAttribute("tabindex", "-1");
+          }
+
+          item.anchor.addEventListener("click", function () {
+            setTimeout(function () {
+              item.heading.focus();
+            }, 0);
+          });
+
+          observer.observe(item.heading);
+        });
+      }
+
+      const searchInput = document.getElementById("cp-search-input");
+      const searchResultsEl = document.getElementById("cp-search-results");
+      const searchStatusEl = document.getElementById("cp-search-status");
+      let activeResultIndex = -1;
+
+      const searchIndex = [];
+      if (main) {
+        if (headings.length) {
+          const entryByHeading = new Map();
+
+          headings.forEach(function (heading) {
+            const entry = {
+              id: headingIds.get(heading),
+              heading: heading,
+              title: heading.textContent.trim(),
+              parts: []
+            };
+
+            entryByHeading.set(heading, entry);
+            searchIndex.push(entry);
+          });
+
+          let current = null;
+          const walker = document.createTreeWalker(main, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT);
+          let node;
+
+          while ((node = walker.nextNode())) {
+            if (node.nodeType === Node.ELEMENT_NODE) {
+              if (entryByHeading.has(node)) {
+                current = entryByHeading.get(node);
+              }
+              continue;
+            }
+
+            if (current) {
+              current.parts.push(node.textContent);
+            }
+          }
+
+          searchIndex.forEach(function (entry) {
+            const text = entry.parts.join(" ").replace(/\s+/g, " ").trim();
+            entry.text = text;
+            entry.titleLower = entry.title.toLowerCase();
+            entry.textLower = text.toLowerCase();
+            delete entry.parts;
+          });
+        } else {
+          const fallbackText = (main.textContent || "").replace(/\s+/g, " ").trim();
+          searchIndex.push({
+            id: "main-content",
+            title: "Document",
+            titleLower: "document",
+            text: fallbackText,
+            textLower: fallbackText.toLowerCase()
+          });
+        }
+      }
+
+      function escapeRegExp(str) {
+        return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      }
+
+      function rankResult(item, terms) {
+        let score = 0;
+
+        terms.forEach(function (term) {
+          if (!term) return;
+          const re = new RegExp(escapeRegExp(term), "g");
+          const titleMatches = (item.titleLower.match(re) || []).length;
+          const textMatches = (item.textLower.match(re) || []).length;
+          score += titleMatches * 5 + textMatches;
+        });
+
+        return score;
+      }
+
+      function makeSnippet(item, terms) {
+        let pos = -1;
+
+        for (let i = 0; i < terms.length; i += 1) {
+          pos = item.textLower.indexOf(terms[i]);
+          if (pos !== -1) break;
+        }
+
+        if (pos === -1) {
+          return item.text.slice(0, 120) + (item.text.length > 120 ? "…" : "");
+        }
+
+        const start = Math.max(0, pos - 40);
+        const end = Math.min(item.text.length, pos + 80);
+        const prefix = start > 0 ? "…" : "";
+        const suffix = end < item.text.length ? "…" : "";
+        return prefix + item.text.slice(start, end).replace(/\s+/g, " ").trim() + suffix;
+      }
+
+      function highlightText(text, terms) {
+        let output = text;
+
+        terms.forEach(function (term) {
+          if (!term) return;
+          const re = new RegExp("(" + escapeRegExp(term) + ")", "gi");
+          output = output.replace(re, '<mark class="cp-search-highlight">$1</mark>');
+        });
+
+        return output;
+      }
+
+      function renderSearchResults(query) {
+        if (!searchResultsEl || !searchStatusEl) return;
+
+        activeResultIndex = -1;
+        searchResultsEl.innerHTML = "";
+        const trimmed = query.trim();
+
+        if (!trimmed) {
+          searchStatusEl.textContent = "Tippe um zu suchen.";
+          return;
+        }
+
+        const terms = trimmed.toLowerCase().split(/\s+/).filter(Boolean);
+
+        const scored = searchIndex
+          .map(function (item) {
+            return { item: item, score: rankResult(item, terms) };
+          })
+          .filter(function (entry) {
+            return entry.score > 0;
+          })
+          .sort(function (a, b) {
+            return b.score - a.score;
+          })
+          .slice(0, 12);
+
+        if (!scored.length) {
+          searchStatusEl.textContent = "Keine Ergebnisse.";
+          return;
+        }
+
+        searchStatusEl.textContent =
+          scored.length + " Ergebnis" + (scored.length !== 1 ? "se" : "");
+
+        scored.forEach(function (entry) {
+          const item = entry.item;
+          const li = document.createElement("li");
+          li.className = "cp-search-result-item";
+          li.setAttribute("role", "option");
+          li.setAttribute("tabindex", "0");
+
+          const title = document.createElement("div");
+          title.className = "cp-search-result-item-title";
+          title.innerHTML = highlightText(item.title, terms);
+
+          const snippet = document.createElement("div");
+          snippet.className = "cp-search-result-item-snippet";
+          snippet.innerHTML = highlightText(makeSnippet(item, terms), terms);
+
+          li.appendChild(title);
+          li.appendChild(snippet);
+
+          function jumpToResult() {
+            const target = item.heading || document.getElementById(item.id);
+            if (target) {
+              if (history.replaceState) {
+                history.replaceState(null, "", "#" + encodeURIComponent(item.id));
+              }
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+              if (!target.hasAttribute("tabindex")) {
+                target.setAttribute("tabindex", "-1");
+              }
+              setTimeout(function () {
+                target.focus();
+              }, 50);
+            }
+          }
+
+          li.addEventListener("click", jumpToResult);
+          li.addEventListener("keydown", function (ev) {
+            if (ev.key === "Enter" || ev.key === " ") {
+              ev.preventDefault();
+              jumpToResult();
+            }
+          });
+
+          searchResultsEl.appendChild(li);
+        });
+
+        setActiveResult(Array.from(searchResultsEl.querySelectorAll(".cp-search-result-item")), 0);
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener("input", function (e) {
+          renderSearchResults(e.target.value || "");
+        });
+      }
+
+      function setActiveResult(items, index) {
+        items.forEach(function (item) {
+          item.classList.remove("is-keyboard-active");
+          item.removeAttribute("aria-selected");
+        });
+
+        if (index >= 0 && index < items.length) {
+          activeResultIndex = index;
+          items[index].classList.add("is-keyboard-active");
+          items[index].setAttribute("aria-selected", "true");
+          items[index].scrollIntoView({ block: "nearest" });
+        } else {
+          activeResultIndex = -1;
+        }
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener("keydown", function (event) {
+          if (!searchResultsEl) return;
+          const items = Array.from(searchResultsEl.querySelectorAll(".cp-search-result-item"));
+          if (!items.length) return;
+
+          if (event.key === "ArrowDown") {
+            event.preventDefault();
+            setActiveResult(items, activeResultIndex < items.length - 1 ? activeResultIndex + 1 : 0);
+          } else if (event.key === "ArrowUp") {
+            event.preventDefault();
+            setActiveResult(items, activeResultIndex > 0 ? activeResultIndex - 1 : items.length - 1);
+          } else if (event.key === "Enter" && activeResultIndex >= 0 && items[activeResultIndex]) {
+            event.preventDefault();
+            items[activeResultIndex].click();
+          }
+        });
+      }
+
+      document.addEventListener("keydown", function (event) {
+        const isModK = (event.ctrlKey || event.metaKey) && !event.altKey && event.key.toLowerCase() === "k";
+
+        if (isModK) {
+          event.preventDefault();
+          if (searchInput) {
+            searchInput.focus();
+            searchInput.select();
+          }
+          return;
+        }
+
+        if (event.key === "Escape") {
+          const focusInSearch = searchInput && (
+            document.activeElement === searchInput ||
+            (searchResultsEl && searchResultsEl.contains(document.activeElement))
+          );
+
+          if (focusInSearch) {
+            searchInput.value = "";
+            renderSearchResults("");
+            searchInput.blur();
+            return;
+          }
+
+          if (sidebarToggle && mobileQuery.matches && body.classList.contains("sidebar-open")) {
+            sidebarToggle.click();
+          }
+        }
+      });
+
+      function initRollTables() {
+        const tables = document.querySelectorAll(".roll-table");
+
+        tables.forEach(function (container) {
+          const table = container.querySelector("table");
+          if (!table) return;
+
+          const rows = Array.from(table.querySelectorAll("tbody tr"));
+          const ranges = [];
+          let maxValue = 0;
+
+          rows.forEach(function (row) {
+            const firstCell = row.querySelector("td, th");
+            if (!firstCell) return;
+
+            const raw = firstCell.textContent.trim();
+            const rangeMatch = raw.match(/(\d+)\s*(?:-|–|—|to)\s*(\d+)/i);
+            const singleMatch = raw.match(/^(\d+)$/);
+            const match = rangeMatch || singleMatch;
+            if (!match) return;
+
+            const min = parseInt(match[1], 10);
+            const max = match[2] !== undefined ? parseInt(match[2], 10) : min;
+            ranges.push({ min: min, max: max, row: row });
+            maxValue = Math.max(maxValue, max);
+          });
+
+          if (!ranges.length) return;
+
+          const declaredDice = (container.dataset.dice || "").toLowerCase().trim();
+          const isD66 = declaredDice === "d66";
+          let dieSize = null;
+
+          if (!isD66) {
+            if (/^d\d+$/.test(declaredDice)) {
+              dieSize = parseInt(declaredDice.slice(1), 10);
+            } else {
+              const commonDice = [4, 6, 8, 10, 12, 20, 100];
+              dieSize = commonDice.find(function (d) { return d >= maxValue; }) || maxValue;
+            }
+          }
+
+          const header = document.createElement("div");
+          header.className = "roll-table-header";
+
+          const titleEl = document.createElement("span");
+          titleEl.className = "roll-table-title";
+          titleEl.textContent = container.dataset.title || "Roll Table";
+          header.appendChild(titleEl);
+
+          const rollButton = document.createElement("button");
+          rollButton.type = "button";
+          rollButton.className = "roll-table-button";
+          rollButton.textContent = "🎲 Roll";
+          header.appendChild(rollButton);
+
+          const resultEl = document.createElement("div");
+          resultEl.className = "roll-table-result";
+          resultEl.setAttribute("aria-live", "polite");
+
+          container.insertBefore(header, container.firstChild);
+          container.insertBefore(resultEl, table);
+
+          let lastRow = null;
+
+          rollButton.addEventListener("click", function () {
+            if (lastRow) {
+              lastRow.classList.remove("is-rolled");
+            }
+
+            let roll;
+
+            if (isD66) {
+              const tens = 1 + Math.floor(Math.random() * 6);
+              const ones = 1 + Math.floor(Math.random() * 6);
+              roll = tens * 10 + ones;
+            } else {
+              roll = 1 + Math.floor(Math.random() * dieSize);
+            }
+
+            const match = ranges.find(function (r) { return roll >= r.min && roll <= r.max; });
+
+            if (match) {
+              match.row.classList.add("is-rolled");
+              match.row.scrollIntoView({ behavior: "smooth", block: "nearest" });
+              lastRow = match.row;
+
+              const resultCells = Array.from(match.row.children).slice(1);
+              const resultText = resultCells
+                .map(function (cell) { return cell.textContent.trim(); })
+                .filter(Boolean)
+                .join(" — ");
+
+              resultEl.textContent = "🎲 Rolled " + roll + " → " + resultText;
+            } else {
+              resultEl.textContent = "🎲 Rolled " + roll + " — no matching row.";
+            }
+          });
+        });
+      }
+
+      initRollTables();
+
+      function initGlossary() {
+        const glossaryBlocks = document.querySelectorAll(".glossary");
+        if (!glossaryBlocks.length || !main) return;
+
+        const terms = [];
+        const usedSlugs = Object.create(null);
+
+        glossaryBlocks.forEach(function (block) {
+          const dts = block.querySelectorAll("dt");
+
+          dts.forEach(function (dt) {
+            const text = dt.textContent.trim();
+            if (!text) return;
+
+            let slug = text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+            if (!slug) slug = "term";
+
+            let uniqueSlug = slug;
+            let n = 2;
+            while (usedSlugs[uniqueSlug]) {
+              uniqueSlug = slug + "-" + n;
+              n += 1;
+            }
+            usedSlugs[uniqueSlug] = true;
+
+            const id = "glossary-" + uniqueSlug;
+            dt.id = id;
+
+            let def = "";
+            const sibling = dt.nextElementSibling;
+            if (sibling && sibling.tagName === "DD") {
+              def = sibling.textContent.trim();
+            }
+
+            terms.push({ term: text, id: id, def: def });
+          });
+        });
+
+        if (!terms.length) return;
+
+        terms.sort(function (a, b) { return b.term.length - a.term.length; });
+
+        const used = Object.create(null);
+        const skipTags = {
+          SCRIPT: true, STYLE: true, CODE: true, PRE: true, A: true,
+          H1: true, H2: true, H3: true, H4: true, H5: true, H6: true
+        };
+
+        const walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT, {
+          acceptNode: function (node) {
+            let el = node.parentElement;
+            while (el && el !== main) {
+              if (skipTags[el.tagName]) return NodeFilter.FILTER_REJECT;
+              if (el.classList && el.classList.contains("glossary")) return NodeFilter.FILTER_REJECT;
+              el = el.parentElement;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        });
+
+        const textNodes = [];
+        let node;
+        while ((node = walker.nextNode())) {
+          textNodes.push(node);
+        }
+
+        textNodes.forEach(function (textNode) {
+          let current = textNode;
+
+          while (current && current.parentNode) {
+            const text = current.textContent;
+            let bestMatch = null;
+
+            for (let i = 0; i < terms.length; i += 1) {
+              const entry = terms[i];
+              if (used[entry.id]) continue;
+
+              const re = new RegExp("\\b" + escapeRegExp(entry.term) + "\\b", "i");
+              const match = text.match(re);
+              if (!match) continue;
+
+              if (
+                !bestMatch ||
+                match.index < bestMatch.match.index ||
+                (match.index === bestMatch.match.index && match[0].length > bestMatch.match[0].length)
+              ) {
+                bestMatch = { entry: entry, match: match };
+              }
+            }
+
+            if (!bestMatch) break;
+
+            used[bestMatch.entry.id] = true;
+
+            const start = bestMatch.match.index;
+            const end = start + bestMatch.match[0].length;
+
+            const before = document.createTextNode(text.slice(0, start));
+            const after = document.createTextNode(text.slice(end));
+
+            const link = document.createElement("a");
+            link.className = "cp-glossary-term";
+            link.href = "#" + bestMatch.entry.id;
+            link.textContent = bestMatch.match[0];
+
+            if (bestMatch.entry.def) {
+              const tooltip = document.createElement("span");
+              tooltip.className = "cp-glossary-tooltip";
+              tooltip.textContent = bestMatch.entry.def;
+              link.appendChild(tooltip);
+            }
+
+            const parent = current.parentNode;
+            parent.insertBefore(before, current);
+            parent.insertBefore(link, current);
+            parent.insertBefore(after, current);
+            parent.removeChild(current);
+
+            current = after;
+          }
+        });
+      }
+
+      initGlossary();
+    })();
+  </script>
+</body>
+</html>
