@@ -175,6 +175,7 @@ Normal  | 1x A, 2x B, 2x C
 Gut     | 2x A, 2x B, 1x C
 Spezial | 1x S, 2x B, 2x C
 
+<!--
 ## Drohnen
 
 P | Auffälligkeit | Bewegung   | Kapazität | Stabilität | ???
@@ -191,7 +192,7 @@ C | Auffällig     | Boden      | 2         | 6          |
 	- Schwarm: Statt einer einzelnen Drone handelt es sich um einen kleinen Schwarm fliegender Dronen. Der Schwarm kann sich aufteilen, aber Stabilität und Fähigkeiten werden ebenfalls aufgeteilt.
 - Systeme: Anzahl einbaubarer Systeme:
     - Waffensystem: Drone kann mit einer Waffe ausgestattet werden und besitzt die dafür notwendige Fähigkeit auf Stufe 2. Zusätzliche Waffensysteme können diesen Wert um 2 erhöhen.
-    - Sensorsystem: Drone besitzt spezielle Wahrnehmung, die auch übertragen werden kann. Die Wahrnehmung entspricht entweder der des Betrachters, oder 2*(Anzahl Sensorsysteme)
+    - Sensorsystem: Drone besitzt spezielle Wahrnehmung, die auch übertragen werden kann. Die Wahrnehmung entspricht entweder der Intuition des Betrachters, oder 2*(Anzahl Sensorsysteme)
     - Panzerung: Erhöht Rüstung um 1, bis zu einem Maximum von 3
     - Kapazität: Erhöht Erweiterungs-Kapazität der Drone um 1
     - Werkzeug: Besitzt Werkzeug und die dafür notwendige Fähigkeit auf Stufe 2. Zusätzliche Werkzeugsysteme können diesen Wert um 2 erhöhen.
@@ -207,6 +208,8 @@ Einfach | 2x B, 3x C
 Normal  | 1x A, 2x B, 2x C
 Gut     | 2x A, 2x B, 1x C
 Spezial | 1x S, 2x B, 2x C
+
+-->
 
 ## DiMES
 
@@ -238,7 +241,7 @@ C | 1            | d2
     - Fragment: Explosion
     - Spezial: Flash, AP, EMP
 - Effektstärke (N):
-    - Rauch*: Erhöhte Deckung & Schwierigkeit für Wahrnehmung (der Rauch selbst ist offensichtlich)
+    - Rauch*: Erhöhte Deckung & Schwierigkeit für Intuition (der Rauch selbst ist offensichtlich)
     - Fragment: x3 Schaden, Rüstung wird um 1 höher betrachtet
     - Spezial:
         - Flash: x8 Ticks, die Charaktere ausgeknockt werden
@@ -286,7 +289,7 @@ C | 1               | 2               | ca. 2 Häuserblöcke weit
         - Wärmebild (zählt als extra Sensor zusätzlich zu Kamera)
     - GPS
     - Anderes
-- Unauffälligkeit: Schwierigkeit für eine Wahrnehmungsprobe, um die Wanze zu entdecken
+- Unauffälligkeit: Schwierigkeit für eine Intuitionsprobe, um die Wanze zu entdecken
 - Senderadius: Bereich in dem auf die Sensoren der Wanze zugegriffen werden kann.
 
  Typ    | P
