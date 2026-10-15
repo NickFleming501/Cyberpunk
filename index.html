@@ -1322,7 +1322,6 @@ color: inherit;
           </ul></li>
           <li><a href="#nahkampfwaffen" id="toc-nahkampfwaffen">Nahkampfwaffen</a></li>
           <li><a href="#psi-verstärker" id="toc-psi-verstärker">PSI-Verstärker</a></li>
-          <li><a href="#drohnen" id="toc-drohnen">Drohnen</a></li>
           <li><a href="#dimes" id="toc-dimes">DiMES</a></li>
           <li><a href="#verbrauchsgegenstände" id="toc-verbrauchsgegenstände">Verbrauchsgegenstände</a>
           <ul>
@@ -1381,7 +1380,7 @@ color: inherit;
           <td style="text-align: center;">Bewegungsfähigkeit und Stärke</td>
           </tr>
           <tr>
-          <td style="text-align: center;">Wahrnehmung</td>
+          <td style="text-align: center;">Intuition</td>
           <td style="text-align: center;">Wahrnehmung und Reaktionsgeschwindigkeit</td>
           </tr>
           </tbody>
@@ -2686,7 +2685,7 @@ color: inherit;
           <td>Mentale Gegenwehr</td>
           <td>3</td>
           <td>K<a href="#PSI-tick-1">¹</a></td>
-          <td>Kann bei gegnerischen PSI-Treffer eingesetzt durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Verbraucht <strong>1 Fokus</strong>. Reduziert die Erfolge des Gegners um die Erfolge des Konzetrationswurfes.</td>
+          <td>Kann bei gegnerischen PSI-Treffer eingesetzt durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Verbraucht <strong>1 Fokus</strong>. Reduziert die Erfolge des Gegners um die Erfolge des Konzetrationswurfes. Nur möglich, wenn Intuition größer als die Heimlichkeit des PSI-Verstärker des Angreifers ist.</td>
           </tr>
           <tr>
           <td>Vorahnung</td>
@@ -3420,105 +3419,41 @@ color: inherit;
           </tr>
           </tbody>
           </table>
-          </section>
-          <section id="drohnen" class="level2">
-          <h2>Drohnen</h2>
-          <table>
-          <thead>
-          <tr>
-          <th>P</th>
-          <th>Auffälligkeit</th>
-          <th>Bewegung</th>
-          <th>Kapazität</th>
-          <th>Stabilität</th>
-          <th>???</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          <td>S</td>
-          <td>Getarnt</td>
-          <td>Schwarm</td>
-          <td>12</td>
-          <td>24</td>
-          <td></td>
-          </tr>
-          <tr>
-          <td>A</td>
-          <td>Unauffällig</td>
-          <td>Fliegend</td>
-          <td>8</td>
-          <td>12</td>
-          <td></td>
-          </tr>
-          <tr>
-          <td>B</td>
-          <td>Gewöhnlich</td>
-          <td>Kletternd</td>
-          <td>4</td>
-          <td>9</td>
-          <td></td>
-          </tr>
-          <tr>
-          <td>C</td>
-          <td>Auffällig</td>
-          <td>Boden</td>
-          <td>2</td>
-          <td>6</td>
-          <td></td>
-          </tr>
-          </tbody>
-          </table>
-          <ul>
-          <li>Bewegung:
-          <ul>
-          <li>Boden: Erlaubt bodengebundene, horizontale Bewegung, sowie. Treppen o.ä.</li>
-          <li>Kletternd: Erlaubt Bewegung entlang beliebiger Oberflächen.</li>
-          <li>Fliegend: Erlaubt Bewegung durch die Luft.</li>
-          <li>Schwarm: Statt einer einzelnen Drone handelt es sich um einen kleinen Schwarm fliegender Dronen. Der Schwarm kann sich aufteilen, aber Stabilität und Fähigkeiten werden ebenfalls aufgeteilt.</li>
-          </ul></li>
-          <li>Systeme: Anzahl einbaubarer Systeme:
-          <ul>
-          <li>Waffensystem: Drone kann mit einer Waffe ausgestattet werden und besitzt die dafür notwendige Fähigkeit auf Stufe 2. Zusätzliche Waffensysteme können diesen Wert um 2 erhöhen.</li>
-          <li>Sensorsystem: Drone besitzt spezielle Wahrnehmung, die auch übertragen werden kann. Die Wahrnehmung entspricht entweder der des Betrachters, oder 2*(Anzahl Sensorsysteme)</li>
-          <li>Panzerung: Erhöht Rüstung um 1, bis zu einem Maximum von 3</li>
-          <li>Kapazität: Erhöht Erweiterungs-Kapazität der Drone um 1</li>
-          <li>Werkzeug: Besitzt Werkzeug und die dafür notwendige Fähigkeit auf Stufe 2. Zusätzliche Werkzeugsysteme können diesen Wert um 2 erhöhen.</li>
-          <li>Anderes</li>
-          </ul></li>
-          <li>Stabilität: Trefferpunkte der Drone. Dronen haben nur eine einzige Trefferzone und keinen Gesamtschmerz.
-          <ul>
-          <li>Erleidet die Drone Schaden größergleich dem Stabilitätswert und kleiner als der doppelte Stabilitätswert, so zählt sie als beschädigt und ist aktionsunfähig</li>
-          <li>Erleidet die Drone Schaden größergleich dem doppelten Stabilitätswert. so ist sie irreperabel zerstört.</li>
-          </ul></li>
-          <li>???</li>
-          </ul>
-          <table>
-          <thead>
-          <tr>
-          <th>Type</th>
-          <th>P</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          <td>Einfach</td>
-          <td>2x B, 3x C</td>
-          </tr>
-          <tr>
-          <td>Normal</td>
-          <td>1x A, 2x B, 2x C</td>
-          </tr>
-          <tr>
-          <td>Gut</td>
-          <td>2x A, 2x B, 1x C</td>
-          </tr>
-          <tr>
-          <td>Spezial</td>
-          <td>1x S, 2x B, 2x C</td>
-          </tr>
-          </tbody>
-          </table>
+          <!--
+          ## Drohnen
+
+          P | Auffälligkeit | Bewegung   | Kapazität | Stabilität | ???
+          --|---------------|------------|-----------|------------|-----------
+          S | Getarnt       | Schwarm    | 12        | 24         | 
+          A | Unauffällig   | Fliegend   | 8         | 12         | 
+          B | Gewöhnlich    | Kletternd  | 4         | 9          | 
+          C | Auffällig     | Boden      | 2         | 6          | 
+
+          - Bewegung:
+              - Boden: Erlaubt bodengebundene, horizontale Bewegung, sowie. Treppen o.ä.
+              - Kletternd: Erlaubt Bewegung entlang beliebiger Oberflächen.
+              - Fliegend: Erlaubt Bewegung durch die Luft.
+              - Schwarm: Statt einer einzelnen Drone handelt es sich um einen kleinen Schwarm fliegender Dronen. Der Schwarm kann sich aufteilen, aber Stabilität und Fähigkeiten werden ebenfalls aufgeteilt.
+          - Systeme: Anzahl einbaubarer Systeme:
+              - Waffensystem: Drone kann mit einer Waffe ausgestattet werden und besitzt die dafür notwendige Fähigkeit auf Stufe 2. Zusätzliche Waffensysteme können diesen Wert um 2 erhöhen.
+              - Sensorsystem: Drone besitzt spezielle Wahrnehmung, die auch übertragen werden kann. Die Wahrnehmung entspricht entweder der Intuition des Betrachters, oder 2*(Anzahl Sensorsysteme)
+              - Panzerung: Erhöht Rüstung um 1, bis zu einem Maximum von 3
+              - Kapazität: Erhöht Erweiterungs-Kapazität der Drone um 1
+              - Werkzeug: Besitzt Werkzeug und die dafür notwendige Fähigkeit auf Stufe 2. Zusätzliche Werkzeugsysteme können diesen Wert um 2 erhöhen.
+              - Anderes
+          - Stabilität: Trefferpunkte der Drone. Dronen haben nur eine einzige Trefferzone und keinen Gesamtschmerz.
+              - Erleidet die Drone Schaden größergleich dem Stabilitätswert und kleiner als der doppelte Stabilitätswert, so zählt sie als beschädigt und ist aktionsunfähig
+              - Erleidet die Drone Schaden größergleich dem doppelten Stabilitätswert. so ist sie irreperabel zerstört.
+          - ???
+
+           Type   | P
+          --------|----------------
+          Einfach | 2x B, 3x C
+          Normal  | 1x A, 2x B, 2x C
+          Gut     | 2x A, 2x B, 1x C
+          Spezial | 1x S, 2x B, 2x C
+
+          -->
           </section>
           <section id="dimes" class="level2">
           <h2>DiMES</h2>
@@ -3591,7 +3526,7 @@ color: inherit;
           </ul></li>
           <li>Effektstärke (N):
           <ul>
-          <li>Rauch*: Erhöhte Deckung &amp; Schwierigkeit für Wahrnehmung (der Rauch selbst ist offensichtlich)</li>
+          <li>Rauch*: Erhöhte Deckung &amp; Schwierigkeit für Intuition (der Rauch selbst ist offensichtlich)</li>
           <li>Fragment: x3 Schaden, Rüstung wird um 1 höher betrachtet</li>
           <li>Spezial:
           <ul>
@@ -3706,7 +3641,7 @@ color: inherit;
           <li>GPS</li>
           <li>Anderes</li>
           </ul></li>
-          <li>Unauffälligkeit: Schwierigkeit für eine Wahrnehmungsprobe, um die Wanze zu entdecken</li>
+          <li>Unauffälligkeit: Schwierigkeit für eine Intuitionsprobe, um die Wanze zu entdecken</li>
           <li>Senderadius: Bereich in dem auf die Sensoren der Wanze zugegriffen werden kann.</li>
           </ul>
           <table>
