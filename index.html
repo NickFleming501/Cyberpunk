@@ -1307,7 +1307,11 @@ color: inherit;
           <li><a href="#charakter-erstellung" id="toc-charakter-erstellung">Charakter-Erstellung</a></li>
           <li><a href="#ausrüstung" id="toc-ausrüstung">Ausrüstung</a>
           <ul>
+          <li><a href="#eigenschaften" id="toc-eigenschaften">Eigenschaften</a>
+          <ul>
           <li><a href="#auffälligkeit" id="toc-auffälligkeit">Auffälligkeit</a></li>
+          <li><a href="#kapazität" id="toc-kapazität">Kapazität</a></li>
+          </ul></li>
           <li><a href="#rüstung-1" id="toc-rüstung-1">Rüstung</a>
           <ul>
           <li><a href="#exoskelett" id="toc-exoskelett">Exoskelett</a></li>
@@ -1318,13 +1322,14 @@ color: inherit;
           </ul></li>
           <li><a href="#nahkampfwaffen" id="toc-nahkampfwaffen">Nahkampfwaffen</a></li>
           <li><a href="#psi-verstärker" id="toc-psi-verstärker">PSI-Verstärker</a></li>
+          <li><a href="#drohnen" id="toc-drohnen">Drohnen</a></li>
+          <li><a href="#dimes" id="toc-dimes">DiMES</a></li>
           <li><a href="#verbrauchsgegenstände" id="toc-verbrauchsgegenstände">Verbrauchsgegenstände</a>
           <ul>
           <li><a href="#granaten-minen" id="toc-granaten-minen">Granaten &amp; Minen</a></li>
           <li><a href="#stims" id="toc-stims">Stims</a></li>
           <li><a href="#wanzen" id="toc-wanzen">Wanzen</a></li>
           </ul></li>
-          <li><a href="#drohnen" id="toc-drohnen">Drohnen</a></li>
           <li><a href="#cyberware" id="toc-cyberware">Cyberware</a>
           <ul>
           <li><a href="#energiequelle" id="toc-energiequelle">Energiequelle</a></li>
@@ -1802,8 +1807,8 @@ color: inherit;
           <table>
           <colgroup>
           <col style="width: 12%" />
-          <col style="width: 19%" />
-          <col style="width: 67%" />
+          <col style="width: 20%" />
+          <col style="width: 66%" />
           </colgroup>
           <thead>
           <tr>
@@ -1889,7 +1894,7 @@ color: inherit;
           <td>Stress abbauen, Manipulation erschweren oder umkehren, Mentale Aufgaben erleichtern</td>
           </tr>
           <tr>
-          <td>???</td>
+          <td>Sonstiges</td>
           <td>Heimlichkeit</td>
           <td>Verstecken, Schleichen, Taschendiebstahl</td>
           </tr>
@@ -1900,8 +1905,8 @@ color: inherit;
           </tr>
           <tr>
           <td><br /></td>
-          <td>?</td>
-          <td>?</td>
+          <td>Charakterhintergrund<a href="#faehigkeiten-4">⁴</a></td>
+          <td>Wissen aus vorherigen Erfahrungen. <strong>Startwert ist 1</strong></td>
           </tr>
           </tbody>
           </table>
@@ -1916,6 +1921,9 @@ color: inherit;
           </div>
           <div id="faehigkeiten-3">
           <p><em>³ Benötigt ein PSI-Implantat</em></p>
+          </div>
+          <div id="faehigkeiten-4">
+          <p><em>⁴ Der Charakterhintergrund muss individuell festgelegt werden. Der Startwert zählt nicht für die Mindestpunkte pro Kategorie.</em></p>
           </div>
           </section>
           </section>
@@ -2220,7 +2228,7 @@ color: inherit;
           </table>
           <p>Dieser Deckungswert geht davon aus, dass der Charakter Aktionen macht, die außerhalb der Deckung Auswirkung haben, z.B. selbst schießt. Ist dies nicht der Fall, erhält der Charakter +1 Deckung.</p>
           <p>Sprintende Charaktere haben 1 Deckung, wenn der Winkel zwischen Laufrichtung und Schusslinie mehr als 45° beträgt.</p>
-          <p>Charaktere, die sich innerhalb in der Nähe des Schützen aus befinden, können Nahkampfdeckung haben. Die genaue Entfernung für Nahkampfdeckung hängt von der Reichweite der Waffe ab, der Deckungswert von der Nahkampffähigkeit des Ziels.</p>
+          <p>Charaktere, die sich innerhalb in der Nähe des Schützen aus befinden, können Nahkampfdeckung haben. Die genaue Entfernung für Nahkampfdeckung hängt von der Reichweite der Waffe ab, der Deckungswert von der Nahkampffähigkeit des Ziels. Nahkampfdeckung wird auf normale Deckung addiert, falls vorhanden.</p>
           <!--Range: (6 → 2, 12 → 3, 18 → 5, Unendlich → 6)-->
           <!--Deckung: (1,2 → 1; 3,4 → 2; 5,6 → 3)-->
           <p>Andere Charaktere können ebenfalls als Deckung benutzt werden, aber nur sofern diese keine Deckung haben. Die Deckung entspricht dann der Rüstung des Charakters + 1. Wenn ein Angreifer das Ziel hinter der Deckung verfehlt, wird das Ergebnis des Wurfs mit Schwierigkeit 0 gegen den Deckung gebenden Charakter verwendet.</p>
@@ -2443,12 +2451,17 @@ color: inherit;
           <tr>
           <td>Hinlegen</td>
           <td>2</td>
-          <td>Gibt +3 Vorteil auf Schüsse, erfordert Aufstehen</td>
+          <td>Gibt +3 Vorteil auf Schüsse, aber Nahkampfdeckung für nahe Ziele ist um 1 erhöht, erfordert Aufstehen</td>
           </tr>
           <tr>
           <td>Aufstehen</td>
           <td>2</td>
           <td>Aufstehen aus dem Liegen</td>
+          </tr>
+          <tr>
+          <td>Disengage</td>
+          <td>2|3</td>
+          <td>Positionieren bzw. Bewegung aus einem Nahkampf heraus (weg von einem Nahkämpfer). Erfordet eine erfolgreiche Athletik-Probe, Schwierigkeit ist Erfolge(Nahkampf) des Nahkämpfers.</td>
           </tr>
           </tbody>
           </table>
@@ -2470,9 +2483,9 @@ color: inherit;
           <h2>Gegenstände</h2>
           <table>
           <colgroup>
-          <col style="width: 22%" />
-          <col style="width: 12%" />
-          <col style="width: 65%" />
+          <col style="width: 23%" />
+          <col style="width: 13%" />
+          <col style="width: 63%" />
           </colgroup>
           <thead>
           <tr>
@@ -2495,7 +2508,7 @@ color: inherit;
           <tr>
           <td>Gegenstand Werfen</td>
           <td>2</td>
-          <td>Gegenstand oder Waffe auf ein Ziel werfen. Reichweite ist (6 + Athletik)</td>
+          <td>Gegenstand oder Waffe auf ein Ziel werfen. Reichweite ist 1 + Athletik/2 (aufgerundet) Zonen.</td>
           </tr>
           <tr>
           <td>Gegenstand benutzen</td>
@@ -2519,7 +2532,7 @@ color: inherit;
           </tr>
           <tr>
           <td>Gegenstand aus Gürtel/Weste hervorholen</td>
-          <td>4</td>
+          <td>1</td>
           <td>Leicht erreichbare Gegenstände hervorholen.</td>
           </tr>
           <tr>
@@ -2564,12 +2577,7 @@ color: inherit;
           <tr>
           <td>Gezielter Schuss/Salve</td>
           <td>Langsam</td>
-          <td>Schwierigkeit = Deckung + (Kopf=2, Arm/Bein=1, Torso=0)</td>
-          </tr>
-          <tr>
-          <td>Sperrfeuer</td>
-          <td>5+</td>
-          <td>Deckt einen Bereich mit Sperrfeuer ab. Aus allen Zielen im Bereich des Sperrfeuers, die sich nicht in Deckung befinden, wird alle 5 Ticks ein zufälliges Ziel an einem zufälligen Körperteil getroffen. Alle Aktionen von Gegnern, die sich in Deckung befinden, werden um 1 erschwert, bei einem Fehlschlag erleiden diese einen zufälligen Treffer. Erfordert eine Waffe mit Tick-Malus kleiner gleich 4. Gegner im Bereich des Sperrfeuers bekommen einmalig 1 Stress.</td>
+          <td>Schwierigkeit = Deckung + (Kopf=2, Arm/Bein=1, Torso=0). Ein knapper Fehlschlag trifft den Torso, wenn genug Erfolge dafür erzielt wurden.</td>
           </tr>
           <tr>
           <td>Wache</td>
@@ -2583,6 +2591,9 @@ color: inherit;
           </tr>
           </tbody>
           </table>
+          <!--
+          Sperrfeuer             | 5+          | Deckt einen Bereich mit Sperrfeuer ab. Aus allen Zielen im Bereich des Sperrfeuers, die sich nicht in Deckung befinden, wird alle 5 Ticks ein zufälliges Ziel an einem zufälligen Körperteil getroffen. Alle Aktionen von Gegnern, die sich in Deckung befinden, werden um 1 erschwert, bei einem Fehlschlag erleiden diese einen zufälligen Treffer. Erfordert eine Waffe mit Tick-Malus kleiner gleich 4. Gegner im Bereich des Sperrfeuers bekommen einmalig 1 Stress.
+          -->
           </section>
           <section id="nahkampf" class="level2">
           <h2>Nahkampf</h2>
@@ -2603,45 +2614,49 @@ color: inherit;
           <tr>
           <td>Schneller Angriff</td>
           <td>Schnell</td>
-          <td>Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 2</td>
+          <td>Trifft ein zufälliges Körperteil. Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 2</td>
           </tr>
           <tr>
           <td>Gezielter Angriff</td>
           <td>Langsam</td>
-          <td>Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 1</td>
+          <td>Trifft ein gezieltes Körperteil. Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 1 + (Kopf=2, Arm/Bein=1, Torso=0). Ein knapper Fehlschlag trifft den Torso, wenn genug Erfolge dafür erzielt wurden.</td>
           </tr>
           <tr>
           <td>Schwerer Angriff</td>
           <td>Langsam</td>
-          <td>Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 2. Verursacht doppelten Schmerz. Benötigt <strong>1 Stamina</strong></td>
+          <td>Trifft ein zufälliges Körperteil. Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 2. Verursacht doppelten Schaden, Rüstung wird, sofern vorhanden, als 1 höher behandelt. Verbraucht <strong>1 Stamina</strong></td>
+          </tr>
+          <tr>
+          <td>Lücken-Angriff</td>
+          <td>Schnell</td>
+          <td>Trifft ein zufälliges Körperteil. Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 2. Getragene Rüstung wird ignoriert. Verbraucht <strong>1 Stamina</strong></td>
           </tr>
           <tr>
           <td>Konter</td>
-          <td>Schnell + 2</td>
-          <td>Kann vor Gegnerangriff durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Schwierigkeit entspricht #Gegnererfolge+1. Schaden ist dann (A-B)-1, nicht negativ.</td>
+          <td>Schnell</td>
+          <td>Kann bei gegnerischen Nahkampftreffer durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Verbraucht <strong>1 Stamina</strong>. Schwierigkeit entspricht #Gegnererfolge. Bei Erfolg wird der Schaden des Konters berechnet, und vom Schaden des Nahkampftreffers abgezogen. Übriger Konterschaden geht gegen ein zufälliges Körperteil des Gegners</td>
           </tr>
           <tr>
-          <td>Entwaffnen</td>
-          <td>5 + Waffe</td>
-          <td>Den Gegner entwaffnen. Schwierigkeit +2. Verbraucht <strong>1 Stamina</strong>. Bei Fehlschlag kann ggf. ein normaler Nahkampftreffer gelandet werden, wenn dafür genug Erfolge erzielt wurden.</td>
-          </tr>
-          <tr>
-          <td>Knockout</td>
-          <td>10 + Waffe</td>
-          <td>Den Gegner ausknocken, oder direkt töten. Schwierigkeit +3. Wahlweise tödlich oder nur KO. Verbraucht <strong>1 Stamina</strong>. Bei Fehlschlag kann ggf. ein normaler Nahkampftreffer gelandet werden, wenn dafür genug Erfolge erzielt wurden.</td>
-          </tr>
-          <tr>
-          <td>Verteidigungsstellung</td>
-          <td>3</td>
-          <td>Einnehmen einer Verteidigungsstellung gegenüber einem Ziel, erhöht die Schwierigkeit für den Angreifer um 1</td>
+          <td>Waffe werfen</td>
+          <td>Schnell</td>
+          <td>Wirft die Nahkampfwaffe auf ein zufälliges Körperteil. Reichweite ist 1 + Athletik/2 (aufgerundet) Zonen, Schwierigkeit ist Deckung + 2. Verwendet Nahkampf</td>
           </tr>
           <tr>
           <td>Tackle</td>
           <td>2 + Waffe</td>
-          <td>Dauer entspricht Sprint + Angriff, Angreifer bewegt sich bis zu 3/2 Felder zum Ziel und führt zusätzlich einen Nahkampfangriff aus. Ist das Ziel in Verteidigungsstellung gibt es Nachteil -1, ansonsten Vorteil +1. Verbraucht <strong>1 Stamina</strong></td>
+          <td>Dauer entspricht Sprint + Angriff, Angreifer bewegt sich bis zu 3/2 Felder zum Ziel und führt zusätzlich einen Nahkampfangriff aus. Ist das Ziel in Verteidigungsstellung gibt es Nachteil -1, ansonsten Vorteil +1. Benötigt <strong>1 Stamina</strong></td>
+          </tr>
+          <tr>
+          <td>Verteidigungsstellung</td>
+          <td>3</td>
+          <td>Einnehmen einer Verteidigungsstellung gegenüber einem Ziel, gibt dem Angreifer einem -1 Nachteil.</td>
           </tr>
           </tbody>
           </table>
+          <!--
+          Entwaffnen            | 5 + Waffe  | Den Gegner entwaffnen. Schwierigkeit +2. Verbraucht **1 Stamina**. Bei Fehlschlag kann ggf. ein normaler Nahkampftreffer gelandet werden, wenn dafür genug Erfolge erzielt wurden.
+          Knockout              | 10 + Waffe | Den Gegner ausknocken, oder direkt töten. Schwierigkeit +3. Wahlweise tödlich oder nur KO. Verbraucht **1 Stamina**. Bei Fehlschlag kann ggf. ein normaler Nahkampftreffer gelandet werden, wenn dafür genug Erfolge erzielt wurden.
+          -->
           </section>
           <section id="psi" class="level2">
           <h2>PSI</h2>
@@ -2662,60 +2677,57 @@ color: inherit;
           </thead>
           <tbody>
           <tr>
-          <td>Generisches Einfühlen/Manipulieren</td>
-          <td>x1/x2/x3</td>
-          <td>F/M</td>
-          <td>Einfache/Mittlere/Schwere Aktionen</td>
+          <td>Tief durchatmen</td>
+          <td>3</td>
+          <td>K<a href="#PSI-tick-1">¹</a></td>
+          <td>Reduziert Stress um die Anzahl an Erfolgen einer Konzentrationsprobe</td>
           </tr>
           <tr>
-          <td>Konzentrieren</td>
-          <td>3<a href="#PSI-tick-1">¹</a></td>
-          <td>K</td>
-          <td>Stress abbauen, Manipulation erschweren oder umkehren, Bestimmte Aufgaben erleichtern.</td>
+          <td>Mentale Gegenwehr</td>
+          <td>3</td>
+          <td>K<a href="#PSI-tick-1">¹</a></td>
+          <td>Kann bei gegnerischen PSI-Treffer eingesetzt durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Verbraucht <strong>1 Fokus</strong>. Reduziert die Erfolge des Gegners um die Erfolge des Konzetrationswurfes.</td>
           </tr>
           <tr>
-          <td>Stress verursachen</td>
+          <td>Vorahnung</td>
           <td>x1</td>
-          <td>M</td>
-          <td>Ziel bekommt (Erfolge-Gegenerfolge(Wille))+1 Stress (nur wenn Erfolge &gt; Gegenerfolge)</td>
+          <td>F</td>
+          <td>Gibt Erfolge(Fühlen) Deckung (additiv) für die nächsten 2 Aktionen, sowie die selbe Anzahl an Nachteil für Nahkampfangreifer. Verbraucht <strong>1 Fokus</strong></td>
           </tr>
           <tr>
           <td>Wahrnehmung übernehmen</td>
           <td>x1+</td>
           <td>F</td>
-          <td>Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich, dann kann der Übernehmende alles wahrnehmen, was das Ziel wahrnimmt</td>
+          <td>Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich, dann kann der Übernehmende alles wahrnehmen, was das Ziel wahrnimmt, anstelle der eigenen Wahrnehmung. Während die Wahrnehmung übernommen ist, können andere Aktionen durchgeführt werden</td>
           </tr>
           <tr>
-          <td>Körper Übernehmen</td>
-          <td>x2+</td>
+          <td>Verwirren</td>
+          <td>x1</td>
           <td>M</td>
-          <td>Schwierigkeit = 2+Gegenerfolge(Wille), wenn Erfolgreich, dann ist Gegner übernommen und agiert nach Anweisung des Übernehmenden. Verbraucht <strong>1 Fokus</strong></td>
+          <td>Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich bekommt Ziel -2 Nachteil auf alle Würfe während der nächsten 2 Aktionen. Keine Mentale Gegenwehr möglich.</td>
+          </tr>
+          <tr>
+          <td>Stress verursachen</td>
+          <td>x1</td>
+          <td>M</td>
+          <td>Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich bekommt Ziel (Erfolge-Gegenerfolge(Wille))+1 Stress. Verbraucht <strong>1 Fokus</strong></td>
           </tr>
           <tr>
           <td>Betäuben</td>
-          <td>x2</td>
+          <td>x1</td>
           <td>M</td>
-          <td>Tickzeit des Ziels wird um 6+Erfolge*3 erhöht. Verbraucht <strong>1 Fokus</strong></td>
-          </tr>
-          <tr>
-          <td>Falsche Wahrnehmung</td>
-          <td>x3</td>
-          <td>M</td>
-          <td>Schwierigeit = 1+Gegenerfolge(Wille), wenn Erfolgreich dann nimmt das Ziel eine leicht andere Situation<a href="#PSI-tick-2">²</a> war. Verbraucht <strong>1 Fokus</strong></td>
+          <td>Tickzeit des Ziels wird um 6 erhöht, + 2 für jeden Krit. Verbraucht <strong>1 Fokus</strong></td>
           </tr>
           <tr>
           <td>Aktionen erzwingen</td>
-          <td>x2</td>
+          <td>x3</td>
           <td>M</td>
-          <td>Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich kann der Angreifer die nächsten 2 (Tick)Aktion des Ziels festlegen, jeder zusätzliche Erfolg erlaubt 1 weitere Aktion zu spezifizieren.</td>
+          <td>Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich kann der Angreifer die nächsten 2 (Tick)Aktion des Ziels festlegen, jeder zusätzliche Erfolg erlaubt 1 weitere Aktion zu spezifizieren. Verbraucht <strong>1 Fokus</strong></td>
           </tr>
           </tbody>
           </table>
           <div id="PSI-tick-1">
-          <p><em>¹ Konzentrieren ist ohne PSI-Implantat oder -Verstärker möglich und hat konstante Dauer.</em></p>
-          </div>
-          <div id="PSI-tick-2">
-          <p><em>² Z.B. eine Person an einer anderen Position, etwas/jemand nicht da, mehr Gegner, etc.</em></p>
+          <p><em>¹ ist ohne PSI-Implantat oder -Verstärker möglich.</em></p>
           </div>
           <!--
           ## Team-Aktionen
@@ -2732,7 +2744,7 @@ color: inherit;
           <h2>Verschiedenes</h2>
           <table>
           <colgroup>
-          <col style="width: 25%" />
+          <col style="width: 26%" />
           <col style="width: 20%" />
           <col style="width: 53%" />
           </colgroup>
@@ -2778,6 +2790,16 @@ color: inherit;
           <td>Überanstrengen</td>
           <td>1</td>
           <td>Regeneriert 1 Stamina ODER 1 Fokus. Verursacht 1 Schmerz</td>
+          </tr>
+          <tr>
+          <td>Erweiterungen umschalten</td>
+          <td>3</td>
+          <td>Schaltet einen spezialisierten Gegenstand zwischen zwei Erweiterungssets um.</td>
+          </tr>
+          <tr>
+          <td>Superkondensator aktivieren</td>
+          <td>1</td>
+          <td>Aktiviert die inaktiven Erweiterungen des Superkondensator-Boost</td>
           </tr>
           </tbody>
           </table>
@@ -2825,7 +2847,7 @@ color: inherit;
           <td>16</td>
           </tr>
           <tr>
-          <td><a href="#psi-verstärker">Verstärker</a></td>
+          <td><a href="#psi-verstärker">Verstärker</a><a href="#chargen-3">³</a></td>
           <td>4</td>
           <td>8</td>
           <td>16</td>
@@ -2845,17 +2867,17 @@ color: inherit;
           <tr>
           <td><a href="#cyborg-körperteil">Cyborg-Körperteil</a><a href="#chargen-1">¹</a></td>
           <td>2</td>
-          <td>4</td>
-          <td>6</td>
+          <td>3</td>
+          <td>5</td>
           </tr>
           <tr>
           <td>Cyborg-Komplettkörper<a href="#chargen-2">²</a></td>
-          <td>9</td>
-          <td>18</td>
-          <td>27</td>
+          <td>8</td>
+          <td>12</td>
+          <td>20</td>
           </tr>
           <tr>
-          <td>DiMES</td>
+          <td><a href="#dimes">DiMES</a><a href="#chargen-4">⁴</a></td>
           <td>0</td>
           <td>1</td>
           <td>2</td>
@@ -2867,6 +2889,12 @@ color: inherit;
           </div>
           <div id="chargen-2">
           <p><em>² Beinhaltet Arme, Beine, Torso und Kopf (aber keine Energiequelle), mit der selben Qualitätsstufe.</em></p>
+          </div>
+          <div id="chargen-3">
+          <p><em>³ Beinhaltet ein PSI-Implantat</em></p>
+          </div>
+          <div id="chargen-4">
+          <p><em>⁴ Jedes weitere DiMES kostet +2 Punkte mehr.</em></p>
           </div>
           <table>
           <colgroup>
@@ -2890,12 +2918,17 @@ color: inherit;
           <tr>
           <td><a href="#Erweiterungen">Erweiterung</a></td>
           <td>1</td>
-          <td>(Cyber-)Erweiterung im Wert von ca. X Credits. Je nach Erweiterung kann/muss es in ein Cyborg-Körperteil eingebaut werden</td>
+          <td>(Cyber-)Erweiterung im Wert von ca. 1500 Credits. Je nach Erweiterung kann/muss es in ein Cyborg-Körperteil eingebaut werden</td>
           </tr>
           <tr>
           <td><a href="#spezialmunition">Spezialmunition</a></td>
           <td>1</td>
           <td>Jeder Munitionstyp kostet extra. Muss für jede Waffe separat gekauft werden.</td>
+          </tr>
+          <tr>
+          <td>PSI-Implantat</td>
+          <td>1</td>
+          <td>Ermöglicht PSI</td>
           </tr>
           </tbody>
           </table>
@@ -2927,8 +2960,10 @@ color: inherit;
           </ul></li>
           </ul>
           </div>
-          <section id="auffälligkeit" class="level2">
-          <h2>Auffälligkeit</h2>
+          <section id="eigenschaften" class="level2">
+          <h2>Eigenschaften</h2>
+          <section id="auffälligkeit" class="level3">
+          <h3>Auffälligkeit</h3>
           <p>Viele Gegenstände besitzen einen Auffälligkeitswert. Dieser beschreibt, welches Aufsehen die Waffe bei anderen Personen erregen, die den Umgang mit Waffen gewohnt sind, z.B., Gang-Mitglieder, andere Söldner oder Sicherheitskräften.</p>
           <table>
           <colgroup>
@@ -2966,6 +3001,12 @@ color: inherit;
           </tr>
           </tbody>
           </table>
+          </section>
+          <section id="kapazität" class="level3">
+          <h3>Kapazität</h3>
+          <p>Cyborg-Körperteile, sowie Schusswaffen, Nahkampfwaffen, Rüstungen und DiMES, besitzen Kapazität für Erweiterungen. Cyborg-Körperteile brauchen dafür eine Energiequelle, die anderen Gegenstände nicht. Spezialisierte Gegenstände oder Cyborgs mit Superkondensator können inaktive Erweiterungen haben, welche keinen Effekt haben solange sie nicht aktiviert sind.</p>
+          <p>Wechsel: Spezialisierte Gegenstände können Kapazität 6|6 haben, was bedeutet das zwischen zwei Sets von 6 Kapazität hin und her geschaltet werden kann.</p>
+          </section>
           </section>
           <section id="rüstung-1" class="level2">
           <h2>Rüstung</h2>
@@ -3013,20 +3054,24 @@ color: inherit;
           <tr>
           <th>Typ</th>
           <th>P</th>
+          <th>Kapazität</th>
           </tr>
           </thead>
           <tbody>
           <tr>
           <td>Einfach</td>
           <td>2x B, 2x C</td>
+          <td>3</td>
           </tr>
           <tr>
           <td>Normal</td>
           <td>1x A, 2x B, 1x C</td>
+          <td>6</td>
           </tr>
           <tr>
           <td>Gut</td>
           <td>2x A, 2x B</td>
+          <td>10</td>
           </tr>
           </tbody>
           </table>
@@ -3079,7 +3124,7 @@ color: inherit;
           <td>Gewöhnlich</td>
           <td>2</td>
           <td>1</td>
-          <td>4|8</td>
+          <td>4|6</td>
           </tr>
           <tr>
           <td>C</td>
@@ -3087,16 +3132,16 @@ color: inherit;
           <td>Auffällig</td>
           <td>1</td>
           <td>0.5</td>
-          <td>8|12</td>
+          <td>6|8</td>
           </tr>
           </tbody>
           </table>
           <ul>
           <li>Reichweite: Reichweite im Kampf
           <ul>
-          <li>Gering: Selbe Zone, danach Nachteil von 2 pro weitere Zone. Nahkampfdeckung nur wenn bereits im Nahkampf verwickelt</li>
-          <li>Normal: Selbe oder benachbarte Zone, danach Nachteil von 2 pro weitere Zone. Nahkampfdeckung innerhalb der selben Zone</li>
-          <li>Hoch: Bis zu 3 Zonen entfernt (selbe Zone + 3 weitere), danach Nachteil von 1 pro weitere Zone. Nahkampfdeckung in der selben Zone</li>
+          <li>Gering: Selbe oder benachbarte Zone, danach Nachteil von 2 pro weitere Zone. Nahkampfdeckung nur wenn bereits im Nahkampf verwickelt</li>
+          <li>Normal: Bis zu 2 Zonen entfernt (selbe Zone + 2 weitere), danach Nachteil von 2 pro weitere Zone. Nahkampfdeckung innerhalb der selben Zone</li>
+          <li>Hoch: Bis zu 4 Zonen entfernt (selbe Zone + 4 weitere), danach Nachteil von 1 pro weitere Zone. Nahkampfdeckung innerhalb der selben Zone</li>
           <li>Unendlich: hinreichend unendlich, kein Angriffs-Nachteil durch Entfernung. Kann von einem Punkt außerhalb der Karte schießen. Nahkampfdeckung in der selben oder benachbarten Zone</li>
           </ul></li>
           <li>Schmerz: Schaden, die beim Ziel verursacht werden</li>
@@ -3116,24 +3161,29 @@ color: inherit;
           <tr>
           <th>Type</th>
           <th>P</th>
+          <th>Kapazität</th>
           </tr>
           </thead>
           <tbody>
           <tr>
           <td>Einfach</td>
           <td>2x B, 3x C</td>
+          <td>3</td>
           </tr>
           <tr>
           <td>Normal</td>
           <td>1x A, 2x B, 2x C</td>
+          <td>6</td>
           </tr>
           <tr>
           <td>Gut</td>
           <td>2x A, 2x B, 1x C</td>
+          <td>10</td>
           </tr>
           <tr>
           <td>Spezial</td>
           <td>1x S, 2x B, 2x C</td>
+          <td>10 oder 6|6</td>
           </tr>
           </tbody>
           </table>
@@ -3166,11 +3216,11 @@ color: inherit;
           </tr>
           <tr>
           <td>Schock</td>
-          <td>+1 Schaden gegen Cyborgs / Drohnen</td>
+          <td>+2 Schaden gegen Cyborg-Körperteile / Drohnen</td>
           </tr>
           <tr>
           <td>Leuchtspur</td>
-          <td>+1 Vorteil (kumulativ) pro konsekutiven Schuss auf das gleiche Ziel (Start +0)</td>
+          <td>+1 Vorteil (kumulativ) pro konsekutiven Schuss auf das gleiche Ziel (Start +0, Limit +2 ab dem 3. Schuss)</td>
           </tr>
           <tr>
           <td>Kryo</td>
@@ -3234,24 +3284,29 @@ color: inherit;
           <tr>
           <th>Typ</th>
           <th>P</th>
+          <th>Kapazität</th>
           </tr>
           </thead>
           <tbody>
           <tr>
           <td>Einfach</td>
           <td>2x B, 2x C</td>
+          <td>3</td>
           </tr>
           <tr>
           <td>Normal</td>
           <td>1x A, 2x B, 1x C</td>
+          <td>6</td>
           </tr>
           <tr>
           <td>Gut</td>
           <td>2x A, 2x B</td>
+          <td>10</td>
           </tr>
           <tr>
           <td>Spezial</td>
           <td>1x S, 2x B, 1x C</td>
+          <td>10 oder 6|6</td>
           </tr>
           </tbody>
           </table>
@@ -3259,15 +3314,23 @@ color: inherit;
           <section id="psi-verstärker" class="level2">
           <h2>PSI-Verstärker</h2>
           <p>Ein PSI-Verstärker verstärkt PSI-Aktionen</p>
-          <table>
+          <table style="width:100%;">
+          <colgroup>
+          <col style="width: 2%" />
+          <col style="width: 18%" />
+          <col style="width: 7%" />
+          <col style="width: 17%" />
+          <col style="width: 27%" />
+          <col style="width: 27%" />
+          </colgroup>
           <thead>
           <tr>
           <th>P</th>
           <th>Reichweite</th>
           <th>Tick</th>
           <th>Heimlichkeit</th>
-          <th>Fühlen-Erfolge</th>
-          <th>Manip.-Erfolge</th>
+          <th>Fühlen</th>
+          <th>Manipulieren</th>
           </tr>
           </thead>
           <tbody>
@@ -3276,16 +3339,16 @@ color: inherit;
           <td>Hoch</td>
           <td>1</td>
           <td>5</td>
-          <td>+2</td>
-          <td>+2</td>
+          <td>+1 Erfolg, 2 Vorteil</td>
+          <td>+1 Erfolg, 2 Vorteil</td>
           </tr>
           <tr>
           <td>A</td>
           <td>Normal</td>
           <td>2</td>
           <td>3</td>
-          <td>+1</td>
-          <td>+1</td>
+          <td>2 Vorteil</td>
+          <td>2 Vorteil</td>
           </tr>
           <tr>
           <td>B</td>
@@ -3300,22 +3363,22 @@ color: inherit;
           <td>Berührung</td>
           <td>4</td>
           <td>1</td>
-          <td>-1</td>
-          <td>-1</td>
+          <td>1 Nachteil</td>
+          <td>1 Nachteil</td>
           </tr>
           </tbody>
           </table>
           <ul>
           <li>Reichweite
           <ul>
-          <li>Berührung: Wie Nahkampfwaffe, oder mit Nachteil von 2 innerhalb der selben Zone</li>
-          <li>Gering: Selbe Zone, danach Nachteil von 2 pro weitere Zone</li>
-          <li>Normal: Selbe oder benachbarte Zone, danach Nachteil von 1 pro weitere Zone</li>
+          <li>Berührung: Selbe Zone, danach Nachteil von 2 pro weiterer Zone</li>
+          <li>Gering: Selbe Zone oder benachbarte Zone, danach Nachteil von 2 pro weitere Zone</li>
+          <li>Normal: Selbe Zone oder benachbarte Zone, danach Nachteil von 1 pro weitere Zone</li>
           <li>Hoch: Bis zu 3 Zonen entfernt (selbe Zone + 3 weitere), danach Nachteil von 1 pro weitere Zone</li>
           </ul></li>
           <li>Tick: Tickzeit für PSI-Aktionen im Kampf</li>
-          <li>Heimlichkeit: Schwierigkeit für das Ziel, die PSI-Aktion zu Bemerken</li>
-          <li>Fühlen/Manipulation-Erfolge: Senkt/Erhöht die Anzahl der erzielten Erfolge einer PSI-Aktion.</li>
+          <li>Heimlichkeit: Schwierigkeit für das Ziel, die PSI-Aktion zu bemerken</li>
+          <li>Fühlen/Manipulation-Vorteil: Senkt/Erhöht die entsprechende Fähigkeit für PSI-Aktionen.</li>
           </ul>
           <!--
 
@@ -3357,216 +3420,6 @@ color: inherit;
           </tr>
           </tbody>
           </table>
-          </section>
-          <section id="verbrauchsgegenstände" class="level2">
-          <h2>Verbrauchsgegenstände</h2>
-          <p>Verbrauchsgegenstände werden einmalig gekauft, und stehen dann während einer Mission in entsprechender Anzahl zur Verfügung. Zwischen Missionen können die Verbrauchsgegenstände kostenlos wieder aufgefüllt werden.</p>
-          <section id="granaten-minen" class="level3">
-          <h3>Granaten &amp; Minen</h3>
-          <p>Eine Granate können wahlweise als Minen erstellt werden, welche den Effekt der Granate über den Zünder einer Mine auslöst.</p>
-          <table>
-          <thead>
-          <tr>
-          <th>P</th>
-          <th>Effektstärke</th>
-          <th>Radius</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          <td>A</td>
-          <td>3</td>
-          <td>d5+3</td>
-          </tr>
-          <tr>
-          <td>B</td>
-          <td>2</td>
-          <td>d3+1</td>
-          </tr>
-          <tr>
-          <td>C</td>
-          <td>1</td>
-          <td>d2</td>
-          </tr>
-          </tbody>
-          </table>
-          <ul>
-          <li>Effekt:
-          <ul>
-          <li>Rauch: Gibt Deckung und versteckt alle Charaktere im Rauch vor Sicht (inkl. Nacht- u. Wärmesicht). Effekt gilt in beide Richtungen (in Rauch rein/heraus)</li>
-          <li>Fragment: Explosion</li>
-          <li>Spezial: Flash, AP, EMP</li>
-          </ul></li>
-          <li>Effektstärke (N):
-          <ul>
-          <li>Rauch*: Erhöhte Deckung &amp; Schwierigkeit für Wahrnehmung (der Rauch selbst ist offensichtlich)</li>
-          <li>Fragment: x3 Schaden, Rüstung wird um 1 höher betrachtet</li>
-          <li>Spezial:
-          <ul>
-          <li>Flash: x8 Ticks, die Charaktere ausgeknockt werden</li>
-          <li>EMP: x3 Schaden gegen Cyborgs/Drohnen, sonst 0 Schaden</li>
-          <li>AP: x2 Schaden, Rüstung wird um 1 niedriger betrachtet</li>
-          </ul></li>
-          </ul></li>
-          <li>Radius: Es können nur Charaktere innerhalb einer Zone oder in der Nähe eines Interaktionspunktes getroffen werden. Anzahl der Charaktere die vom Effekt maximal betroffen sein können. Bei Rauchgranaten beschränkt dies die Größe der entstehenden Rauch-Zone, bei anderen Effekten ist es die maximale Anzahl betroffener Charaktere. Welche Charaktere genau getroffenen werden, wird vom Spielleiter final entschieden.</li>
-          </ul>
-          <table>
-          <thead>
-          <tr>
-          <th>Typ</th>
-          <th>P</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          <td>Einfach</td>
-          <td>1x B, 1x C</td>
-          </tr>
-          <tr>
-          <td>Normal</td>
-          <td>2x B</td>
-          </tr>
-          <tr>
-          <td>Gut</td>
-          <td>1x A, 1x B</td>
-          </tr>
-          </tbody>
-          </table>
-          </section>
-          <section id="stims" class="level3">
-          <h3>Stims</h3>
-          <p>Im Kampf einsetzbare Medizin/Aufputschmittel. Können auch als Tabletten, Pillen oder in anderen Formen auftreten.</p>
-          <table>
-          <thead>
-          <tr>
-          <th>P</th>
-          <th>Effektstärke</th>
-          <th>Aktivierungsdauer</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          <td>A</td>
-          <td>6</td>
-          <td>2</td>
-          </tr>
-          <tr>
-          <td>B</td>
-          <td>4</td>
-          <td>4</td>
-          </tr>
-          <tr>
-          <td>C</td>
-          <td>2</td>
-          <td>8</td>
-          </tr>
-          </tbody>
-          </table>
-          <ul>
-          <li>Effekt
-          <ul>
-          <li>Stressreduktion: Reduziert Stress (nicht unter Basisstress)</li>
-          <li>Schmerzreduktion: Reduziert Gesamtschmerz, aber keinen Körperteilschmerz</li>
-          <li>Fokus-Boost: Stellt Effektstärke Fokus sofort her, auch über das Maximum heraus</li>
-          <li>Stamina-Boost: Stellt Effektstärke Stamina sofort her, auch über das Maximum heraus</li>
-          </ul></li>
-          <li>Effektstärke: Menge an Stress/Gesamtschmerz/Fokus/Stamina die reduziert/wiederhergestellt wird</li>
-          <li>Aktivierungsdauer: Ticks die zum Einsetzen benötigt werden.</li>
-          </ul>
-          <table>
-          <thead>
-          <tr>
-          <th>Typ</th>
-          <th>P</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          <td>Einfach</td>
-          <td>1x B, 1x C</td>
-          </tr>
-          <tr>
-          <td>Normal</td>
-          <td>2x B</td>
-          </tr>
-          <tr>
-          <td>Gut</td>
-          <td>1x A, 1x B</td>
-          </tr>
-          </tbody>
-          </table>
-          </section>
-          <section id="wanzen" class="level3">
-          <h3>Wanzen</h3>
-          <p>Sehr kleine, unauffällige Sensoren die an verschiedenen Oberflächen angebracht werden können.</p>
-          <table>
-          <thead>
-          <tr>
-          <th>P</th>
-          <th>Anzahl Sensoren</th>
-          <th>Unauffälligkeit</th>
-          <th>Senderadius</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          <td>A</td>
-          <td>3</td>
-          <td>5</td>
-          <td>Stadtweit</td>
-          </tr>
-          <tr>
-          <td>B</td>
-          <td>2</td>
-          <td>3</td>
-          <td>Distriktweit</td>
-          </tr>
-          <tr>
-          <td>C</td>
-          <td>1</td>
-          <td>2</td>
-          <td>ca. 2 Häuserblöcke weit</td>
-          </tr>
-          </tbody>
-          </table>
-          <ul>
-          <li>Anzahl Sensoren: bestimmt wie viele Sensoren bzw. Verbesserungen eingebaut sind
-          <ul>
-          <li>Mikrophon</li>
-          <li>Kamera
-          <ul>
-          <li>Nachtsicht (zählt als extra Sensor zusätzlich zu Kamera)</li>
-          <li>Wärmebild (zählt als extra Sensor zusätzlich zu Kamera)</li>
-          </ul></li>
-          <li>GPS</li>
-          <li>Anderes</li>
-          </ul></li>
-          <li>Unauffälligkeit: Schwierigkeit für eine Wahrnehmungsprobe, um die Wanze zu entdecken</li>
-          <li>Senderadius: Bereich in dem auf die Sensoren der Wanze zugegriffen werden kann.</li>
-          </ul>
-          <table>
-          <thead>
-          <tr>
-          <th>Typ</th>
-          <th>P</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          <td>Einfach</td>
-          <td>2x B, 1x C</td>
-          </tr>
-          <tr>
-          <td>Normal</td>
-          <td>1x A, 1x B, 1x C</td>
-          </tr>
-          <tr>
-          <td>Gut</td>
-          <td>2x A, 1x B</td>
-          </tr>
-          </tbody>
-          </table>
-          </section>
           </section>
           <section id="drohnen" class="level2">
           <h2>Drohnen</h2>
@@ -3667,6 +3520,219 @@ color: inherit;
           </tbody>
           </table>
           </section>
+          <section id="dimes" class="level2">
+          <h2>DiMES</h2>
+          <p>Ein DiMES besitzt Kapazität für Erweiterungen, sonst nichts.</p>
+          <table>
+          <thead>
+          <tr>
+          <th>Typ</th>
+          <th>Kapazität</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Einfach</td>
+          <td>3</td>
+          </tr>
+          <tr>
+          <td>Normal</td>
+          <td>6</td>
+          </tr>
+          <tr>
+          <td>Gut</td>
+          <td>10</td>
+          </tr>
+          <tr>
+          <td>Spezial</td>
+          <td>10 oder 6|6 Wechselt zwischen zwei Erweiterungs-Sets</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          <section id="verbrauchsgegenstände" class="level2">
+          <h2>Verbrauchsgegenstände</h2>
+          <p>Verbrauchsgegenstände werden einmalig gekauft, und stehen dann während einer Mission in entsprechender Anzahl zur Verfügung. Zwischen Missionen können die Verbrauchsgegenstände kostenlos wieder aufgefüllt werden.</p>
+          <section id="granaten-minen" class="level3">
+          <h3>Granaten &amp; Minen</h3>
+          <p>Eine Granate können wahlweise als Minen erstellt werden, welche den Effekt der Granate über den Zünder einer Mine auslöst.</p>
+          <table>
+          <thead>
+          <tr>
+          <th>P</th>
+          <th>Effektstärke</th>
+          <th>Radius</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>A</td>
+          <td>3</td>
+          <td>d5+3</td>
+          </tr>
+          <tr>
+          <td>B</td>
+          <td>2</td>
+          <td>d3+1</td>
+          </tr>
+          <tr>
+          <td>C</td>
+          <td>1</td>
+          <td>d2</td>
+          </tr>
+          </tbody>
+          </table>
+          <ul>
+          <li>Effekt:
+          <ul>
+          <li>Rauch: Gibt Deckung und versteckt alle Charaktere im Rauch vor Sicht (inkl. Nacht- u. Wärmesicht). Effekt gilt in beide Richtungen (in Rauch rein/heraus)</li>
+          <li>Fragment: Explosion</li>
+          <li>Spezial: Flash, AP, EMP</li>
+          </ul></li>
+          <li>Effektstärke (N):
+          <ul>
+          <li>Rauch*: Erhöhte Deckung &amp; Schwierigkeit für Wahrnehmung (der Rauch selbst ist offensichtlich)</li>
+          <li>Fragment: x3 Schaden, Rüstung wird um 1 höher betrachtet</li>
+          <li>Spezial:
+          <ul>
+          <li>Flash: x8 Ticks, die Charaktere ausgeknockt werden</li>
+          <li>EMP: x3 Schaden gegen Cyborgs/Drohnen, sonst 0 Schaden</li>
+          <li>AP: x2 Schaden, Rüstung wird um 1 niedriger betrachtet</li>
+          </ul></li>
+          </ul></li>
+          <li>Radius: Es können nur Charaktere innerhalb einer Zone oder in der Nähe eines Interaktionspunktes getroffen werden. Anzahl der Charaktere die vom Effekt maximal betroffen sein können. Bei Rauchgranaten beschränkt dies die Größe der entstehenden Rauch-Zone, bei anderen Effekten ist es die maximale Anzahl betroffener Charaktere. Welche Charaktere genau getroffenen werden, wird vom Spielleiter final entschieden.</li>
+          </ul>
+          <table>
+          <thead>
+          <tr>
+          <th>Typ</th>
+          <th>P</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Einfach</td>
+          <td>1x B, 1x C</td>
+          </tr>
+          <tr>
+          <td>Normal</td>
+          <td>2x B</td>
+          </tr>
+          <tr>
+          <td>Gut</td>
+          <td>1x A, 1x B</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          <section id="stims" class="level3">
+          <h3>Stims</h3>
+          <p>Im Kampf einsetzbare Medizin/Aufputschmittel. Können auch als Tabletten, Pillen oder in anderen Formen auftreten.</p>
+          <table>
+          <thead>
+          <tr>
+          <th>Typ</th>
+          <th>Effektstärke</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Gut</td>
+          <td>6</td>
+          </tr>
+          <tr>
+          <td>Normal</td>
+          <td>4</td>
+          </tr>
+          <tr>
+          <td>Einfach</td>
+          <td>2</td>
+          </tr>
+          </tbody>
+          </table>
+          <ul>
+          <li>Effekt
+          <ul>
+          <li>Stressreduktion: Reduziert Stress (nicht unter Basisstress)</li>
+          <li>Schmerzreduktion: Reduziert Gesamtschmerz, aber keinen Körperteilschmerz</li>
+          <li>Fokus-Boost: Stellt Effektstärke Fokus sofort her, auch über das Maximum heraus</li>
+          <li>Stamina-Boost: Stellt Effektstärke Stamina sofort her, auch über das Maximum heraus</li>
+          </ul></li>
+          <li>Effektstärke: Menge an Stress/Gesamtschmerz/Fokus/Stamina die reduziert/wiederhergestellt wird</li>
+          </ul>
+          </section>
+          <section id="wanzen" class="level3">
+          <h3>Wanzen</h3>
+          <p>Sehr kleine, unauffällige Sensoren die an verschiedenen Oberflächen angebracht werden können.</p>
+          <table>
+          <thead>
+          <tr>
+          <th>P</th>
+          <th>Anzahl Sensoren</th>
+          <th>Unauffälligkeit</th>
+          <th>Senderadius</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>A</td>
+          <td>3</td>
+          <td>5</td>
+          <td>Stadtweit</td>
+          </tr>
+          <tr>
+          <td>B</td>
+          <td>2</td>
+          <td>3</td>
+          <td>Distriktweit</td>
+          </tr>
+          <tr>
+          <td>C</td>
+          <td>1</td>
+          <td>2</td>
+          <td>ca. 2 Häuserblöcke weit</td>
+          </tr>
+          </tbody>
+          </table>
+          <ul>
+          <li>Anzahl Sensoren: bestimmt wie viele Sensoren bzw. Verbesserungen eingebaut sind
+          <ul>
+          <li>Mikrophon</li>
+          <li>Kamera
+          <ul>
+          <li>Nachtsicht (zählt als extra Sensor zusätzlich zu Kamera)</li>
+          <li>Wärmebild (zählt als extra Sensor zusätzlich zu Kamera)</li>
+          </ul></li>
+          <li>GPS</li>
+          <li>Anderes</li>
+          </ul></li>
+          <li>Unauffälligkeit: Schwierigkeit für eine Wahrnehmungsprobe, um die Wanze zu entdecken</li>
+          <li>Senderadius: Bereich in dem auf die Sensoren der Wanze zugegriffen werden kann.</li>
+          </ul>
+          <table>
+          <thead>
+          <tr>
+          <th>Typ</th>
+          <th>P</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Einfach</td>
+          <td>2x B, 1x C</td>
+          </tr>
+          <tr>
+          <td>Normal</td>
+          <td>1x A, 1x B, 1x C</td>
+          </tr>
+          <tr>
+          <td>Gut</td>
+          <td>2x A, 1x B</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          </section>
           <section id="cyberware" class="level2">
           <h2>Cyberware</h2>
           <section id="energiequelle" class="level3">
@@ -3690,13 +3756,13 @@ color: inherit;
           <tr>
           <td>Einfach</td>
           <td>Batterie</td>
-          <td>12</td>
+          <td>16</td>
           <td>Muss nach maximal 20h wieder aufgeladen werden, was bis zu 6h dauert.</td>
           </tr>
           <tr>
           <td>Normal</td>
           <td>Bioreaktor</td>
-          <td>25</td>
+          <td>28</td>
           <td>Erzeugt Energie durch mehr Essen. Etwa 5x soviel, wie eine normale Person isst. Es gibt spezielle “Energieriegel”, die besonders viele Nährstoffe für Bioreaktoren beinhalten</td>
           </tr>
           <tr>
@@ -3708,8 +3774,8 @@ color: inherit;
           <tr>
           <td>Spezial</td>
           <td>Superkondensator</td>
-          <td>20 | 99</td>
-          <td>Erzeugt begrenzte Energie im Normalbetrieb, aber kann bei Bedarf für ca. 10 Minuten nahezu unbegrenzt Energie produzieren. Danach muss der Superkondensator wieder aufgeladen, was bis zu 1h dauert. Dies erlaubt selektive Aktivierung<a href="#cyber-energy-1">¹</a> von zusätzlicher Cyberware</td>
+          <td>20 | 60</td>
+          <td>Erzeugt begrenzte Energie im Normalbetrieb, aber kann bei Bedarf für ca. 10 Minuten nahezu unbegrenzt Energie produzieren. Danach muss der Superkondensator wieder aufgeladen, was bis zu 4h dauert. Dies erlaubt selektive Aktivierung<a href="#cyber-energy-1">¹</a> von zusätzlicher Cyberware. Körperteile müssen über den Normalbetrieb angeschlossen sein, für Erweiterungen wird beim Einbau entschieden ob sieTeil des Normalbetriebs sind oder nur im geboosteten Zustand aktiv sind.</td>
           </tr>
           </tbody>
           </table>
@@ -3734,21 +3800,21 @@ color: inherit;
           <td>A</td>
           <td>Versteckt</td>
           <td>1</td>
-          <td>+1</td>
-          <td>0</td>
+          <td>+4</td>
+          <td>0.5</td>
           </tr>
           <tr>
           <td>B</td>
           <td>Gewöhnlich</td>
           <td>0</td>
-          <td>-1</td>
+          <td>~0</td>
           <td>1</td>
           </tr>
           <tr>
           <td>C</td>
           <td>Auffällig</td>
           <td>-1</td>
-          <td>-2</td>
+          <td>-4</td>
           <td>2</td>
           </tr>
           </tbody>
@@ -3757,7 +3823,7 @@ color: inherit;
           <li>Auffälligkeit: Gilt für alle in den Körperteil eingebauten Erweiterungen</li>
           <li>Rüstung: Eingebaute Rüstung für Nah-/Fernkampf. Negative Rüstung erhöht den eingehenden Schaden</li>
           <li>Kapazität: Kapazität für das Körperteil (negative Kapazität senkt die Gesamtkapazität)</li>
-          <li>Basisstress: Erhöht den Basisstress</li>
+          <li>Basisstress: Erhöht den Basisstress (aufgerundet)</li>
           </ul>
           <table>
           <thead>
@@ -3802,15 +3868,15 @@ color: inherit;
           </tr>
           <tr>
           <td>Sicht</td>
-          <td>Cyborg-Kopf, Implantat(Auge), Rüstung(Kopf), Schusswaffen, DiMES, Exoskelett, Drone</td>
+          <td>Cyborg-Kopf, Implantat(Auge), Rüstung(Kopf), Schusswaffen, DiMES, Exoskelett, Drohne</td>
           </tr>
           <tr>
           <td>Werkzeug</td>
-          <td>Cyborg-Arme, DiMES, Exoskelett, Drone</td>
+          <td>Cyborg-Arme, DiMES, Nahkampfwaffe, Exoskelett, Drohne</td>
           </tr>
           <tr>
           <td>Körper</td>
-          <td>Cyborg-Komplettkörper, Rüstung, Exoskelett, Drone</td>
+          <td>Cyborg-Komplettkörper, Rüstung, Exoskelett, Drohne</td>
           </tr>
           <tr>
           <td>Atmung</td>
@@ -3822,181 +3888,461 @@ color: inherit;
           </tr>
           <tr>
           <td>Arme</td>
-          <td>Cyborg-Arme, Exoskelett, Drone</td>
+          <td>Cyborg-Arme, Exoskelett, Drohne</td>
+          </tr>
+          <tr>
+          <td>Beine</td>
+          <td>Cyborg-Beine, Exoskelett</td>
           </tr>
           </tbody>
           </table>
           <table>
           <colgroup>
-          <col style="width: 24%" />
-          <col style="width: 8%" />
-          <col style="width: 14%" />
-          <col style="width: 53%" />
+          <col style="width: 22%" />
+          <col style="width: 7%" />
+          <col style="width: 5%" />
+          <col style="width: 13%" />
+          <col style="width: 50%" />
           </colgroup>
           <thead>
           <tr>
           <th>Erweiterung</th>
           <th>Kapazität</th>
+          <th>Preis</th>
           <th>Typ</th>
           <th>Beschreibung</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-          <td>Kommunikator</td>
-          <td>1</td>
+          <td>3D-Drucker</td>
+          <td>-6</td>
+          <td>3000</td>
           <td>Beliebig</td>
-          <td>Erlaubt Kommunikation mit anderen Kommunikatoren</td>
-          </tr>
-          <tr>
-          <td>Restlichtverstärker</td>
-          <td>1</td>
-          <td>Sicht</td>
-          <td>Erlaubt Sicht in Dunkelheit, passiv</td>
-          </tr>
-          <tr>
-          <td>Hacking-Werkzeug</td>
-          <td>1</td>
-          <td>Werkzeug</td>
-          <td>Ermöglicht Software-Hacking</td>
+          <td>Kann kleine Gegenstände mit einfacher Form herstellen, inklusive Einfacher Einweg-Waffen</td>
           </tr>
           <tr>
           <td>Aktive Camouflage</td>
-          <td>6</td>
+          <td>-10</td>
+          <td>5000</td>
           <td>Körper</td>
-          <td>Macht den Körper transparent</td>
-          </tr>
-          <tr>
-          <td>Gasfilter</td>
-          <td>2</td>
-          <td>Atmung</td>
-          <td>Filtert (giftige) Gase aus der Atemluft</td>
-          </tr>
-          <tr>
-          <td>Optische Vergrößerung</td>
-          <td>1</td>
-          <td>Sicht</td>
-          <td>Erlaubt an entfernte oder kleine Dinge heranzuzoomen</td>
-          </tr>
-          <tr>
-          <td>Stauraum</td>
-          <td>0</td>
-          <td>Beliebig</td>
-          <td>Ermöglicht kleine Gegenstände getarnt zu verstauen</td>
-          </tr>
-          <tr>
-          <td>Jammer</td>
-          <td>2</td>
-          <td>Beliebig</td>
-          <td>Blockiert Kommunikation</td>
-          </tr>
-          <tr>
-          <td>Eingebaute Waffe</td>
-          <td>2&gt;4&gt;6</td>
-          <td>Beliebig</td>
-          <td>Erlaubt eine einfache|normale&gt;gute/spezielle Waffe zu verbauen</td>
-          </tr>
-          <tr>
-          <td>Geigerzähler</td>
-          <td>1</td>
-          <td>Beliebig</td>
-          <td>Meldet Radioaktivität</td>
-          </tr>
-          <tr>
-          <td>Sauerstoff-Tanks</td>
-          <td>4</td>
-          <td>Atmung</td>
-          <td>Bietet Sauerstoff für ca. 10 Minuten</td>
-          </tr>
-          <tr>
-          <td>Kamera</td>
-          <td>1</td>
-          <td>Sicht</td>
-          <td>Erlaubt Fotos und Videos der aktuellen Sicht zu machen</td>
+          <td>Macht den Körper transparent, solange man sich nur langsam bewegt ist man effektiv unsichtbar, aber schnellere Bewegungen oder Kampfaktionen können nicht komplett versteckt werden (-2 Nachteil für Angreifer)</td>
           </tr>
           <tr>
           <td>Audio-Rekorder</td>
-          <td>1</td>
+          <td>-1</td>
+          <td>500</td>
           <td>Beliebig</td>
           <td>Erlaubt aktuelle Geräusche aufzunehmen</td>
           </tr>
           <tr>
-          <td>Scheinwerfer</td>
-          <td>1</td>
-          <td>Beliebig</td>
-          <td>Macht helles Licht</td>
+          <td>Auto-Ausweicher</td>
+          <td>-10</td>
+          <td>5000</td>
+          <td>Cyborg-Körper</td>
+          <td>Gibt eine Mindest-Deckung von 1</td>
           </tr>
           <tr>
-          <td>Automatische Spritze</td>
-          <td>3</td>
-          <td>Atmung</td>
-          <td>Ermöglicht Spritzen zu laden, die bei Bedarf automatisch injiziert werden</td>
+          <td>Automatische Blende</td>
+          <td>-4</td>
+          <td>2000</td>
+          <td>Sicht (kein DiMES)</td>
+          <td>Immunität gegen Flash</td>
+          </tr>
+          <tr>
+          <td>Automatische Reparatur</td>
+          <td>-8</td>
+          <td>4000</td>
+          <td>Cyborg-*</td>
+          <td>Regeneriert nicht-kritischen Schaden an Cyborg-Körperteilen, ca. 1 Box pro Minute</td>
+          </tr>
+          <tr>
+          <td>Bionische Fingerspitzen</td>
+          <td>-2</td>
+          <td>1000</td>
+          <td>Cyborg-Arm</td>
+          <td>Erlaubt es die Fingerspitzen anzupassen, sodass sie veränderbare (oder gar keine) Fingerabdrücke haben.</td>
+          </tr>
+          <tr>
+          <td>Brechstangenfunktion</td>
+          <td>-2</td>
+          <td>1000</td>
+          <td>Nahkampfwaffe</td>
+          <td>Gibt +2 Vorteil auf gewaltsames Öffnen von Türen u.ä.</td>
+          </tr>
+          <tr>
+          <td>Bionische Stimmbänder</td>
+          <td>-2</td>
+          <td>1000</td>
+          <td>Cyborg-Kopf</td>
+          <td>Verstellt die Stimme zu der einer anderen Person</td>
+          </tr>
+          <tr>
+          <td>Blackbox-Recorder</td>
+          <td>-1</td>
+          <td>500</td>
+          <td>Cyborg-Kopf</td>
+          <td>Zeichnet Sinneswahrnehmungen auf, Aufzeichnung überlebt auch Zerstörung des entsprechended Kopfes</td>
+          </tr>
+          <tr>
+          <td>Datenbank</td>
+          <td>-1</td>
+          <td>500</td>
+          <td>Beliebig</td>
+          <td>Erlaubt extrem große Datenmengen zu speichern</td>
+          </tr>
+          <tr>
+          <td>Disko-Modus</td>
+          <td>-1</td>
+          <td>500</td>
+          <td>Beliebig</td>
+          <td>Macht Licht, bunte Farben und coole Mucke</td>
+          </tr>
+          <tr>
+          <td>Dokumentenscanner</td>
+          <td>-1</td>
+          <td>500</td>
+          <td>Sicht</td>
+          <td>Ermöglicht schnell größere Mengen an Text und Dokumenten zu scannen</td>
+          </tr>
+          <tr>
+          <td>Druckregulator</td>
+          <td>-4</td>
+          <td>2000</td>
+          <td>Körper (keine Drohne)</td>
+          <td>Ermöglicht Aktionen in Situationen mit sehr hohem oder sehr niedrigem Druck (z.B. Ozeantiefe oder außen an einem Flugzeugs)</td>
+          </tr>
+          <tr>
+          <td>Eingebaute Waffe</td>
+          <td>-2&gt;-6&gt;-10</td>
+          <td>1k|3k|5k</td>
+          <td>Beliebig</td>
+          <td>Erlaubt eine einfache|normale&gt;gute/spezielle Waffe zu verbauen</td>
           </tr>
           <tr>
           <td>Fähigkeitsbooster</td>
-          <td>2</td>
+          <td>-3|-6</td>
+          <td>1500|3k</td>
           <td>Spezifisch</td>
-          <td>Gibt einen +1 Vorteil auf einen bestimmten Fähigkeitswert der den Booster involviert. Die genaue Art des Boosters sowie die dadurch verbesserte Fähigkeit müssen bei Erwerb festgelegt werden. Beispiel: Fähigkeitsbooster für Schusswaffen könnte ein Ziellaser sein.</td>
+          <td>Gibt einen +1 Vorteil auf einen bestimmten Fähigkeitswert der den Booster involviert. Booster für Kampffähigkeiten verbrauchen doppelte Kapazität. Die genaue Art des Boosters sowie die dadurch verbesserte Fähigkeit müssen bei Erwerb festgelegt werden. Beispiel: Fähigkeitsbooster für Schusswaffen könnte ein Ziellaser sein.</td>
           </tr>
           <tr>
-          <td>Richtmikrophon</td>
-          <td>1</td>
-          <td>Sicht</td>
-          <td>Ermöglicht Hören in Sichtlinie</td>
+          <td>Gasfilter</td>
+          <td>-2</td>
+          <td>1000</td>
+          <td>Atmung</td>
+          <td>Filtert (giftige) Gase aus der Atemluft</td>
           </tr>
           <tr>
-          <td>Infrarotsicht</td>
-          <td>1</td>
-          <td>Sicht</td>
-          <td>Ermöglicht Sehen im Infrarotbereich</td>
+          <td>Gedächtnis-Backup</td>
+          <td>-16</td>
+          <td>8000</td>
+          <td>Cyborg-Kopf</td>
+          <td>Lagert Erinnerungen auf einen externen Speicher aus. Ermöglicht es, sich an viele Sachen zu erinnern oder sogar eine grobe Wiederherstellung des Benutzers nach Terminierung</td>
           </tr>
           <tr>
-          <td>Nachtsicht</td>
-          <td>1</td>
-          <td>Sicht</td>
-          <td>Erlaubt Sicht in Dunkelheit, aktiv</td>
+          <td>Gehirn-Swap</td>
+          <td>-6</td>
+          <td>3000</td>
+          <td>Cyborg-Kopf</td>
+          <td>Erlaubt es das Gehirn zu entnehmen und in andere Körper mit Gehirn-Swap einzusetzen</td>
+          </tr>
+          <tr>
+          <td>Geigerzähler</td>
+          <td>-1</td>
+          <td>500</td>
+          <td>Beliebig</td>
+          <td>Meldet Radioaktivität</td>
+          </tr>
+          <tr>
+          <td>Geräuschabsorber</td>
+          <td>-2</td>
+          <td>1000</td>
+          <td>Spezifisch</td>
+          <td>Macht Dinge leise</td>
+          </tr>
+          <tr>
+          <td>Gleitmembran</td>
+          <td>-10</td>
+          <td>5000</td>
+          <td>Arme</td>
+          <td>Erlaubt gleiten</td>
           </tr>
           <tr>
           <td>GPS</td>
-          <td>1</td>
+          <td>-1</td>
+          <td>500</td>
           <td>Beliebig</td>
           <td>Erlaubt die genaue Position festzustellen</td>
           </tr>
           <tr>
+          <td>Granatmensch™</td>
+          <td>-10</td>
+          <td>5000</td>
+          <td>Körper (keine Drohne)</td>
+          <td>Erzeugt die Explosion einer bestimmten Granate an der Position des Nutzers, ohne diesen selbst zu betreffen. Die Granate muss vor Einsatz vorbereitet werden, was ca. 2-3 Minuten dauert und die Granate verbraucht.</td>
+          </tr>
+          <tr>
+          <td>Hacking-Werkzeug</td>
+          <td>-1</td>
+          <td>500</td>
+          <td>Werkzeug</td>
+          <td>Ermöglicht Software-Hacking</td>
+          </tr>
+          <tr>
           <td>Holographische Maske</td>
-          <td>4</td>
-          <td>Cyborg-Kopf,DiMES</td>
+          <td>-6</td>
+          <td>3000</td>
+          <td>Cyborg-Kopf</td>
           <td>Erlaubt freies Anpassen von Gesicht</td>
           </tr>
           <tr>
-          <td>Datenbank</td>
-          <td>1</td>
+          <td>Holographische Projektion</td>
+          <td>-6</td>
+          <td>3000</td>
           <td>Beliebig</td>
-          <td></td>
+          <td>Erzeugt eine holographische Projektion des Benutzers an einer anderen Position, aber innerhalb der Sichtweite des Benutzers.</td>
           </tr>
           <tr>
-          <td>Bionische Stimmbänder</td>
-          <td>2</td>
-          <td>Cyborg-Kopf</td>
-          <td></td>
+          <td>Infrarotsicht</td>
+          <td>-1</td>
+          <td>500</td>
+          <td>Sicht</td>
+          <td>Ermöglicht Sehen im Infrarotbereich</td>
+          </tr>
+          <tr>
+          <td>Jammer</td>
+          <td>-2</td>
+          <td>1000</td>
+          <td>Beliebig</td>
+          <td>Blockiert Kommunikation</td>
+          </tr>
+          <tr>
+          <td>Kamera</td>
+          <td>-1</td>
+          <td>500</td>
+          <td>Sicht</td>
+          <td>Erlaubt Fotos und Videos der aktuellen Sicht zu machen</td>
+          </tr>
+          <tr>
+          <td>Kletterhände</td>
+          <td>-4</td>
+          <td>2000</td>
+          <td>Arme</td>
+          <td>Ermöglicht klettern entlang glatter Oberflächen</td>
+          </tr>
+          <tr>
+          <td>Kommunikator</td>
+          <td>-1</td>
+          <td>500</td>
+          <td>Beliebig</td>
+          <td>Erlaubt Kommunikation mit anderen Kommunikatoren</td>
           </tr>
           <tr>
           <td>Kraftbooster</td>
-          <td>4</td>
+          <td>-6</td>
+          <td>3000</td>
           <td>Arme</td>
           <td>Athletik +1, Erlaubt es sehr schwere Dinge zu heben.</td>
           </tr>
+          <tr>
+          <td>Mega-Bohrer</td>
+          <td>-10</td>
+          <td>5000</td>
+          <td>Werkzeug</td>
+          <td>Erlaubt es, große Öffnungen in Wänden zu erzeugen. Funktioniert nur für schwächere Wände.</td>
+          </tr>
+          <tr>
+          <td>Micro-Deassembler</td>
+          <td>-2</td>
+          <td>1000</td>
+          <td>Beliebig</td>
+          <td>Wandelt kleine Gegenstände in einfaches Bastelmaterial um, z.B. für einen 3D-Drucker</td>
+          </tr>
+          <tr>
+          <td>Multitool</td>
+          <td>-1</td>
+          <td>500</td>
+          <td>Werkzeug</td>
+          <td>Einfaches Werkzeug für grundlegende Hardware-Arbeiten</td>
+          </tr>
+          <tr>
+          <td>Nachtsicht</td>
+          <td>-1</td>
+          <td>500</td>
+          <td>Sicht</td>
+          <td>Erlaubt Sicht in Dunkelheit, aktiv</td>
+          </tr>
+          <tr>
+          <td>Neodymium-Schild</td>
+          <td>-6</td>
+          <td>3000</td>
+          <td>Cyborg-*</td>
+          <td>+1 Rüstung</td>
+          </tr>
+          <tr>
+          <td>Notfall-Defibrillator</td>
+          <td>-12</td>
+          <td>6000</td>
+          <td>Beliebig (kein DiMES)</td>
+          <td>Aktiviert den Besitzer nach einer gescheiterten Zähigkeitsprobe, muss danach aber für ca. 5 Minuten wieder aufladen.</td>
+          </tr>
+          <tr>
+          <td>Optische Vergrößerung</td>
+          <td>-1</td>
+          <td>500</td>
+          <td>Sicht</td>
+          <td>Erlaubt an entfernte oder kleine Dinge heranzuzoomen</td>
+          </tr>
+          <tr>
+          <td>Restlichtverstärker</td>
+          <td>-1</td>
+          <td>500</td>
+          <td>Sicht</td>
+          <td>Erlaubt Sicht in Dunkelheit, passiv</td>
+          </tr>
+          <tr>
+          <td>Richtmikrophon</td>
+          <td>-1</td>
+          <td>500</td>
+          <td>Sicht</td>
+          <td>Ermöglicht Hören in Sichtlinie</td>
+          </tr>
+          <tr>
+          <td>Rückholvorrichtung</td>
+          <td>-2</td>
+          <td>1000</td>
+          <td>Nahkampfwaffe</td>
+          <td>Erlaubt die Waffe aus Entfernung wieder zurückzuholen, dauert Langsam + 1 Tick pro Zone Entfernung</td>
+          </tr>
+          <tr>
+          <td>Sauerstoff-Tanks</td>
+          <td>-6</td>
+          <td>3000</td>
+          <td>Atmung</td>
+          <td>Bietet Sauerstoff für ca. 10 Minuten</td>
+          </tr>
+          <tr>
+          <td>Scheinwerfer</td>
+          <td>-1</td>
+          <td>500</td>
+          <td>Beliebig</td>
+          <td>Macht helles Licht</td>
+          </tr>
+          <tr>
+          <td>Schmerzfilter</td>
+          <td>-16</td>
+          <td>8000</td>
+          <td>Cyborg-Körper</td>
+          <td>Zähigkeitsschwellen sind alle 4 Gesamtschmerz</td>
+          </tr>
+          <tr>
+          <td>Schockabsorber</td>
+          <td>-2</td>
+          <td>1000</td>
+          <td>Beine</td>
+          <td>Kein Fallschaden</td>
+          </tr>
+          <tr>
+          <td>Schweißbrenner</td>
+          <td>-6</td>
+          <td>3000</td>
+          <td>Werkzeug</td>
+          <td>Ermöglicht Metall zu schweißen</td>
+          </tr>
+          <tr>
+          <td>Schwimmflossen-Kit</td>
+          <td>-2</td>
+          <td>1000</td>
+          <td>Beine</td>
+          <td>Ausfahrbare Schwimmflossen. Erlauben schnelle Unterwasserbewegung</td>
+          </tr>
+          <tr>
+          <td>Seilwinde</td>
+          <td>-2</td>
+          <td>1000</td>
+          <td>Werkzeug</td>
+          <td>Ermöglicht Abseilen oder Klettern/Hochziehen</td>
+          </tr>
+          <tr>
+          <td>Sprinter-Beine</td>
+          <td>-8</td>
+          <td>4000</td>
+          <td>Beine</td>
+          <td>Erlaubt schnelleres Sprinten. Reduziert Bewegung auf 2 Ticks</td>
+          </tr>
+          <tr>
+          <td>Sprung-Beine</td>
+          <td>-2</td>
+          <td>1000</td>
+          <td>Beine</td>
+          <td>Erlaubt große Sprünge</td>
+          </tr>
+          <tr>
+          <td>Stauraum</td>
+          <td>-1</td>
+          <td>500</td>
+          <td>Beliebig</td>
+          <td>Ermöglicht kleine Gegenstände getarnt zu verstauen</td>
+          </tr>
+          <tr>
+          <td>Stimmanalysator</td>
+          <td>-6</td>
+          <td>3000</td>
+          <td>Beliebig</td>
+          <td>Analysiert subtile Details in Stimm- und Sprachverhalten um die Täuschungen zu durchschauen</td>
+          </tr>
+          <tr>
+          <td>Subvocal-Kommunikator</td>
+          <td>-2</td>
+          <td>1000</td>
+          <td>Cyborg-Kopf</td>
+          <td>Wie ein Kommunikator, aber lautlos</td>
+          </tr>
+          <tr>
+          <td>Temperatur-Isolierung</td>
+          <td>-2</td>
+          <td>1000</td>
+          <td>Körper</td>
+          <td>Maskiert die Wärmestrahlung des Benutzers</td>
+          </tr>
+          <tr>
+          <td>Wand-Radar</td>
+          <td>-10</td>
+          <td>5000</td>
+          <td>Sicht</td>
+          <td>Erlaubt es durch einfache Wände oder Türen zu sehen (eine Schicht), und auch zu zielen.</td>
+          </tr>
+          <tr>
+          <td>Zähigkeitsbooster</td>
+          <td>-6</td>
+          <td>3000</td>
+          <td>Cyborg-*</td>
+          <td>Zähigkeit +1</td>
+          </tr>
           </tbody>
           </table>
-          <p>Mega-Bohrer Kletterhände Seilwinde Geräuschabsorber Sprung-Beine Zähigkeitsbooster LIDAR-Scanner Automatische Blende (protection for flashbangs) Auto-Ausweicher (Fernkampf-Deckung) Subvocal-Kommunikator (Kommunikator ohne laut zu reden) Blackbox-Recorder Eingebaute KI Holographische Projektion Typhoon (Eingebaute Granate, die um Nutzer herum auslöst) Bionische Finger(-abdrücke) Offensiv-Injektor (Spritzt Gifte/Substanzen in andere) Magnete Automatische Reparatur Schockabsorber (Kein Fallschaden) Neodymium-Schild Temperatur-Isolierung Schmerzfilter Sprinter-Beine Gleitmembran Schwimmflossen-Kit 3D-Drucker Schweißbrenner Dokumentenscanner Druckregulator (high/low pressure, e.g. on outside of plane or deep on the ocean floor) Gedächtnis-Backup Stimmanalysator (Lügendetektor) Disko-Modus Gehirn-Swap (Erlaubt Tausch mit anderen Körpern mit Gehirn-Swap) Micro-Deassembler Durch-Wände-Sehen-Dingens Loot-Scanner Notfall-Defibrilator (erlaubt wieder aufstehen nach gescheiterter Zähigkeitsprobe, einmal pro kampf) Reflexbooster | ? | ? | ?</p>
+          <!--
+          Fehlende Ideen:
+
+          Eingebaute KI
+          Offensiv-Injektor (Spritzt Gifte/Substanzen in andere)
+          Magnete
+          Loot-Scanner
+          Reflexbooster                   | ?       | ?               | ?
+
+          removed
+
+          Automatische Spritze            | 3         | Atmung            | Ermöglicht Spritzen zu laden, die bei Bedarf automatisch injiziert werden
+          LIDAR-Scanner                   | 1         | Sicht             | Misst Entfernung und 
+
+          -->
           <!--
           ## TODO
 
-          - Cyberware
           - Drohnen/Roboter
           - Hacking-Spike (Verbrauchsgegenstand)
           - Stationäre Geschütze
-          - Exo-Skelett
           - Fahrzeuge
           - AIs
           - Firewalls

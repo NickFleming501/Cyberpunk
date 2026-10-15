@@ -11,8 +11,9 @@ Positionieren      | 2      | Bewegung zu einem bestimmten Punkt in der aktuelle
 Schleichen         | 5      | Heimliche Bewegung zu einem bestimmten Punkt in der aktuellen Zone oder einer angrenzenden Zone
 Klettern           | 8      | Unter Dingen hindurch kriechen oder darüber klettern.
 In die Hocke gehen | 1      | Gibt +1 Vorteil auf Schüsse
-Hinlegen           | 2      | Gibt +3 Vorteil auf Schüsse, erfordert Aufstehen
+Hinlegen           | 2      | Gibt +3 Vorteil auf Schüsse, aber Nahkampfdeckung für nahe Ziele ist um 1 erhöht, erfordert Aufstehen
 Aufstehen          | 2      | Aufstehen aus dem Liegen
+Disengage          | 2\|3    | Positionieren bzw. Bewegung aus einem Nahkampf heraus (weg von einem Nahkämpfer). Erfordet eine erfolgreiche Athletik-Probe, Schwierigkeit ist Erfolge(Nahkampf) des Nahkämpfers.
 
 <!--
 Aktion             | Dauer  |Beschreibung
@@ -30,62 +31,66 @@ In Deckung gehen   | 5      | Erhöht Deckungswert einmalig um 1, bis der Charak
 
 ## Gegenstände
 
-Aktion                                 |Dauer                 |Beschreibung
--------------------|-----------|--------------------------------------------------------
-Gegenstand Fallen lassen               | 0                    | Gegenstand oder Waffe fallenlassen.
-Gegenstand Aufheben                    | 3                    | Gegenstand oder Waffe aufheben. Gegenstand ist danach sofort verwendbar.
-Gegenstand Werfen                      | 2                    | Gegenstand oder Waffe auf ein Ziel werfen. Reichweite ist (6 + Athletik)
-Gegenstand benutzen                    | siehe Gegenstand     | Benutzung eines Gegenstands, z.B. Spritzen o.ä.
-Waffe ziehen (Holster)                 | 1                    | Waffe aus einem Holster (z.B. am Gürtel) ziehen.
-Waffe ziehen (Versteckt)               | 2                    | Eine versteckte Waffe ziehen.
-Waffe wegstecken                       | 1                    | Waffe wieder wegpacken
-Gegenstand aus Gürtel/Weste hervorholen| 4                    | Leicht erreichbare Gegenstände hervorholen.
-Gegenstand aus Rucksack hervorholen    | 10                   | Schwer erreichbare Gegenstände hervorholen. Dauert mehrere Runden.
+Aktion                                 |Dauer             | Beschreibung
+-------------------|-----------|----------------------------------------------------
+Gegenstand Fallen lassen               | 0                | Gegenstand oder Waffe fallenlassen.
+Gegenstand Aufheben                    | 3                | Gegenstand oder Waffe aufheben. Gegenstand ist danach sofort verwendbar.
+Gegenstand Werfen                      | 2                | Gegenstand oder Waffe auf ein Ziel werfen. Reichweite ist 1 + Athletik/2 (aufgerundet) Zonen.
+Gegenstand benutzen                    | siehe Gegenstand | Benutzung eines Gegenstands, z.B. Spritzen o.ä.
+Waffe ziehen (Holster)                 | 1                | Waffe aus einem Holster (z.B. am Gürtel) ziehen.
+Waffe ziehen (Versteckt)               | 2                | Eine versteckte Waffe ziehen.
+Waffe wegstecken                       | 1                | Waffe wieder wegpacken
+Gegenstand aus Gürtel/Weste hervorholen| 1                | Leicht erreichbare Gegenstände hervorholen.
+Gegenstand aus Rucksack hervorholen    | 10               | Schwer erreichbare Gegenstände hervorholen. Dauert mehrere Runden.
 
 ## Schusswaffen
 
-Aktion                 |Dauer        | Beschreibung
+Aktion                 | Dauer       | Beschreibung
 -----------------------|-------------|--------------------------------------------------------
 Schnelles Anvisieren   | 1           | Die Waffe auf ein (neues) Ziel richten. Erhöhrt Schwierigkeit des nächsten Schuss um 1.
 Schneller Schuss/Salve | Schnell     | Schuss in die grobe Richtung des Gegners, trifft ein zufälliges Körperteil. Schwierigkeit = Deckung + 1
 Ziel anvisieren        | 2           | Die Waffe auf ein (neues) Ziel richten.
-Gezielter Schuss/Salve | Langsam     | Schwierigkeit = Deckung + (Kopf=2, Arm/Bein=1, Torso=0)
-Sperrfeuer             | 5+          | Deckt einen Bereich mit Sperrfeuer ab. Aus allen Zielen im Bereich des Sperrfeuers, die sich nicht in Deckung befinden, wird alle 5 Ticks ein zufälliges Ziel an einem zufälligen Körperteil getroffen. Alle Aktionen von Gegnern, die sich in Deckung befinden, werden um 1 erschwert, bei einem Fehlschlag erleiden diese einen zufälligen Treffer. Erfordert eine Waffe mit Tick-Malus kleiner gleich 4. Gegner im Bereich des Sperrfeuers bekommen einmalig 1 Stress.
+Gezielter Schuss/Salve | Langsam     | Schwierigkeit = Deckung + (Kopf=2, Arm/Bein=1, Torso=0). Ein knapper Fehlschlag trifft den Torso, wenn genug Erfolge dafür erzielt wurden.
 Wache                  | 2+          | Einnehmen der Wachposition dauert 2 Ticks. Danach kann zu einem beliebigen Zeitpunkt in den bewachten Bereich geschossen (Schnell oder gezielt) werden, ohne anvisieren zu müssen. Die Wache kann jederzeit abgebrochen werden.
 Magazin wechseln       | Langsam/2  | Füllt Ladungen wieder auf, kann optional Munitionstyp wechseln.
 
+<!--
+Sperrfeuer             | 5+          | Deckt einen Bereich mit Sperrfeuer ab. Aus allen Zielen im Bereich des Sperrfeuers, die sich nicht in Deckung befinden, wird alle 5 Ticks ein zufälliges Ziel an einem zufälligen Körperteil getroffen. Alle Aktionen von Gegnern, die sich in Deckung befinden, werden um 1 erschwert, bei einem Fehlschlag erleiden diese einen zufälligen Treffer. Erfordert eine Waffe mit Tick-Malus kleiner gleich 4. Gegner im Bereich des Sperrfeuers bekommen einmalig 1 Stress.
+-->
+
 ## Nahkampf
 
-Aktion                 |Dauer        | Beschreibung
+Aktion                 | Dauer       | Beschreibung
 -----------------------|-------------|--------------------------------------------------------
-Schneller Angriff      | Schnell     | Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 2
-Gezielter Angriff      | Langsam     | Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 1
-Schwerer Angriff       | Langsam     | Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 2. Verursacht doppelten Schmerz. Benötigt **1 Stamina**
-Konter                 | Schnell + 2 | Kann vor Gegnerangriff durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Schwierigkeit entspricht \#Gegnererfolge+1. Schaden ist dann (A-B)-1, nicht negativ.
+Schneller Angriff      | Schnell     | Trifft ein zufälliges Körperteil. Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 2
+Gezielter Angriff      | Langsam     | Trifft ein gezieltes Körperteil. Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 1 + (Kopf=2, Arm/Bein=1, Torso=0). Ein knapper Fehlschlag trifft den Torso, wenn genug Erfolge dafür erzielt wurden.
+Schwerer Angriff       | Langsam     | Trifft ein zufälliges Körperteil. Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 2. Verursacht doppelten Schaden, Rüstung wird, sofern vorhanden, als 1 höher behandelt. Verbraucht **1 Stamina**
+Lücken-Angriff         | Schnell     | Trifft ein zufälliges Körperteil. Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 2. Getragene Rüstung wird ignoriert. Verbraucht **1 Stamina**
+Konter                 | Schnell     | Kann bei gegnerischen Nahkampftreffer durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Verbraucht **1 Stamina**. Schwierigkeit entspricht \#Gegnererfolge. Bei Erfolg wird der Schaden des Konters berechnet, und vom Schaden des Nahkampftreffers abgezogen. Übriger Konterschaden geht gegen ein zufälliges Körperteil des Gegners
+Waffe werfen           | Schnell     | Wirft die Nahkampfwaffe auf ein zufälliges Körperteil. Reichweite ist 1 + Athletik/2 (aufgerundet) Zonen, Schwierigkeit ist Deckung + 2. Verwendet Nahkampf
+Tackle                 | 2 + Waffe   | Dauer entspricht Sprint + Angriff, Angreifer bewegt sich bis zu 3/2 Felder zum Ziel und führt zusätzlich einen Nahkampfangriff aus. Ist das Ziel in Verteidigungsstellung gibt es Nachteil -1, ansonsten Vorteil +1. Benötigt **1 Stamina**
+Verteidigungsstellung  | 3           | Einnehmen einer Verteidigungsstellung gegenüber einem Ziel, gibt dem Angreifer einem -1 Nachteil.
+
+<!--
 Entwaffnen            | 5 + Waffe  | Den Gegner entwaffnen. Schwierigkeit +2. Verbraucht **1 Stamina**. Bei Fehlschlag kann ggf. ein normaler Nahkampftreffer gelandet werden, wenn dafür genug Erfolge erzielt wurden.
 Knockout              | 10 + Waffe | Den Gegner ausknocken, oder direkt töten. Schwierigkeit +3. Wahlweise tödlich oder nur KO. Verbraucht **1 Stamina**. Bei Fehlschlag kann ggf. ein normaler Nahkampftreffer gelandet werden, wenn dafür genug Erfolge erzielt wurden.
-Verteidigungsstellung | 3          | Einnehmen einer Verteidigungsstellung gegenüber einem Ziel, erhöht die Schwierigkeit für den Angreifer um 1
-Tackle                | 2 + Waffe  | Dauer entspricht Sprint + Angriff, Angreifer bewegt sich bis zu 3/2 Felder zum Ziel und führt zusätzlich einen Nahkampfangriff aus. Ist das Ziel in Verteidigungsstellung gibt es Nachteil -1, ansonsten Vorteil +1. Verbraucht **1 Stamina**
+-->
 
 ## PSI
 
-Aktion                             | Dauer    | Fähigkeit |Beschreibung
+Aktion                             | Dauer    | Fähigkeit | Beschreibung
 -----------------------------------|----------|-----------|---------------------------------------------
-Generisches Einfühlen/Manipulieren | x1/x2/x3 | F/M       | Einfache/Mittlere/Schwere Aktionen
-Konzentrieren                      | 3[¹](#PSI-tick-1)       | K         | Stress abbauen, Manipulation erschweren oder umkehren, Bestimmte Aufgaben erleichtern.
-Stress verursachen                 | x1       | M         | Ziel bekommt (Erfolge-Gegenerfolge(Wille))+1 Stress (nur wenn Erfolge > Gegenerfolge)
-Wahrnehmung übernehmen             | x1+      | F         | Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich, dann kann der Übernehmende alles wahrnehmen, was das Ziel wahrnimmt
-Körper Übernehmen                  | x2+      | M         | Schwierigkeit = 2+Gegenerfolge(Wille), wenn Erfolgreich, dann ist Gegner übernommen und agiert nach Anweisung des Übernehmenden. Verbraucht **1 Fokus**
-Betäuben                           | x2       | M         | Tickzeit des Ziels wird um 6+Erfolge*3 erhöht. Verbraucht **1 Fokus**
-Falsche Wahrnehmung                | x3       | M         | Schwierigeit = 1+Gegenerfolge(Wille), wenn Erfolgreich dann nimmt das Ziel eine leicht andere Situation[²](#PSI-tick-2) war. Verbraucht **1 Fokus**
-Aktionen erzwingen                 | x2       | M         | Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich kann der Angreifer die nächsten 2 (Tick)Aktion des Ziels festlegen, jeder zusätzliche Erfolg erlaubt 1 weitere Aktion zu spezifizieren.
+Tief durchatmen                    | 3        | K[¹](#PSI-tick-1)        | Reduziert Stress um die Anzahl an Erfolgen einer Konzentrationsprobe
+Mentale Gegenwehr                  | 3        | K[¹](#PSI-tick-1)        | Kann bei gegnerischen PSI-Treffer eingesetzt durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Verbraucht **1 Fokus**. Reduziert die Erfolge des Gegners um die Erfolge des Konzetrationswurfes.
+Vorahnung                          | x1       | F         | Gibt Erfolge(Fühlen) Deckung (additiv) für die nächsten 2 Aktionen, sowie die selbe Anzahl an Nachteil für Nahkampfangreifer. Verbraucht **1 Fokus**
+Wahrnehmung übernehmen             | x1+      | F         | Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich, dann kann der Übernehmende alles wahrnehmen, was das Ziel wahrnimmt, anstelle der eigenen Wahrnehmung. Während die Wahrnehmung übernommen ist, können andere Aktionen durchgeführt werden
+Verwirren                          | x1       | M         | Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich bekommt Ziel -2 Nachteil auf alle Würfe während der nächsten 2 Aktionen. Keine Mentale Gegenwehr möglich.
+Stress verursachen                 | x1       | M         | Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich bekommt Ziel (Erfolge-Gegenerfolge(Wille))+1 Stress. Verbraucht **1 Fokus**
+Betäuben                           | x1       | M         | Tickzeit des Ziels wird um 6 erhöht, + 2 für jeden Krit. Verbraucht **1 Fokus**
+Aktionen erzwingen                 | x3       | M         | Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich kann der Angreifer die nächsten 2 (Tick)Aktion des Ziels festlegen, jeder zusätzliche Erfolg erlaubt 1 weitere Aktion zu spezifizieren. Verbraucht **1 Fokus**
 
 ::: {#PSI-tick-1}
-_¹ Konzentrieren ist ohne PSI-Implantat oder -Verstärker möglich und hat konstante Dauer._
-:::
-
-::: {#PSI-tick-2}
-_² Z.B. eine Person an einer anderen Position, etwas/jemand nicht da, mehr Gegner, etc._
+_¹ ist ohne PSI-Implantat oder -Verstärker möglich._
 :::
 
 <!--
@@ -101,13 +106,15 @@ Deckungsfeuer      | 3+\|3+     | (I) Wache und (M) Bewegung außerhalb des Wach
 
 ## Verschiedenes
 
-Aktion                     | Dauer               | Beschreibung
----------------------------|---------------------|--------------------------------------------------------
-Fenster öffnen/schließen   | 4                   | Öffnen, aber ohne das Fenster zu beschädigen
-Fenster einschlagen        | 2                   | Schneller öffnen, lässt sich aber nicht wieder schließen.
-Tür öffnen                 | 6                   | Eine nicht verschlossene Tür aufstoßen.
-Tür eintreten              | 3                   | Eine verschlossene Tür auftreten. Erfordert Athletikprobe mit Schwierigkeit abhängig von der Türstärke. Verbraucht **1 Stamina**
-Interaktion                | ~                   | Abhängig von der Interaktion
-Ausruhen                   | 5                   | Regeneriert 1 Stamina ODER 1 Fokus
-Überanstrengen             | 1                   | Regeneriert 1 Stamina ODER 1 Fokus. Verursacht 1 Schmerz
+Aktion                      | Dauer               | Beschreibung
+----------------------------|---------------------|--------------------------------------------------------
+Fenster öffnen/schließen    | 4                   | Öffnen, aber ohne das Fenster zu beschädigen
+Fenster einschlagen         | 2                   | Schneller öffnen, lässt sich aber nicht wieder schließen.
+Tür öffnen                  | 6                   | Eine nicht verschlossene Tür aufstoßen.
+Tür eintreten               | 3                   | Eine verschlossene Tür auftreten. Erfordert Athletikprobe mit Schwierigkeit abhängig von der Türstärke. Verbraucht **1 Stamina**
+Interaktion                 | ~                   | Abhängig von der Interaktion
+Ausruhen                    | 5                   | Regeneriert 1 Stamina ODER 1 Fokus
+Überanstrengen              | 1                   | Regeneriert 1 Stamina ODER 1 Fokus. Verursacht 1 Schmerz
+Erweiterungen umschalten    | 3                   | Schaltet einen spezialisierten Gegenstand zwischen zwei Erweiterungssets um.
+Superkondensator aktivieren | 1                   | Aktiviert die inaktiven Erweiterungen des Superkondensator-Boost
 

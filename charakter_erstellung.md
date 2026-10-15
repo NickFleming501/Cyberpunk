@@ -9,12 +9,12 @@ Ausrüstung                 | Einfach | Normal | Gut/Spezialisiert
 [Rüstung](#rüstung-1)                    | 4       | 8      | 12
 [Schusswaffe](#schusswaffen-1)                | 4       | 8      | 16
 [Nahkampfwaffe](#nahkampfwaffen)              | 4       | 8      | 16
-[Verstärker](#psi-verstärker)                 | 4       | 8      | 16
+[Verstärker](#psi-verstärker)[³](#chargen-3)                | 4       | 8      | 16
 [Verbrauchsgegenstände](#verbrauchsgegenstände) (x3) | 1       | 2      | 3
 [Energiequelle](#energiequelle)              | 2       | 4      | 6
-[Cyborg-Körperteil](#cyborg-körperteil)[¹](#chargen-1)         | 2       | 4      | 6
-Cyborg-Komplettkörper[²](#chargen-2)     | 9       | 18     | 27
-DiMES                      | 0       | 1      | 2
+[Cyborg-Körperteil](#cyborg-körperteil)[¹](#chargen-1)         | 2       | 3      | 5
+Cyborg-Komplettkörper[²](#chargen-2)     | 8       | 12     | 20
+[DiMES](#dimes)[⁴](#chargen-4)                     | 0       | 1      | 2
 
 ::: {#chargen-1}
 _¹ Für Cyborg-Beine kostet ein zweites dazu passendes, identisch gebautes Bein nur 1 Punkt._
@@ -24,11 +24,20 @@ _¹ Für Cyborg-Beine kostet ein zweites dazu passendes, identisch gebautes Bein
 _² Beinhaltet Arme, Beine, Torso und Kopf (aber keine Energiequelle), mit der selben Qualitätsstufe._
 :::
 
+::: {#chargen-3}
+_³ Beinhaltet ein PSI-Implantat_
+:::
+
+::: {#chargen-4}
+_⁴ Jedes weitere DiMES kostet +2 Punkte mehr._
+:::
+
 Sonstiges        | Kosten | Info
 -----------------|--------|--------------------
 Kleidung         | 0      | Einfache Kleidung ohne besondere Funktion
-[Erweiterung](#Erweiterungen)      | 1      | (Cyber-)Erweiterung im Wert von ca. X Credits. Je nach Erweiterung kann/muss es in ein Cyborg-Körperteil eingebaut werden
+[Erweiterung](#Erweiterungen)      | 1      | (Cyber-)Erweiterung im Wert von ca. 1500 Credits. Je nach Erweiterung kann/muss es in ein Cyborg-Körperteil eingebaut werden
 [Spezialmunition](#spezialmunition)  | 1      | Jeder Munitionstyp kostet extra. Muss für jede Waffe separat gekauft werden.
+PSI-Implantat    | 1      | Ermöglicht PSI
 
 <!--
 <a href="#armor">Kampfanzug</a>                                           | 4       | 8      | 12
