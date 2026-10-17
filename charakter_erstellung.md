@@ -14,6 +14,7 @@ Ausrüstung                 | Einfach | Normal | Gut/Spezialisiert
 [Energiequelle](#energiequelle)              | 2       | 4      | 6
 [Cyborg-Körperteil](#cyborg-körperteil)[¹](#chargen-1)         | 2       | 3      | 5
 Cyborg-Komplettkörper[²](#chargen-2)     | 8       | 12     | 20
+[Drohne](#drohnen)                     | 2       | 4      | 8
 [DiMES](#dimes)[⁴](#chargen-4)                     | 0       | 1      | 2
 
 ::: {#chargen-1}
@@ -29,7 +30,7 @@ _³ Beinhaltet ein PSI-Implantat_
 :::
 
 ::: {#chargen-4}
-_⁴ Jedes weitere DiMES kostet +2 Punkte mehr._
+_⁴ Jedes weitere DiMES kostet +2 Punkte mehr als das vorherige._
 :::
 
 Sonstiges        | Kosten | Info

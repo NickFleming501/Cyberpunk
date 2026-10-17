@@ -11,7 +11,7 @@ Fähigkeiten gehandhabt.
 Zähigkeit   |      Körperliche Resistenz, Stamina
 Wille       |            Mentale Resistenz
 Athletik    |      Bewegungsfähigkeit und Stärke
-Wahrnehmung | Wahrnehmung und Reaktionsgeschwindigkeit
+Intuition   | Wahrnehmung und Reaktionsgeschwindigkeit
 
 ### Zähigkeit
 
@@ -192,6 +192,12 @@ Bei einer gescheiterten Willensprobe erleidet der Charakter einen Zusammenbruch.
 
 - **Flucht**: Der Charakter rennt oder kriecht so gut es geht davon, wahlweise schreiend. Der Charakter geht dabei nicht in Deckung.
 - **Ohnmacht/Lähmung**: Der Charakter wird bewegungs- und reaktionslos, oder wahlweise ohnmächtig. Der Charakter geht dabei nicht in Deckung.
+
+#### Basisstress
+
+Basisstress ist eine nicht reduzierbare Form von Stress, die durch Cyberware entsteht und als Mindest-Stress funktioniert. Basisstress löst keine Willensproben direkt aus. Wird eine Schwelle durch (Erhöhung von) Basisstress überschritten, wird die Willensprobe erst durchgeführt wenn der Charakter das nächste Mal normalen Stress erhält.
+
+Bestimmte Ausrüstung gibt halben Basisstress (z.B. 0.5 oder 1.5), in diesen Fällen wird aller Basisstress zusammenaddiert und erst am Ende aufgerundet.
 
 ## Ruhepausen
 

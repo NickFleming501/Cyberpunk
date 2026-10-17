@@ -1,6 +1,9 @@
 # Mission
 
-Wenn Charaktere in ein gegnerisches Gebiet eindringen, wird dies als Mission betrachtet. Während Missionen spielt Zeit eine kritische Rolle: Charaktere teilen sich auf um parallel unterschiedliche Ziele zu erreichen während Wachen patrouillieren und Leute langsam verdächtig werden.
+Wenn Charaktere in ein gegnerisches Gebiet eindringen, wird dies als Mission betrachtet.
+
+<!--
+Während Missionen spielt Zeit eine kritische Rolle: Charaktere teilen sich auf um parallel unterschiedliche Ziele zu erreichen während Wachen patrouillieren und Leute langsam verdächtig werden.
 
 ## Zeit
 
@@ -31,6 +34,7 @@ Wichtige Daten herunterladen | Lang        | 8
 Backdoor installieren        | Kurz        | 2
 Verkleidung wecheln          | Kurz        | 2
 :::
+-->
 
 ## Verdacht
 
@@ -38,7 +42,7 @@ Aktionen, oder die Auswirkungen von Aktionen, können bemerkt werden. Dies führ
 
 Verdacht wird erhöht durch:
 
-- Fehlgeschlagene Proben: Ein Fehlschlag um 1/2/3/4/5 usw., erhöht den Verdacht um 1/2/3/5/8
+- Proben: Das Ergebnis der Probe wird mit der Summe aus Schwierigkeit und Gesamtauffälligkeit (siehe [Auffälligkeit](#auffälligkeit)) verglichen. Bei halben Punkten entscheidet der Erfolg der Probe: Bei Erfolg wird die Schwelle abgerundet, bei einem Fehlschlag wird aufgerundet Ein Verfehlen der Schwelle um 1/2/3/4/5 usw., erhöht den Verdacht um 1/2/3/5/8, selbst wenn die Probe erfolgreich ist.
 - Vorkommnisse: Jede weitere Ungewöhnlichkeit erhöht den Verdacht um 1/2/3/4/5
 
 Vorkommnisse können einen Mindestverdacht verursachen:
@@ -49,6 +53,18 @@ Regelverstoß           | 5       | Licht wo keins sein sollte, fehlende Person,
 Möglicher Eindringling | 15      | Spuren von Hacking/Schlossknacken, fehlende Wache, Alarm
 Spuren von Gewalt      | 25      | Aufgebrochene Tür, Waffen, Blutspuren, Schüsse in der Ferne
 Bedrohung              | 35      | Tote Person, Bombe, etc.
+
+::: {.accordion data-title="Beispiele für Verdacht durch Proben"}
+Probe mit Schwierigkeit 2:
+
+Gesamtauffälligkeit | 1 Erfolg            | 2 Erfolge            | 3 Erfolge
+--------------------|---------------------|----------------------|-------------------
+0                   | 1 Stufe → 1 Verdacht | gelungen, kein Verdacht | gelungen, kein Verdacht
+0,5                 | 2 Stufen → 2 Verdacht | gelungen, kein Verdacht | gelungen, kein Verdacht
+1                   | 2 Stufen → 2 Verdacht | gelungen, 1 Stufe → 1 Verdacht | gelungen, kein Verdacht
+1,5                 | 3 Stufen → 3 Verdacht | gelungen, 1 Stufe → 1 Verdacht | gelungen, kein Verdacht
+2                   | 3 Stufen → 3 Verdacht | gelungen, 2 Stufen → 2 Verdacht | gelungen, 1 Stufe → 1 Verdacht
+:::
 
 ### Verdachtsstufen
 

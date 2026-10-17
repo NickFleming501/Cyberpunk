@@ -13,7 +13,7 @@ Klettern           | 8      | Unter Dingen hindurch kriechen oder darüber klett
 In die Hocke gehen | 1      | Gibt +1 Vorteil auf Schüsse
 Hinlegen           | 2      | Gibt +3 Vorteil auf Schüsse, aber Nahkampfdeckung für nahe Ziele ist um 1 erhöht, erfordert Aufstehen
 Aufstehen          | 2      | Aufstehen aus dem Liegen
-Disengage          | 2\|3    | Positionieren bzw. Bewegung aus einem Nahkampf heraus (weg von einem Nahkämpfer). Erfordet eine erfolgreiche Athletik-Probe, Schwierigkeit ist Erfolge(Nahkampf) des Nahkämpfers.
+Disengage          | 2\|3    | Positionieren bzw. Bewegung aus einem Nahkampf heraus (weg von einem Nahkämpfer). Erfordet eine erfolgreiche Athletik-Probe, Schwierigkeit ist Erfolge(Nahkampf) des Nahkämpfers. Bei mehreren Nahkämpfern zeählt nur der höchste Nahkampf-Wert.
 
 <!--
 Aktion             | Dauer  |Beschreibung
@@ -45,6 +45,8 @@ Gegenstand aus Rucksack hervorholen    | 10               | Schwer erreichbare G
 
 ## Schusswaffen
 
+Schüsse werden mit Schusswaffen geworfen und erfordern eine Schusswaffe.
+
 Aktion                 | Dauer       | Beschreibung
 -----------------------|-------------|--------------------------------------------------------
 Schnelles Anvisieren   | 1           | Die Waffe auf ein (neues) Ziel richten. Erhöhrt Schwierigkeit des nächsten Schuss um 1.
@@ -59,6 +61,8 @@ Sperrfeuer             | 5+          | Deckt einen Bereich mit Sperrfeuer ab. Au
 -->
 
 ## Nahkampf
+
+Nahkampfangriffe werden mit Nahkampf geworfen und erfordern eine Nahkampfwaffe.
 
 Aktion                 | Dauer       | Beschreibung
 -----------------------|-------------|--------------------------------------------------------
@@ -78,13 +82,15 @@ Knockout              | 10 + Waffe | Den Gegner ausknocken, oder direkt töten. 
 
 ## PSI
 
+PSI-Aktionen werden mit Konzentration, Fühlen oder Manipulieren geworfen. PSI-Aktionen mit Fühlen- oder Manipulieren-Probe erfordern ein PSI-Implantat, PSI-Aktionen mit Konzentrationsprobe können von jedem durchgeführt werden.
+
 Aktion                             | Dauer    | Fähigkeit | Beschreibung
 -----------------------------------|----------|-----------|---------------------------------------------
 Tief durchatmen                    | 3        | K[¹](#PSI-tick-1)        | Reduziert Stress um die Anzahl an Erfolgen einer Konzentrationsprobe
-Mentale Gegenwehr                  | 3        | K[¹](#PSI-tick-1)        | Kann bei gegnerischen PSI-Treffer eingesetzt durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Verbraucht **1 Fokus**. Reduziert die Erfolge des Gegners um die Erfolge des Konzetrationswurfes.
-Vorahnung                          | x1       | F         | Gibt Erfolge(Fühlen) Deckung (additiv) für die nächsten 2 Aktionen, sowie die selbe Anzahl an Nachteil für Nahkampfangreifer. Verbraucht **1 Fokus**
+Mentale Gegenwehr                  | 3        | K[¹](#PSI-tick-1)        | Kann bei gegnerischen PSI-Treffer eingesetzt durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Verbraucht **1 Fokus**. Reduziert die Erfolge des Gegners um die Erfolge des Konzetrationswurfes. Nur möglich, wenn Intuition größer als die Heimlichkeit des PSI-Verstärker des Angreifers ist.
+Vorahnung                          | x1       | F         | Gibt Erfolge(Fühlen) Deckung (additiv) für die nächsten 3 Aktionen, sowie die selbe Anzahl an Nachteil für Nahkampfangreifer. Verbraucht **1 Fokus**
 Wahrnehmung übernehmen             | x1+      | F         | Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich, dann kann der Übernehmende alles wahrnehmen, was das Ziel wahrnimmt, anstelle der eigenen Wahrnehmung. Während die Wahrnehmung übernommen ist, können andere Aktionen durchgeführt werden
-Verwirren                          | x1       | M         | Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich bekommt Ziel -2 Nachteil auf alle Würfe während der nächsten 2 Aktionen. Keine Mentale Gegenwehr möglich.
+Verwirren                          | x1       | M         | Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich bekommt Ziel 2 Nachteil auf alle Würfe während der nächsten 2 Aktionen. Keine Mentale Gegenwehr möglich.
 Stress verursachen                 | x1       | M         | Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich bekommt Ziel (Erfolge-Gegenerfolge(Wille))+1 Stress. Verbraucht **1 Fokus**
 Betäuben                           | x1       | M         | Tickzeit des Ziels wird um 6 erhöht, + 2 für jeden Krit. Verbraucht **1 Fokus**
 Aktionen erzwingen                 | x3       | M         | Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich kann der Angreifer die nächsten 2 (Tick)Aktion des Ziels festlegen, jeder zusätzliche Erfolg erlaubt 1 weitere Aktion zu spezifizieren. Verbraucht **1 Fokus**
@@ -104,10 +110,23 @@ Taktischer Eingang | 3+\|5      | (I) Tür öffnen und (A) hindurchgehen. Option
 Deckungsfeuer      | 3+\|3+     | (I) Wache und (M) Bewegung außerhalb des Wachbereichs, mit Deckung + 1.
 -->
 
+## Taktik
+
+Taktische Aktionen werden mit Taktik geworfen.
+
+Aktion                      | Dauer               | Beschreibung
+----------------------------|---------------------|-------------------------------------------------------
+Deckungsangriffe            | Schnell+            | Erfordert eine Waffe. Angriffe von Gegnern innerhalb der direkten Waffenreichweite gegen einen bestimmten Verbündeten werden erschwert: Deckung ist mindestens Erfolge(Taktik)/2 (aufgerundet). Verbraucht **1 Stamina**
+Schwachstelle erkennen      | 2                   | Gibt Verbündeten in Rufweite 1+Erfolge(Taktik)/2 (aufgerundet) Vorteil auf die nächste offensive Aktion gegen einen bestimmten Gegner
+Antreiben                   | 2                   | Reduziert die verbleibende Tick-Dauer der aktuellen Aktion eines Verbündeten in Rufweite um 3 + Erfolge(Taktik)/2 (aufgerundet), aber höchstens bis auf 1 Tick. Verbraucht **1 Fokus**
+Warnruf                     | 1                   | Kann bei einer Aktion eines Gegners gegen einen Verbündeten in Rufweite durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Der Angreifer erhält 1 + Erfolge(Taktik) Nachteil auf die Aktion. Verbraucht **1 Fokus**. Nicht gegen PSI-Aktionen einsetzbar.
+
 ## Verschiedenes
 
 Aktion                      | Dauer               | Beschreibung
 ----------------------------|---------------------|--------------------------------------------------------
+Drohne steuern              | Aktion + 1/Drohne   | Eine oder mehrere verknüpfte Drohnen führen dieselbe Aktion aus (Ziele bzw. Zonen können unterschiedlich sein). Dauer ist die längste Aktion der Drohnen, +1 für jede Drohne nach der ersten. Angriffe während Wache der Drohne funktionieren sind auch ohne direkte Kontrolle möglich. Mögliche Aktionen: _Bewegen, Positionieren, Klettern, Anvisieren (schnell und normal), Schneller und Gezielter Schuss, Wache, Schneller und Gezielter Angriff, Interaktion_
+Drohnenschwarm teilen/einen | 2                   | Teilt bzw. vereint einen Drohnenschwarm. Jeder Teil des Schwarms bindet **1 Fokus**
 Fenster öffnen/schließen    | 4                   | Öffnen, aber ohne das Fenster zu beschädigen
 Fenster einschlagen         | 2                   | Schneller öffnen, lässt sich aber nicht wieder schließen.
 Tür öffnen                  | 6                   | Eine nicht verschlossene Tür aufstoßen.

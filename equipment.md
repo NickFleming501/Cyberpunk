@@ -15,14 +15,23 @@ Gegenstände werden je nach Typ mit der entsprechenden Generatormatrix erstellt.
 
 ### Auffälligkeit
 
-Viele Gegenstände besitzen einen Auffälligkeitswert. Dieser beschreibt, welches Aufsehen die Waffe bei anderen Personen erregen, die den Umgang mit Waffen gewohnt sind, z.B., Gang-Mitglieder, andere Söldner oder Sicherheitskräften.
+Viele Gegenstände besitzen einen Auffälligkeitswert. Dieser beschreibt, welches Aufsehen die Waffe bei anderen Personen erregen, die den Umgang mit Waffen gewohnt sind, z.B., Gang-Mitglieder, andere Söldner oder Sicherheitskräften. Dies wirkt sich vorallem darauf aus, wie schnell [Verdacht](#verdacht) steigt.
 
-Auffälligkeit           | Beispiel         | Beschreibung 
-------------------------|------------------|---------------------------------------------------------------------
-Integriert / Getarnt    | Gehstock-Pistole | Der Gegenstand ist in etwas anderem verborgen, z.B. in einem unauffälligem Gegenstand oder in einem Cyborg-Teil. Ein Integrierter Gegenstand wird auch bei einem Sicherheitscheck nicht gefunden (wohl aber der "behausende" Gegenstand)
-Versteckt / Unauffällig | CCW Pistole      | Der Gegenstand ist generell nicht zu sehen, und kann meist nur bei einem Sicherheitscheck gefunden werden
-Gewöhnlich              | Gewehr           | Der Gegenstand ist generell offen sichtbar, sieht für Personen die an Waffen gewöhnt sind jedoch nicht bedrohlich aus. Ein Gewöhnlicher Gegenstand kann nur gegenüber Zivilisten verborgen werden und wird ansonsten auch ohne Sicherheitscheck bemerkt.
-Auffällig               | Minigun          | Der Gegenstand ist für jeden zu sehen und kann nicht von einer Person verborgen getragen werden und gleichzeitig zugreifbar sein (aber z.B. in einem großen verschlossenen Behälter). Der Gegenstand sieht illegal aus und wird entsprechend kontrolliert, und löst generell Unmut aus.
+Auffälligkeit           | Wert | Beispiel         | Beschreibung 
+------------------------|------|------------------|---------------------------------------------------------------------
+Integriert / Getarnt    | -0.5 | Gehstock-Pistole | Der Gegenstand ist in etwas anderem verborgen, z.B. in einem unauffälligem Gegenstand oder in einem Cyborg-Teil. Ein Integrierter Gegenstand wird auch bei einem Sicherheitscheck nicht gefunden (wohl aber der "behausende" Gegenstand)
+Versteckt / Unauffällig | 0    | CCW Pistole      | Der Gegenstand ist generell nicht zu sehen, und kann meist nur bei einem Sicherheitscheck gefunden werden
+Gewöhnlich              | 0.5  | Gewehr           | Der Gegenstand ist generell offen sichtbar, sieht für Personen die an Waffen gewöhnt sind jedoch nicht bedrohlich aus. Ein Gewöhnlicher Gegenstand kann nur gegenüber Zivilisten verborgen werden und wird ansonsten auch ohne Sicherheitscheck bemerkt.
+Auffällig               | 1    | Minigun          | Der Gegenstand ist für jeden zu sehen und kann nicht von einer Person verborgen getragen werden und gleichzeitig zugreifbar sein (aber z.B. in einem großen verschlossenen Behälter). Der Gegenstand sieht illegal aus und wird entsprechend kontrolliert, und löst generell Unmut aus.
+
+**Gesamtauffälligkeit**: Summe der Auffälligkeit aller zugreifbar getragenen Gegenstände eines Charakters, minus 0.5, Minimum 0. Bei Cyberware wird dabei nur das auffälligste Körperteil gewertet.
+
+::: {.accordion data-title="Beispiele"}
+- Gewehr (Gewöhnlich) und Weste (Gewöhnlich): 0.5 + 0.5 - 0.5 = **0,5**
+- CCW Pistole (Versteckt) und Weste (Gewöhnlich): 0 + 0.5 - 0.5 = **0**
+- Shotgun (Auffällig), Weste (Gewöhnlich) und zwei Cyborg-Arme (Auffällig und Gewöhnlich): 1 + 0.5 + 1 - 0,5 = **2**
+- Gehstock-Pistole (Getarnt), Leichte Rüstung (Auffällig) und Cyborg-Bein (Auffällig): -0.5 + 1 + 1 - 0,5 = **1**
+:::
 
 ### Kapazität
 
@@ -48,12 +57,13 @@ Einfach | 2x B, 2x C       | 3
 Normal  | 1x A, 2x B, 1x C | 6
 Gut     | 2x A, 2x B       | 10
 
+<!--
 ### Exoskelett
 
 Exoskelette können anstelle einer Rüstung getragen werden.
 
 P | Fernkampf-Rüstung | Nahkampf-Rüstung | Kapazität | Athletik-Bonus
---|-------------------|------------------|-----------|-------------—
+--|-------------------|------------------|-----------|----------------
 S | Immun             | Immun            | 30        | 10
 A | 3                 | 4                | 12        | 4
 B | 2                 | 3                | 8         | 2
@@ -64,6 +74,7 @@ C | 1                 | 2                | 4         | 1
 - Nahkampf-Rüstung: Erhöht den Nahkampf-Rüstungswert, der von Nahkampfangriffen abgezogen wird
 - Kapazität: Für Erweiterungen die in das Exoskelett eingebaut sind.
 - Atheltik-Bonus: Gibt Vorteil auf Athletik-Würfe bei denen das Exoskelett helfen kann.
+-->
 
 ## Schusswaffen
 
@@ -71,8 +82,8 @@ P | Reichweite | Auffälligkeit   | Schaden | Krit-Schaden | Tick
 --|------------|-----------------|---------|--------------|------
 S | Unendlich  | Integriert      | 8       | 4            | 1\|2
 A | Hoch       | Versteckt       | 4       | 2            | 2\|4
-B | Normal     | Gewöhnlich      | 2       | 1            | 4\|6
-C | Gering     | Auffällig       | 1       | 0.5          | 6\|8
+B | Normal     | Gewöhnlich      | 2       | 1            | 4\|8
+C | Gering     | Auffällig       | 1       | 0.5          | 6\|10
 
 - Reichweite: Reichweite im Kampf
 	- Gering: Selbe oder benachbarte Zone, danach Nachteil von 2 pro weitere Zone. Nahkampfdeckung nur wenn bereits im Nahkampf verwickelt
@@ -121,7 +132,7 @@ P | Auffälligkeit   | Schmerz | Krit-Schaden | Tick
 S | Integriert      | 8       | 5            | 1\|2
 A | Versteckt       | 4       | 3            | 2\|4
 B | Gewöhnlich      | 2       | 2            | 4\|8
-C | Auffällig       | 1       | 1            | 8\|12
+C | Auffällig       | 1       | 1            | 6\|10
 
 - Für Angriffe muss sich generell der Angreifer an das Ziel heran positionieren.
 - Tick ist Wert, der auf die Tickzeit der Aktionen addiert wird.
@@ -175,32 +186,34 @@ Normal  | 1x A, 2x B, 2x C
 Gut     | 2x A, 2x B, 1x C
 Spezial | 1x S, 2x B, 2x C
 
-<!--
 ## Drohnen
 
-P | Auffälligkeit | Bewegung   | Kapazität | Stabilität | ???
---|---------------|------------|-----------|------------|-----------
-S | Getarnt       | Schwarm    | 12        | 24         | 
-A | Unauffällig   | Fliegend   | 8         | 12         | 
-B | Gewöhnlich    | Kletternd  | 4         | 9          | 
-C | Auffällig     | Boden      | 2         | 6          | 
+Drohnen binden Fokus des Charakters. Ein Charakter muss pro Drone **1 Fokus** für das Kontrollieren der Drohne reservieren. Solange eine Drone kontrolliert wird, kann der entsprechende Fokus nicht verwendet werden.
+
+P | Auffälligkeit | Bewegung   | Kapazität | Stabilität | Fähigkeitswert
+--|---------------|------------|-----------|------------|----------------
+S | Getarnt       | Schwarm    | 12        | 20         | 6
+A | Unauffällig   | Fliegend   | 8         | 10         | 4
+B | Gewöhnlich    | Kletternd  | 4         | 8          | 3
+C | Auffällig     | Boden      | 2         | 4          | 2
 
 - Bewegung:
     - Boden: Erlaubt bodengebundene, horizontale Bewegung, sowie. Treppen o.ä.
-    - Kletternd: Erlaubt Bewegung entlang beliebiger Oberflächen.
-    - Fliegend: Erlaubt Bewegung durch die Luft.
-	- Schwarm: Statt einer einzelnen Drone handelt es sich um einen kleinen Schwarm fliegender Dronen. Der Schwarm kann sich aufteilen, aber Stabilität und Fähigkeiten werden ebenfalls aufgeteilt.
-- Systeme: Anzahl einbaubarer Systeme:
-    - Waffensystem: Drone kann mit einer Waffe ausgestattet werden und besitzt die dafür notwendige Fähigkeit auf Stufe 2. Zusätzliche Waffensysteme können diesen Wert um 2 erhöhen.
-    - Sensorsystem: Drone besitzt spezielle Wahrnehmung, die auch übertragen werden kann. Die Wahrnehmung entspricht entweder der Intuition des Betrachters, oder 2*(Anzahl Sensorsysteme)
-    - Panzerung: Erhöht Rüstung um 1, bis zu einem Maximum von 3
-    - Kapazität: Erhöht Erweiterungs-Kapazität der Drone um 1
-    - Werkzeug: Besitzt Werkzeug und die dafür notwendige Fähigkeit auf Stufe 2. Zusätzliche Werkzeugsysteme können diesen Wert um 2 erhöhen.
-    - Anderes
+    - Kletternd: Erlaubt Bewegung entlang beliebiger Oberflächen, mit uneingeschränkter Bewegungsgeschwindigkeit.
+    - Fliegend: Erlaubt Bewegung durch die Luft. Kann Nahkampf ohne Disengage verlassen.
+	- Schwarm: Statt einer einzelnen Drone handelt es sich um einen kleinen Schwarm fliegender Dronen. Der Schwarm kann sich aufteilen, aber Stabilität und Fähigkeiten werden ebenfalls aufgeteilt, und jeder Teil bindet jeweils 1 Fokus.
+- Kapazität: Für Erweiterungen, z.B.Eingebaute Waffe, Sicht- oder Werkzeug.
 - Stabilität: Trefferpunkte der Drone. Dronen haben nur eine einzige Trefferzone und keinen Gesamtschmerz.
-    - Erleidet die Drone Schaden größergleich dem Stabilitätswert und kleiner als der doppelte Stabilitätswert, so zählt sie als beschädigt und ist aktionsunfähig
-    - Erleidet die Drone Schaden größergleich dem doppelten Stabilitätswert. so ist sie irreperabel zerstört.
-- ???
+    - Erleidet die Drohne Schaden größergleich dem Stabilitätswert, so zählt sie als beschädigt und ist aktionsunfähig
+    - Erleidet die Drohne Schaden größergleich dem doppelten Stabilitätswert. so ist sie irreperabel zerstört.
+	- **Schwachpunkt**: die Drohnen hat einen Schwachpunkt der vergleichbar wie ein menschlicher Kopf durch gezielte Angriffe getroffen werden kann, was doppelten Schaden verursacht.
+- Fähigkeitswert: Wert für Fähigkeiten der Drohne, wird verwendet an Stelle von Athletik, Intuition, Schusswaffen, Nahkampf, sowie für ein Werkzeug-Skill. Drohnen haben kein Stamina/Fokus.
+
+Grundausstattung jeder Drohne:
+
+- Jede Drohne besitzt eine Kamera, Mikrofon und Kommunikator eingebaut, die nicht von der Kapazität abgezogen werden.
+- Rüstung 1 gegen Nah- und Fernkampf
+- Entsprechende Bewegung ohne Würfe: Drohnen brauchen kein Parkour
 
  Type   | P
 --------|----------------
@@ -209,7 +222,14 @@ Normal  | 1x A, 2x B, 2x C
 Gut     | 2x A, 2x B, 1x C
 Spezial | 1x S, 2x B, 2x C
 
--->
+### Programme
+
+Drohnen können außerhalb von Kämpfen einfache Programme autonom durchführen:
+
+- **Warten**: Drohne wartet
+- **Folgen**: Drohne folgt einem Charakter, wahlweise Heimlich
+- **Bewegen**: Begibt sich über einen festgelegten Weg zu einem bestimmten Ort.
+- **Beobachten/Erkunden**: Drohne beobachtet oder erkundet und achtet auf vorab festgelegte Details, die automatisch gemeldet werden.
 
 ## DiMES
 
@@ -302,27 +322,27 @@ Gut     | 2x A, 1x B
 
 ### Energiequelle
 
-Typ     | Energiequelle       | Kapazität | Beschreibung
---------|---------------------|-----------|---------------------------------------------------------------
-Einfach | Batterie            | 16        | Muss nach maximal 20h wieder aufgeladen werden, was bis zu 6h dauert.
-Normal  | Bioreaktor          | 28        | Erzeugt Energie durch mehr Essen. Etwa 5x soviel, wie eine normale Person isst. Es gibt spezielle "Energieriegel", die besonders viele Nährstoffe für Bioreaktoren beinhalten
-Gut     | Radionuklidbatterie | 40        | Erzeugt Energie ohne weitere Vorraussetzungen. Die Batterie muss alle paar Jahre ausgetauscht werden.
-Spezial | Superkondensator    | 20 \| 60   | Erzeugt begrenzte Energie im Normalbetrieb, aber kann bei Bedarf für ca. 10 Minuten nahezu unbegrenzt Energie produzieren. Danach muss der Superkondensator wieder aufgeladen, was bis zu 4h dauert. Dies erlaubt selektive Aktivierung[¹](#cyber-energy-1) von zusätzlicher Cyberware. Körperteile müssen über den Normalbetrieb angeschlossen sein, für Erweiterungen wird beim Einbau entschieden ob sieTeil des Normalbetriebs sind oder nur im geboosteten Zustand aktiv sind.
+Typ     | Energiequelle       | Kapazität | Basisstress | Beschreibung
+--------|---------------------|-----------|-------------|---------------------------------------------------------------
+Einfach | Batterie            | 16        | 0.5         | Muss nach maximal 20h wieder aufgeladen werden, was bis zu 6h dauert.
+Normal  | Bioreaktor          | 28        | 1           | Erzeugt Energie durch mehr Essen. Etwa 5x soviel, wie eine normale Person isst. Es gibt spezielle "Energieriegel", die besonders viele Nährstoffe für Bioreaktoren beinhalten
+Gut     | Radionuklidbatterie | 40        | 1.5         | Erzeugt Energie ohne weitere Voraussetzungen. Die Batterie muss alle paar Jahre ausgetauscht werden.
+Spezial | Superkondensator    | 20 \| 60   | 1\|2         | Erzeugt begrenzte Energie im Normalbetrieb, aber kann bei Bedarf für ca. 10 Minuten nahezu unbegrenzt Energie produzieren. Danach muss der Superkondensator wieder aufgeladen, was bis zu 4h dauert. Dies erlaubt selektive Aktivierung[¹](#cyber-energy-1) von zusätzlicher Cyberware. Körperteile müssen über den Normalbetrieb angeschlossen sein, für Erweiterungen wird beim Einbau entschieden ob sie Teil des Normalbetriebs sind oder nur im geboosteten Zustand aktiv sind.
 
 ::: {#cyber-energy-1}
-_¹ Basisstress besteht auch für deaktivierte Cyberware._
+_¹ Wenn der Superkondensator aktiviert wird, erhöht sich der Basisstress von 1 auf 2. Nach Ende des Boosts sinkt der Basisstress wieder auf 1._
 :::
 
 ### Cyborg-Körperteil
 
 P | Auffälligkeit | Rüstung | Kapazität | Basisstress
 --|---------------|---------|-----------|-------------
-A | Versteckt     | 1       | +4        | 0.5
-B | Gewöhnlich    | 0       | ~0        | 1
-C | Auffällig     | -1      | -4        | 2
+A | Versteckt     | 1\|1     | +4        | 0
+B | Gewöhnlich    | 0       | ~0        | 0.5
+C | Auffällig     | 0\|-1 oder -1\|0 | -4        | 1
 
 - Auffälligkeit: Gilt für alle in den Körperteil eingebauten Erweiterungen
-- Rüstung: Eingebaute Rüstung für Nah-/Fernkampf. Negative Rüstung erhöht den eingehenden Schaden
+- Rüstung: Eingebaute Rüstung für Nah- bzw. Fernkampf. Bei C kann gewählt werden zwischen Nah- oder Fernkampf. Negative Rüstung erhöht Schaden
 - Kapazität: Kapazität für das Körperteil (negative Kapazität senkt die Gesamtkapazität)
 - Basisstress: Erhöht den Basisstress (aufgerundet)
 
@@ -355,9 +375,9 @@ Auto-Ausweicher                 | -10       | 5000  | Cyborg-Körper     | Gibt 
 Automatische Blende             | -4        | 2000  | Sicht (kein DiMES) | Immunität gegen Flash
 Automatische Reparatur          | -8        | 4000  | Cyborg-*          | Regeneriert nicht-kritischen Schaden an Cyborg-Körperteilen, ca. 1 Box pro Minute
 Bionische Fingerspitzen         | -2        | 1000  | Cyborg-Arm        | Erlaubt es die Fingerspitzen anzupassen, sodass sie veränderbare (oder gar keine) Fingerabdrücke haben.
-Brechstangenfunktion            | -2        | 1000  | Nahkampfwaffe     | Gibt +2 Vorteil auf gewaltsames Öffnen von Türen u.ä.
 Bionische Stimmbänder           | -2        | 1000  | Cyborg-Kopf       | Verstellt die Stimme zu der einer anderen Person
 Blackbox-Recorder               | -1        | 500   | Cyborg-Kopf       | Zeichnet Sinneswahrnehmungen auf, Aufzeichnung überlebt auch Zerstörung des entsprechended Kopfes
+Brechstangenfunktion            | -2        | 1000  | Nahkampfwaffe     | Gibt +2 Vorteil auf gewaltsames Öffnen von Türen u.ä.
 Datenbank                       | -1        | 500   | Beliebig          | Erlaubt extrem große Datenmengen zu speichern
 Disko-Modus                     | -1        | 500   | Beliebig          | Macht Licht, bunte Farben und coole Mucke
 Dokumentenscanner               | -1        | 500   | Sicht             | Ermöglicht schnell größere Mengen an Text und Dokumenten zu scannen

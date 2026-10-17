@@ -1274,10 +1274,6 @@ color: inherit;
           </ul></li>
           <li><a href="#mission" id="toc-mission">Mission</a>
           <ul>
-          <li><a href="#zeit" id="toc-zeit">Zeit</a>
-          <ul>
-          <li><a href="#erkundungs-ticks" id="toc-erkundungs-ticks">Erkundungs-Ticks</a></li>
-          </ul></li>
           <li><a href="#verdacht" id="toc-verdacht">Verdacht</a>
           <ul>
           <li><a href="#verdachtsstufen" id="toc-verdachtsstufen">Verdachtsstufen</a></li>
@@ -1302,6 +1298,7 @@ color: inherit;
           <li><a href="#schusswaffen" id="toc-schusswaffen">Schusswaffen</a></li>
           <li><a href="#nahkampf" id="toc-nahkampf">Nahkampf</a></li>
           <li><a href="#psi" id="toc-psi">PSI</a></li>
+          <li><a href="#taktik" id="toc-taktik">Taktik</a></li>
           <li><a href="#verschiedenes" id="toc-verschiedenes">Verschiedenes</a></li>
           </ul></li>
           <li><a href="#charakter-erstellung" id="toc-charakter-erstellung">Charakter-Erstellung</a></li>
@@ -1312,16 +1309,17 @@ color: inherit;
           <li><a href="#auffälligkeit" id="toc-auffälligkeit">Auffälligkeit</a></li>
           <li><a href="#kapazität" id="toc-kapazität">Kapazität</a></li>
           </ul></li>
-          <li><a href="#rüstung-1" id="toc-rüstung-1">Rüstung</a>
-          <ul>
-          <li><a href="#exoskelett" id="toc-exoskelett">Exoskelett</a></li>
-          </ul></li>
+          <li><a href="#rüstung-1" id="toc-rüstung-1">Rüstung</a></li>
           <li><a href="#schusswaffen-1" id="toc-schusswaffen-1">Schusswaffen</a>
           <ul>
           <li><a href="#spezialmunition" id="toc-spezialmunition">Spezialmunition</a></li>
           </ul></li>
           <li><a href="#nahkampfwaffen" id="toc-nahkampfwaffen">Nahkampfwaffen</a></li>
           <li><a href="#psi-verstärker" id="toc-psi-verstärker">PSI-Verstärker</a></li>
+          <li><a href="#drohnen" id="toc-drohnen">Drohnen</a>
+          <ul>
+          <li><a href="#programme" id="toc-programme">Programme</a></li>
+          </ul></li>
           <li><a href="#dimes" id="toc-dimes">DiMES</a></li>
           <li><a href="#verbrauchsgegenstände" id="toc-verbrauchsgegenstände">Verbrauchsgegenstände</a>
           <ul>
@@ -1783,6 +1781,11 @@ color: inherit;
           <li><strong>Flucht</strong>: Der Charakter rennt oder kriecht so gut es geht davon, wahlweise schreiend. Der Charakter geht dabei nicht in Deckung.</li>
           <li><strong>Ohnmacht/Lähmung</strong>: Der Charakter wird bewegungs- und reaktionslos, oder wahlweise ohnmächtig. Der Charakter geht dabei nicht in Deckung.</li>
           </ul>
+          <section id="basisstress" class="level4">
+          <h4>Basisstress</h4>
+          <p>Basisstress ist eine nicht reduzierbare Form von Stress, die durch Cyberware entsteht und als Mindest-Stress funktioniert. Basisstress löst keine Willensproben direkt aus. Wird eine Schwelle durch (Erhöhung von) Basisstress überschritten, wird die Willensprobe erst durchgeführt wenn der Charakter das nächste Mal normalen Stress erhält.</p>
+          <p>Bestimmte Ausrüstung gibt halben Basisstress (z.B. 0.5 oder 1.5), in diesen Fällen wird aller Basisstress zusammenaddiert und erst am Ende aufgerundet.</p>
+          </section>
           </section>
           </section>
           <section id="ruhepausen" class="level2">
@@ -1928,119 +1931,46 @@ color: inherit;
           </section>
           <section id="mission" class="level1">
           <h1>Mission</h1>
-          <p>Wenn Charaktere in ein gegnerisches Gebiet eindringen, wird dies als Mission betrachtet. Während Missionen spielt Zeit eine kritische Rolle: Charaktere teilen sich auf um parallel unterschiedliche Ziele zu erreichen während Wachen patrouillieren und Leute langsam verdächtig werden.</p>
-          <section id="zeit" class="level2">
-          <h2>Zeit</h2>
-          <p>Zeit spielt eine kritische Rolle während Mission, besonders wenn sich Teams aufteilen. Je nach Aktion braucht ein Charakter unterschiedlich lange. Die Aktionen werden mit einer Dauer in <strong>Erkundungs-Ticks</strong> bemessen, wobei ein Erkundungs-Tick etwa 1 Minute dauert.</p>
-          <section id="erkundungs-ticks" class="level3">
-          <h3>Erkundungs-Ticks</h3>
-          <table>
-          <thead>
-          <tr>
-          <th>Aktion</th>
-          <th>Erkundungs-Ticks</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          <td>Sehr Kurz</td>
-          <td>1</td>
-          </tr>
-          <tr>
-          <td>Kurz</td>
-          <td>2</td>
-          </tr>
-          <tr>
-          <td>Mittel</td>
-          <td>4</td>
-          </tr>
-          <tr>
-          <td>Lang</td>
-          <td>8</td>
-          </tr>
-          </tbody>
-          </table>
-          <div class="accordion" data-title="Beispiele">
-          <table>
-          <thead>
-          <tr>
-          <th>Aktion</th>
-          <th>Dauer</th>
-          <th>Erkundungs-Ticks</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          <td>Bewegung</td>
-          <td>Sehr kurz</td>
-          <td>1</td>
-          </tr>
-          <tr>
-          <td>Klettern</td>
-          <td>Kurz</td>
-          <td>2</td>
-          </tr>
-          <tr>
-          <td>Schleichen</td>
-          <td>Kurz</td>
-          <td>2</td>
-          </tr>
-          <tr>
-          <td>Tür aufbrechen</td>
-          <td>Kurz</td>
-          <td>2</td>
-          </tr>
-          <tr>
-          <td>Raum durchsuchen</td>
-          <td>Mittel</td>
-          <td>4</td>
-          </tr>
-          <tr>
-          <td>Soziale Interaktion</td>
-          <td>Kurz</td>
-          <td>2</td>
-          </tr>
-          <tr>
-          <td>Schloss hacken</td>
-          <td>Kurz-Mittel</td>
-          <td>2-4</td>
-          </tr>
-          <tr>
-          <td>Computer hacken</td>
-          <td>Mittel</td>
-          <td>4</td>
-          </tr>
-          <tr>
-          <td>Informationen sammeln</td>
-          <td>Kurz</td>
-          <td>2</td>
-          </tr>
-          <tr>
-          <td>Wichtige Daten herunterladen</td>
-          <td>Lang</td>
-          <td>8</td>
-          </tr>
-          <tr>
-          <td>Backdoor installieren</td>
-          <td>Kurz</td>
-          <td>2</td>
-          </tr>
-          <tr>
-          <td>Verkleidung wecheln</td>
-          <td>Kurz</td>
-          <td>2</td>
-          </tr>
-          </tbody>
-          </table>
-          </div>
-          </section>
-          </section>
+          <p>Wenn Charaktere in ein gegnerisches Gebiet eindringen, wird dies als Mission betrachtet.</p>
+          <!--
+          Während Missionen spielt Zeit eine kritische Rolle: Charaktere teilen sich auf um parallel unterschiedliche Ziele zu erreichen während Wachen patrouillieren und Leute langsam verdächtig werden.
+
+          ## Zeit
+
+          Zeit spielt eine kritische Rolle während Mission, besonders wenn sich Teams aufteilen. Je nach Aktion braucht ein Charakter unterschiedlich lange. Die Aktionen werden mit einer Dauer in **Erkundungs-Ticks** bemessen, wobei ein Erkundungs-Tick etwa 1 Minute dauert.
+
+          ### Erkundungs-Ticks
+
+          Aktion    | Erkundungs-Ticks
+          ----------|------------------
+          Sehr Kurz | 1
+          Kurz      | 2
+          Mittel    | 4
+          Lang      | 8
+
+          ::: {.accordion data-title="Beispiele"}
+          Aktion                       | Dauer       | Erkundungs-Ticks
+          -----------------------------|-------------|------------------
+          Bewegung                     | Sehr kurz   | 1
+          Klettern                     | Kurz        | 2
+          Schleichen                   | Kurz        | 2
+          Tür aufbrechen               | Kurz        | 2
+          Raum durchsuchen             | Mittel      | 4
+          Soziale Interaktion          | Kurz        | 2
+          Schloss hacken               | Kurz-Mittel | 2-4
+          Computer hacken              | Mittel      | 4
+          Informationen sammeln        | Kurz        | 2
+          Wichtige Daten herunterladen | Lang        | 8
+          Backdoor installieren        | Kurz        | 2
+          Verkleidung wecheln          | Kurz        | 2
+          :::
+          -->
           <section id="verdacht" class="level2">
           <h2>Verdacht</h2>
           <p>Aktionen, oder die Auswirkungen von Aktionen, können bemerkt werden. Dies führt zu wachsendem Verdacht.</p>
           <p>Verdacht wird erhöht durch:</p>
           <ul>
-          <li>Fehlgeschlagene Proben: Ein Fehlschlag um 1/2/3/4/5 usw., erhöht den Verdacht um 1/2/3/5/8</li>
+          <li>Proben: Das Ergebnis der Probe wird mit der Summe aus Schwierigkeit und Gesamtauffälligkeit (siehe <a href="#auffälligkeit">Auffälligkeit</a>) verglichen. Bei halben Punkten entscheidet der Erfolg der Probe: Bei Erfolg wird die Schwelle abgerundet, bei einem Fehlschlag wird aufgerundet Ein Verfehlen der Schwelle um 1/2/3/4/5 usw., erhöht den Verdacht um 1/2/3/5/8, selbst wenn die Probe erfolgreich ist.</li>
           <li>Vorkommnisse: Jede weitere Ungewöhnlichkeit erhöht den Verdacht um 1/2/3/4/5</li>
           </ul>
           <p>Vorkommnisse können einen Mindestverdacht verursachen:</p>
@@ -2080,6 +2010,57 @@ color: inherit;
           </tr>
           </tbody>
           </table>
+          <div class="accordion" data-title="Beispiele für Verdacht durch Proben">
+          <p>Probe mit Schwierigkeit 2:</p>
+          <table>
+          <colgroup>
+          <col style="width: 24%" />
+          <col style="width: 25%" />
+          <col style="width: 26%" />
+          <col style="width: 23%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Gesamtauffälligkeit</th>
+          <th>1 Erfolg</th>
+          <th>2 Erfolge</th>
+          <th>3 Erfolge</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>0</td>
+          <td>1 Stufe → 1 Verdacht</td>
+          <td>gelungen, kein Verdacht</td>
+          <td>gelungen, kein Verdacht</td>
+          </tr>
+          <tr>
+          <td>0,5</td>
+          <td>2 Stufen → 2 Verdacht</td>
+          <td>gelungen, kein Verdacht</td>
+          <td>gelungen, kein Verdacht</td>
+          </tr>
+          <tr>
+          <td>1</td>
+          <td>2 Stufen → 2 Verdacht</td>
+          <td>gelungen, 1 Stufe → 1 Verdacht</td>
+          <td>gelungen, kein Verdacht</td>
+          </tr>
+          <tr>
+          <td>1,5</td>
+          <td>3 Stufen → 3 Verdacht</td>
+          <td>gelungen, 1 Stufe → 1 Verdacht</td>
+          <td>gelungen, kein Verdacht</td>
+          </tr>
+          <tr>
+          <td>2</td>
+          <td>3 Stufen → 3 Verdacht</td>
+          <td>gelungen, 2 Stufen → 2 Verdacht</td>
+          <td>gelungen, 1 Stufe → 1 Verdacht</td>
+          </tr>
+          </tbody>
+          </table>
+          </div>
           <section id="verdachtsstufen" class="level3">
           <h3>Verdachtsstufen</h3>
           <p>Je größer der Verdacht, um so aktiver werden Wachen:</p>
@@ -2460,7 +2441,7 @@ color: inherit;
           <tr>
           <td>Disengage</td>
           <td>2|3</td>
-          <td>Positionieren bzw. Bewegung aus einem Nahkampf heraus (weg von einem Nahkämpfer). Erfordet eine erfolgreiche Athletik-Probe, Schwierigkeit ist Erfolge(Nahkampf) des Nahkämpfers.</td>
+          <td>Positionieren bzw. Bewegung aus einem Nahkampf heraus (weg von einem Nahkämpfer). Erfordet eine erfolgreiche Athletik-Probe, Schwierigkeit ist Erfolge(Nahkampf) des Nahkämpfers. Bei mehreren Nahkämpfern zeählt nur der höchste Nahkampf-Wert.</td>
           </tr>
           </tbody>
           </table>
@@ -2544,6 +2525,7 @@ color: inherit;
           </section>
           <section id="schusswaffen" class="level2">
           <h2>Schusswaffen</h2>
+          <p>Schüsse werden mit Schusswaffen geworfen und erfordern eine Schusswaffe.</p>
           <table>
           <colgroup>
           <col style="width: 25%" />
@@ -2596,6 +2578,7 @@ color: inherit;
           </section>
           <section id="nahkampf" class="level2">
           <h2>Nahkampf</h2>
+          <p>Nahkampfangriffe werden mit Nahkampf geworfen und erfordern eine Nahkampfwaffe.</p>
           <table>
           <colgroup>
           <col style="width: 25%" />
@@ -2659,6 +2642,7 @@ color: inherit;
           </section>
           <section id="psi" class="level2">
           <h2>PSI</h2>
+          <p>PSI-Aktionen werden mit Konzentration, Fühlen oder Manipulieren geworfen. PSI-Aktionen mit Fühlen- oder Manipulieren-Probe erfordern ein PSI-Implantat, PSI-Aktionen mit Konzentrationsprobe können von jedem durchgeführt werden.</p>
           <table>
           <colgroup>
           <col style="width: 34%" />
@@ -2691,7 +2675,7 @@ color: inherit;
           <td>Vorahnung</td>
           <td>x1</td>
           <td>F</td>
-          <td>Gibt Erfolge(Fühlen) Deckung (additiv) für die nächsten 2 Aktionen, sowie die selbe Anzahl an Nachteil für Nahkampfangreifer. Verbraucht <strong>1 Fokus</strong></td>
+          <td>Gibt Erfolge(Fühlen) Deckung (additiv) für die nächsten 3 Aktionen, sowie die selbe Anzahl an Nachteil für Nahkampfangreifer. Verbraucht <strong>1 Fokus</strong></td>
           </tr>
           <tr>
           <td>Wahrnehmung übernehmen</td>
@@ -2703,7 +2687,7 @@ color: inherit;
           <td>Verwirren</td>
           <td>x1</td>
           <td>M</td>
-          <td>Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich bekommt Ziel -2 Nachteil auf alle Würfe während der nächsten 2 Aktionen. Keine Mentale Gegenwehr möglich.</td>
+          <td>Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich bekommt Ziel 2 Nachteil auf alle Würfe während der nächsten 2 Aktionen. Keine Mentale Gegenwehr möglich.</td>
           </tr>
           <tr>
           <td>Stress verursachen</td>
@@ -2739,6 +2723,46 @@ color: inherit;
           Deckungsfeuer      | 3+\|3+     | (I) Wache und (M) Bewegung außerhalb des Wachbereichs, mit Deckung + 1.
           -->
           </section>
+          <section id="taktik" class="level2">
+          <h2>Taktik</h2>
+          <p>Taktische Aktionen werden mit Taktik geworfen.</p>
+          <table>
+          <colgroup>
+          <col style="width: 26%" />
+          <col style="width: 20%" />
+          <col style="width: 52%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th>Aktion</th>
+          <th>Dauer</th>
+          <th>Beschreibung</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Deckungsangriffe</td>
+          <td>Schnell+</td>
+          <td>Erfordert eine Waffe. Angriffe von Gegnern innerhalb der direkten Waffenreichweite gegen einen bestimmten Verbündeten werden erschwert: Deckung ist mindestens Erfolge(Taktik)/2 (aufgerundet). Verbraucht <strong>1 Stamina</strong></td>
+          </tr>
+          <tr>
+          <td>Schwachstelle erkennen</td>
+          <td>2</td>
+          <td>Gibt Verbündeten in Rufweite 1+Erfolge(Taktik)/2 (aufgerundet) Vorteil auf die nächste offensive Aktion gegen einen bestimmten Gegner</td>
+          </tr>
+          <tr>
+          <td>Antreiben</td>
+          <td>2</td>
+          <td>Reduziert die verbleibende Tick-Dauer der aktuellen Aktion eines Verbündeten in Rufweite um 3 + Erfolge(Taktik)/2 (aufgerundet), aber höchstens bis auf 1 Tick. Verbraucht <strong>1 Fokus</strong></td>
+          </tr>
+          <tr>
+          <td>Warnruf</td>
+          <td>1</td>
+          <td>Kann bei einer Aktion eines Gegners gegen einen Verbündeten in Rufweite durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Der Angreifer erhält 1 + Erfolge(Taktik) Nachteil auf die Aktion. Verbraucht <strong>1 Fokus</strong>. Nicht gegen PSI-Aktionen einsetzbar.</td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
           <section id="verschiedenes" class="level2">
           <h2>Verschiedenes</h2>
           <table>
@@ -2755,6 +2779,16 @@ color: inherit;
           </tr>
           </thead>
           <tbody>
+          <tr>
+          <td>Drohne steuern</td>
+          <td>Aktion + 1/Drohne</td>
+          <td>Eine oder mehrere verknüpfte Drohnen führen dieselbe Aktion aus (Ziele bzw. Zonen können unterschiedlich sein). Dauer ist die längste Aktion der Drohnen, +1 für jede Drohne nach der ersten. Angriffe während Wache der Drohne funktionieren sind auch ohne direkte Kontrolle möglich. Mögliche Aktionen: <em>Bewegen, Positionieren, Klettern, Anvisieren (schnell und normal), Schneller und Gezielter Schuss, Wache, Schneller und Gezielter Angriff, Interaktion</em></td>
+          </tr>
+          <tr>
+          <td>Drohnenschwarm teilen/einen</td>
+          <td>2</td>
+          <td>Teilt bzw. vereint einen Drohnenschwarm. Jeder Teil des Schwarms bindet <strong>1 Fokus</strong></td>
+          </tr>
           <tr>
           <td>Fenster öffnen/schließen</td>
           <td>4</td>
@@ -2876,6 +2910,12 @@ color: inherit;
           <td>20</td>
           </tr>
           <tr>
+          <td><a href="#drohnen">Drohne</a></td>
+          <td>2</td>
+          <td>4</td>
+          <td>8</td>
+          </tr>
+          <tr>
           <td><a href="#dimes">DiMES</a><a href="#chargen-4">⁴</a></td>
           <td>0</td>
           <td>1</td>
@@ -2893,7 +2933,7 @@ color: inherit;
           <p><em>³ Beinhaltet ein PSI-Implantat</em></p>
           </div>
           <div id="chargen-4">
-          <p><em>⁴ Jedes weitere DiMES kostet +2 Punkte mehr.</em></p>
+          <p><em>⁴ Jedes weitere DiMES kostet +2 Punkte mehr als das vorherige.</em></p>
           </div>
           <table>
           <colgroup>
@@ -2963,16 +3003,18 @@ color: inherit;
           <h2>Eigenschaften</h2>
           <section id="auffälligkeit" class="level3">
           <h3>Auffälligkeit</h3>
-          <p>Viele Gegenstände besitzen einen Auffälligkeitswert. Dieser beschreibt, welches Aufsehen die Waffe bei anderen Personen erregen, die den Umgang mit Waffen gewohnt sind, z.B., Gang-Mitglieder, andere Söldner oder Sicherheitskräften.</p>
+          <p>Viele Gegenstände besitzen einen Auffälligkeitswert. Dieser beschreibt, welches Aufsehen die Waffe bei anderen Personen erregen, die den Umgang mit Waffen gewohnt sind, z.B., Gang-Mitglieder, andere Söldner oder Sicherheitskräften. Dies wirkt sich vorallem darauf aus, wie schnell <a href="#verdacht">Verdacht</a> steigt.</p>
           <table>
           <colgroup>
-          <col style="width: 21%" />
-          <col style="width: 16%" />
-          <col style="width: 62%" />
+          <col style="width: 20%" />
+          <col style="width: 5%" />
+          <col style="width: 15%" />
+          <col style="width: 58%" />
           </colgroup>
           <thead>
           <tr>
           <th>Auffälligkeit</th>
+          <th>Wert</th>
           <th>Beispiel</th>
           <th>Beschreibung</th>
           </tr>
@@ -2980,26 +3022,39 @@ color: inherit;
           <tbody>
           <tr>
           <td>Integriert / Getarnt</td>
+          <td>-0.5</td>
           <td>Gehstock-Pistole</td>
           <td>Der Gegenstand ist in etwas anderem verborgen, z.B. in einem unauffälligem Gegenstand oder in einem Cyborg-Teil. Ein Integrierter Gegenstand wird auch bei einem Sicherheitscheck nicht gefunden (wohl aber der “behausende” Gegenstand)</td>
           </tr>
           <tr>
           <td>Versteckt / Unauffällig</td>
+          <td>0</td>
           <td>CCW Pistole</td>
           <td>Der Gegenstand ist generell nicht zu sehen, und kann meist nur bei einem Sicherheitscheck gefunden werden</td>
           </tr>
           <tr>
           <td>Gewöhnlich</td>
+          <td>0.5</td>
           <td>Gewehr</td>
           <td>Der Gegenstand ist generell offen sichtbar, sieht für Personen die an Waffen gewöhnt sind jedoch nicht bedrohlich aus. Ein Gewöhnlicher Gegenstand kann nur gegenüber Zivilisten verborgen werden und wird ansonsten auch ohne Sicherheitscheck bemerkt.</td>
           </tr>
           <tr>
           <td>Auffällig</td>
+          <td>1</td>
           <td>Minigun</td>
           <td>Der Gegenstand ist für jeden zu sehen und kann nicht von einer Person verborgen getragen werden und gleichzeitig zugreifbar sein (aber z.B. in einem großen verschlossenen Behälter). Der Gegenstand sieht illegal aus und wird entsprechend kontrolliert, und löst generell Unmut aus.</td>
           </tr>
           </tbody>
           </table>
+          <p><strong>Gesamtauffälligkeit</strong>: Summe der Auffälligkeit aller zugreifbar getragenen Gegenstände eines Charakters, minus 0.5, Minimum 0. Bei Cyberware wird dabei nur das auffälligste Körperteil gewertet.</p>
+          <div class="accordion" data-title="Beispiele">
+          <ul>
+          <li>Gewehr (Gewöhnlich) und Weste (Gewöhnlich): 0.5 + 0.5 - 0.5 = <strong>0,5</strong></li>
+          <li>CCW Pistole (Versteckt) und Weste (Gewöhnlich): 0 + 0.5 - 0.5 = <strong>0</strong></li>
+          <li>Shotgun (Auffällig), Weste (Gewöhnlich) und zwei Cyborg-Arme (Auffällig und Gewöhnlich): 1 + 0.5 + 1 - 0,5 = <strong>2</strong></li>
+          <li>Gehstock-Pistole (Getarnt), Leichte Rüstung (Auffällig) und Cyborg-Bein (Auffällig): -0.5 + 1 + 1 - 0,5 = <strong>1</strong></li>
+          </ul>
+          </div>
           </section>
           <section id="kapazität" class="level3">
           <h3>Kapazität</h3>
@@ -3074,18 +3129,24 @@ color: inherit;
           </tr>
           </tbody>
           </table>
-          <section id="exoskelett" class="level3">
-          <h3>Exoskelett</h3>
-          <p>Exoskelette können anstelle einer Rüstung getragen werden.</p>
-          <p>P | Fernkampf-Rüstung | Nahkampf-Rüstung | Kapazität | Athletik-Bonus –|——————-|——————|———–|————-— S | Immun | Immun | 30 | 10 A | 3 | 4 | 12 | 4 B | 2 | 3 | 8 | 2 C | 1 | 2 | 4 | 1</p>
-          <ul>
-          <li>Auffälligkeit: Ein Exoskelett ist immer Auffällig</li>
-          <li>Fernkampf-Rüstung: Erhöht den Fernkampf-Rüstungswert, der von Fernkampfangriffen abgezogen wird</li>
-          <li>Nahkampf-Rüstung: Erhöht den Nahkampf-Rüstungswert, der von Nahkampfangriffen abgezogen wird</li>
-          <li>Kapazität: Für Erweiterungen die in das Exoskelett eingebaut sind.</li>
-          <li>Atheltik-Bonus: Gibt Vorteil auf Athletik-Würfe bei denen das Exoskelett helfen kann.</li>
-          </ul>
-          </section>
+          <!--
+          ### Exoskelett
+
+          Exoskelette können anstelle einer Rüstung getragen werden.
+
+          P | Fernkampf-Rüstung | Nahkampf-Rüstung | Kapazität | Athletik-Bonus
+          --|-------------------|------------------|-----------|----------------
+          S | Immun             | Immun            | 30        | 10
+          A | 3                 | 4                | 12        | 4
+          B | 2                 | 3                | 8         | 2
+          C | 1                 | 2                | 4         | 1
+
+          - Auffälligkeit: Ein Exoskelett ist immer Auffällig
+          - Fernkampf-Rüstung: Erhöht den Fernkampf-Rüstungswert, der von Fernkampfangriffen abgezogen wird
+          - Nahkampf-Rüstung: Erhöht den Nahkampf-Rüstungswert, der von Nahkampfangriffen abgezogen wird
+          - Kapazität: Für Erweiterungen die in das Exoskelett eingebaut sind.
+          - Atheltik-Bonus: Gibt Vorteil auf Athletik-Würfe bei denen das Exoskelett helfen kann.
+          -->
           </section>
           <section id="schusswaffen-1" class="level2">
           <h2>Schusswaffen</h2>
@@ -3123,7 +3184,7 @@ color: inherit;
           <td>Gewöhnlich</td>
           <td>2</td>
           <td>1</td>
-          <td>4|6</td>
+          <td>4|8</td>
           </tr>
           <tr>
           <td>C</td>
@@ -3131,7 +3192,7 @@ color: inherit;
           <td>Auffällig</td>
           <td>1</td>
           <td>0.5</td>
-          <td>6|8</td>
+          <td>6|10</td>
           </tr>
           </tbody>
           </table>
@@ -3268,7 +3329,7 @@ color: inherit;
           <td>Auffällig</td>
           <td>1</td>
           <td>1</td>
-          <td>8|12</td>
+          <td>6|10</td>
           </tr>
           </tbody>
           </table>
@@ -3419,41 +3480,115 @@ color: inherit;
           </tr>
           </tbody>
           </table>
-          <!--
-          ## Drohnen
-
-          P | Auffälligkeit | Bewegung   | Kapazität | Stabilität | ???
-          --|---------------|------------|-----------|------------|-----------
-          S | Getarnt       | Schwarm    | 12        | 24         | 
-          A | Unauffällig   | Fliegend   | 8         | 12         | 
-          B | Gewöhnlich    | Kletternd  | 4         | 9          | 
-          C | Auffällig     | Boden      | 2         | 6          | 
-
-          - Bewegung:
-              - Boden: Erlaubt bodengebundene, horizontale Bewegung, sowie. Treppen o.ä.
-              - Kletternd: Erlaubt Bewegung entlang beliebiger Oberflächen.
-              - Fliegend: Erlaubt Bewegung durch die Luft.
-              - Schwarm: Statt einer einzelnen Drone handelt es sich um einen kleinen Schwarm fliegender Dronen. Der Schwarm kann sich aufteilen, aber Stabilität und Fähigkeiten werden ebenfalls aufgeteilt.
-          - Systeme: Anzahl einbaubarer Systeme:
-              - Waffensystem: Drone kann mit einer Waffe ausgestattet werden und besitzt die dafür notwendige Fähigkeit auf Stufe 2. Zusätzliche Waffensysteme können diesen Wert um 2 erhöhen.
-              - Sensorsystem: Drone besitzt spezielle Wahrnehmung, die auch übertragen werden kann. Die Wahrnehmung entspricht entweder der Intuition des Betrachters, oder 2*(Anzahl Sensorsysteme)
-              - Panzerung: Erhöht Rüstung um 1, bis zu einem Maximum von 3
-              - Kapazität: Erhöht Erweiterungs-Kapazität der Drone um 1
-              - Werkzeug: Besitzt Werkzeug und die dafür notwendige Fähigkeit auf Stufe 2. Zusätzliche Werkzeugsysteme können diesen Wert um 2 erhöhen.
-              - Anderes
-          - Stabilität: Trefferpunkte der Drone. Dronen haben nur eine einzige Trefferzone und keinen Gesamtschmerz.
-              - Erleidet die Drone Schaden größergleich dem Stabilitätswert und kleiner als der doppelte Stabilitätswert, so zählt sie als beschädigt und ist aktionsunfähig
-              - Erleidet die Drone Schaden größergleich dem doppelten Stabilitätswert. so ist sie irreperabel zerstört.
-          - ???
-
-           Type   | P
-          --------|----------------
-          Einfach | 2x B, 3x C
-          Normal  | 1x A, 2x B, 2x C
-          Gut     | 2x A, 2x B, 1x C
-          Spezial | 1x S, 2x B, 2x C
-
-          -->
+          </section>
+          <section id="drohnen" class="level2">
+          <h2>Drohnen</h2>
+          <p>Drohnen binden Fokus des Charakters. Ein Charakter muss pro Drone <strong>1 Fokus</strong> für das Kontrollieren der Drohne reservieren. Solange eine Drone kontrolliert wird, kann der entsprechende Fokus nicht verwendet werden.</p>
+          <table>
+          <thead>
+          <tr>
+          <th>P</th>
+          <th>Auffälligkeit</th>
+          <th>Bewegung</th>
+          <th>Kapazität</th>
+          <th>Stabilität</th>
+          <th>Fähigkeitswert</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>S</td>
+          <td>Getarnt</td>
+          <td>Schwarm</td>
+          <td>12</td>
+          <td>20</td>
+          <td>6</td>
+          </tr>
+          <tr>
+          <td>A</td>
+          <td>Unauffällig</td>
+          <td>Fliegend</td>
+          <td>8</td>
+          <td>10</td>
+          <td>4</td>
+          </tr>
+          <tr>
+          <td>B</td>
+          <td>Gewöhnlich</td>
+          <td>Kletternd</td>
+          <td>4</td>
+          <td>8</td>
+          <td>3</td>
+          </tr>
+          <tr>
+          <td>C</td>
+          <td>Auffällig</td>
+          <td>Boden</td>
+          <td>2</td>
+          <td>4</td>
+          <td>2</td>
+          </tr>
+          </tbody>
+          </table>
+          <ul>
+          <li>Bewegung:
+          <ul>
+          <li>Boden: Erlaubt bodengebundene, horizontale Bewegung, sowie. Treppen o.ä.</li>
+          <li>Kletternd: Erlaubt Bewegung entlang beliebiger Oberflächen, mit uneingeschränkter Bewegungsgeschwindigkeit.</li>
+          <li>Fliegend: Erlaubt Bewegung durch die Luft. Kann Nahkampf ohne Disengage verlassen.</li>
+          <li>Schwarm: Statt einer einzelnen Drone handelt es sich um einen kleinen Schwarm fliegender Dronen. Der Schwarm kann sich aufteilen, aber Stabilität und Fähigkeiten werden ebenfalls aufgeteilt, und jeder Teil bindet jeweils 1 Fokus.</li>
+          </ul></li>
+          <li>Kapazität: Für Erweiterungen, z.B.Eingebaute Waffe, Sicht- oder Werkzeug.</li>
+          <li>Stabilität: Trefferpunkte der Drone. Dronen haben nur eine einzige Trefferzone und keinen Gesamtschmerz.
+          <ul>
+          <li>Erleidet die Drohne Schaden größergleich dem Stabilitätswert, so zählt sie als beschädigt und ist aktionsunfähig</li>
+          <li>Erleidet die Drohne Schaden größergleich dem doppelten Stabilitätswert. so ist sie irreperabel zerstört.</li>
+          <li><strong>Schwachpunkt</strong>: die Drohnen hat einen Schwachpunkt der vergleichbar wie ein menschlicher Kopf durch gezielte Angriffe getroffen werden kann, was doppelten Schaden verursacht.</li>
+          </ul></li>
+          <li>Fähigkeitswert: Wert für Fähigkeiten der Drohne, wird verwendet an Stelle von Athletik, Intuition, Schusswaffen, Nahkampf, sowie für ein Werkzeug-Skill. Drohnen haben kein Stamina/Fokus.</li>
+          </ul>
+          <p>Grundausstattung jeder Drohne:</p>
+          <ul>
+          <li>Jede Drohne besitzt eine Kamera, Mikrofon und Kommunikator eingebaut, die nicht von der Kapazität abgezogen werden.</li>
+          <li>Rüstung 1 gegen Nah- und Fernkampf</li>
+          <li>Entsprechende Bewegung ohne Würfe: Drohnen brauchen kein Parkour</li>
+          </ul>
+          <table>
+          <thead>
+          <tr>
+          <th>Type</th>
+          <th>P</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Einfach</td>
+          <td>2x B, 3x C</td>
+          </tr>
+          <tr>
+          <td>Normal</td>
+          <td>1x A, 2x B, 2x C</td>
+          </tr>
+          <tr>
+          <td>Gut</td>
+          <td>2x A, 2x B, 1x C</td>
+          </tr>
+          <tr>
+          <td>Spezial</td>
+          <td>1x S, 2x B, 2x C</td>
+          </tr>
+          </tbody>
+          </table>
+          <section id="programme" class="level3">
+          <h3>Programme</h3>
+          <p>Drohnen können außerhalb von Kämpfen einfache Programme autonom durchführen:</p>
+          <ul>
+          <li><strong>Warten</strong>: Drohne wartet</li>
+          <li><strong>Folgen</strong>: Drohne folgt einem Charakter, wahlweise Heimlich</li>
+          <li><strong>Bewegen</strong>: Begibt sich über einen festgelegten Weg zu einem bestimmten Ort.</li>
+          <li><strong>Beobachten/Erkunden</strong>: Drohne beobachtet oder erkundet und achtet auf vorab festgelegte Details, die automatisch gemeldet werden.</li>
+          </ul>
+          </section>
           </section>
           <section id="dimes" class="level2">
           <h2>DiMES</h2>
@@ -3674,16 +3809,18 @@ color: inherit;
           <h3>Energiequelle</h3>
           <table>
           <colgroup>
-          <col style="width: 7%" />
-          <col style="width: 20%" />
-          <col style="width: 10%" />
-          <col style="width: 61%" />
+          <col style="width: 6%" />
+          <col style="width: 18%" />
+          <col style="width: 9%" />
+          <col style="width: 11%" />
+          <col style="width: 54%" />
           </colgroup>
           <thead>
           <tr>
           <th>Typ</th>
           <th>Energiequelle</th>
           <th>Kapazität</th>
+          <th>Basisstress</th>
           <th>Beschreibung</th>
           </tr>
           </thead>
@@ -3692,30 +3829,34 @@ color: inherit;
           <td>Einfach</td>
           <td>Batterie</td>
           <td>16</td>
+          <td>0.5</td>
           <td>Muss nach maximal 20h wieder aufgeladen werden, was bis zu 6h dauert.</td>
           </tr>
           <tr>
           <td>Normal</td>
           <td>Bioreaktor</td>
           <td>28</td>
+          <td>1</td>
           <td>Erzeugt Energie durch mehr Essen. Etwa 5x soviel, wie eine normale Person isst. Es gibt spezielle “Energieriegel”, die besonders viele Nährstoffe für Bioreaktoren beinhalten</td>
           </tr>
           <tr>
           <td>Gut</td>
           <td>Radionuklidbatterie</td>
           <td>40</td>
-          <td>Erzeugt Energie ohne weitere Vorraussetzungen. Die Batterie muss alle paar Jahre ausgetauscht werden.</td>
+          <td>1.5</td>
+          <td>Erzeugt Energie ohne weitere Voraussetzungen. Die Batterie muss alle paar Jahre ausgetauscht werden.</td>
           </tr>
           <tr>
           <td>Spezial</td>
           <td>Superkondensator</td>
           <td>20 | 60</td>
-          <td>Erzeugt begrenzte Energie im Normalbetrieb, aber kann bei Bedarf für ca. 10 Minuten nahezu unbegrenzt Energie produzieren. Danach muss der Superkondensator wieder aufgeladen, was bis zu 4h dauert. Dies erlaubt selektive Aktivierung<a href="#cyber-energy-1">¹</a> von zusätzlicher Cyberware. Körperteile müssen über den Normalbetrieb angeschlossen sein, für Erweiterungen wird beim Einbau entschieden ob sieTeil des Normalbetriebs sind oder nur im geboosteten Zustand aktiv sind.</td>
+          <td>1|2</td>
+          <td>Erzeugt begrenzte Energie im Normalbetrieb, aber kann bei Bedarf für ca. 10 Minuten nahezu unbegrenzt Energie produzieren. Danach muss der Superkondensator wieder aufgeladen, was bis zu 4h dauert. Dies erlaubt selektive Aktivierung<a href="#cyber-energy-1">¹</a> von zusätzlicher Cyberware. Körperteile müssen über den Normalbetrieb angeschlossen sein, für Erweiterungen wird beim Einbau entschieden ob sie Teil des Normalbetriebs sind oder nur im geboosteten Zustand aktiv sind.</td>
           </tr>
           </tbody>
           </table>
           <div id="cyber-energy-1">
-          <p><em>¹ Basisstress besteht auch für deaktivierte Cyberware.</em></p>
+          <p><em>¹ Wenn der Superkondensator aktiviert wird, erhöht sich der Basisstress von 1 auf 2. Nach Ende des Boosts sinkt der Basisstress wieder auf 1.</em></p>
           </div>
           </section>
           <section id="cyborg-körperteil" class="level3">
@@ -3734,29 +3875,29 @@ color: inherit;
           <tr>
           <td>A</td>
           <td>Versteckt</td>
-          <td>1</td>
+          <td>1|1</td>
           <td>+4</td>
-          <td>0.5</td>
+          <td>0</td>
           </tr>
           <tr>
           <td>B</td>
           <td>Gewöhnlich</td>
           <td>0</td>
           <td>~0</td>
-          <td>1</td>
+          <td>0.5</td>
           </tr>
           <tr>
           <td>C</td>
           <td>Auffällig</td>
-          <td>-1</td>
+          <td>0|-1 oder -1|0</td>
           <td>-4</td>
-          <td>2</td>
+          <td>1</td>
           </tr>
           </tbody>
           </table>
           <ul>
           <li>Auffälligkeit: Gilt für alle in den Körperteil eingebauten Erweiterungen</li>
-          <li>Rüstung: Eingebaute Rüstung für Nah-/Fernkampf. Negative Rüstung erhöht den eingehenden Schaden</li>
+          <li>Rüstung: Eingebaute Rüstung für Nah- bzw. Fernkampf. Bei C kann gewählt werden zwischen Nah- oder Fernkampf. Negative Rüstung erhöht Schaden</li>
           <li>Kapazität: Kapazität für das Körperteil (negative Kapazität senkt die Gesamtkapazität)</li>
           <li>Basisstress: Erhöht den Basisstress (aufgerundet)</li>
           </ul>
@@ -3899,13 +4040,6 @@ color: inherit;
           <td>Erlaubt es die Fingerspitzen anzupassen, sodass sie veränderbare (oder gar keine) Fingerabdrücke haben.</td>
           </tr>
           <tr>
-          <td>Brechstangenfunktion</td>
-          <td>-2</td>
-          <td>1000</td>
-          <td>Nahkampfwaffe</td>
-          <td>Gibt +2 Vorteil auf gewaltsames Öffnen von Türen u.ä.</td>
-          </tr>
-          <tr>
           <td>Bionische Stimmbänder</td>
           <td>-2</td>
           <td>1000</td>
@@ -3918,6 +4052,13 @@ color: inherit;
           <td>500</td>
           <td>Cyborg-Kopf</td>
           <td>Zeichnet Sinneswahrnehmungen auf, Aufzeichnung überlebt auch Zerstörung des entsprechended Kopfes</td>
+          </tr>
+          <tr>
+          <td>Brechstangenfunktion</td>
+          <td>-2</td>
+          <td>1000</td>
+          <td>Nahkampfwaffe</td>
+          <td>Gibt +2 Vorteil auf gewaltsames Öffnen von Türen u.ä.</td>
           </tr>
           <tr>
           <td>Datenbank</td>
