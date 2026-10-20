@@ -262,10 +262,10 @@ C | 2            | d2
     - Spezial: Flash, AP, EMP
 - Effektstärke (N):
     - Rauch*: Erhöhte Deckung (Minimum 2) & Schwierigkeit für Intuition (+2) (der Rauch selbst ist offensichtlich), hält für Effektstärke x5 Ticks
-    - Fragment: x3+2 Schaden
+    - Fragment: x4 Schaden
     - Spezial:
         - Flash: x3 Ticks, die Charaktere ausgeknockt werden
-		- EMP: x3+2 Schaden gegen Cyborgs/Drohnen, sonst 0 Schaden
+		- EMP: x4 Schaden gegen Cyborgs/Drohnen (ignoriert Rüstung), sonst 0 Schaden
         - AP: x3 Schaden, Rüstung wird um 1 niedriger betrachtet
 - Radius: Es können nur Charaktere innerhalb einer Zone oder in der Nähe eines Interaktionspunktes getroffen werden. Anzahl der Charaktere die vom Effekt maximal betroffen sein können. Bei Rauchgranaten beschränkt dies die Größe der entstehenden Rauch-Zone, bei anderen Effekten ist es die maximale Anzahl betroffener Charaktere. Welche Charaktere genau getroffenen werden, wird vom Spielleiter final entschieden.
 
