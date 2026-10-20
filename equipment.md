@@ -325,10 +325,10 @@ Gut     | 2x A, 1x B
 
 Typ     | Energiequelle       | Kapazität | Basisstress | Beschreibung
 --------|---------------------|-----------|-------------|---------------------------------------------------------------
-Einfach | Batterie            | 16        | 0.5         | Muss nach maximal 20h wieder aufgeladen werden, was bis zu 6h dauert.
-Normal  | Bioreaktor          | 28        | 1           | Erzeugt Energie durch mehr Essen. Etwa 5x soviel, wie eine normale Person isst. Es gibt spezielle "Energieriegel", die besonders viele Nährstoffe für Bioreaktoren beinhalten
-Gut     | Radionuklidbatterie | 40        | 1.5         | Erzeugt Energie ohne weitere Voraussetzungen. Die Batterie muss alle paar Jahre ausgetauscht werden.
-Spezial | Superkondensator    | 20 \| 60   | 1\|2         | Erzeugt begrenzte Energie im Normalbetrieb, aber kann bei Bedarf für ca. 10 Minuten nahezu unbegrenzt Energie produzieren. Danach muss der Superkondensator wieder aufgeladen, was bis zu 4h dauert. Dies erlaubt selektive Aktivierung[¹](#cyber-energy-1) von zusätzlicher Cyberware. Körperteile müssen über den Normalbetrieb angeschlossen sein, für Erweiterungen wird beim Einbau entschieden ob sie Teil des Normalbetriebs sind oder nur im geboosteten Zustand aktiv sind.
+Einfach | Batterie            | 12        | 0.5         | Muss nach maximal 20h wieder aufgeladen werden, was bis zu 6h dauert.
+Normal  | Bioreaktor          | 24        | 1           | Erzeugt Energie durch mehr Essen. Etwa 5x soviel, wie eine normale Person isst. Es gibt spezielle "Energieriegel", die besonders viele Nährstoffe für Bioreaktoren beinhalten
+Gut     | Radionuklidbatterie | 32        | 1.5         | Erzeugt Energie ohne weitere Voraussetzungen. Die Batterie muss alle paar Jahre ausgetauscht werden.
+Spezial | Superkondensator    | 16 \| 60   | 1\|2         | Erzeugt begrenzte Energie im Normalbetrieb, aber kann bei Bedarf für ca. 10 Minuten nahezu unbegrenzt Energie produzieren. Danach muss der Superkondensator wieder aufgeladen, was bis zu 4h dauert. Dies erlaubt selektive Aktivierung[¹](#cyber-energy-1) von zusätzlicher Cyberware. Körperteile müssen über den Normalbetrieb angeschlossen sein, für Erweiterungen wird beim Einbau entschieden ob sie Teil des Normalbetriebs sind oder nur im geboosteten Zustand aktiv sind.
 
 ::: {#cyber-energy-1}
 _¹ Wenn der Superkondensator aktiviert wird, erhöht sich der Basisstress von 1 auf 2. Nach Ende des Boosts sinkt der Basisstress wieder auf 1._
@@ -338,12 +338,12 @@ _¹ Wenn der Superkondensator aktiviert wird, erhöht sich der Basisstress von 1
 
 P | Auffälligkeit | Rüstung | Kapazität | Basisstress
 --|---------------|---------|-----------|-------------
-A | Versteckt     | 1\|1     | +4        | 0
-B | Gewöhnlich    | 0       | ~0        | 0.5
-C | Auffällig     | 0\|-1 oder -1\|0 | -4        | 1
+A | Versteckt     | 1\|1     | +8        | 0
+B | Gewöhnlich    | 0\|1 oder 1\|0 | +4        | 0.5
+C | Auffällig     | 0\\|0 | 0         | 1
 
 - Auffälligkeit: Gilt für alle in den Körperteil eingebauten Erweiterungen
-- Rüstung: Eingebaute Rüstung für Nah- bzw. Fernkampf. Bei C kann gewählt werden zwischen Nah- oder Fernkampf. Negative Rüstung erhöht Schaden
+- Rüstung: Eingebaute Rüstung für Nah- bzw. Fernkampf. Bei B kann gewählt werden zwischen Nah- oder Fernkampf.
 - Kapazität: Kapazität für das Körperteil (negative Kapazität senkt die Gesamtkapazität)
 - Basisstress: Erhöht den Basisstress (aufgerundet)
 
