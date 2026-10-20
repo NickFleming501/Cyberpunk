@@ -347,6 +347,8 @@ C | Auffällig     | 0\\|0 | 0         | 1
 - Kapazität: Kapazität für das Körperteil (negative Kapazität senkt die Gesamtkapazität)
 - Basisstress: Erhöht den Basisstress (aufgerundet)
 
+**Ein zweites, kostenloses Körperteil (Arm/Bein) gibt weder Kapazität noch Basisstress, aber nur wenn es gleich gebaut ist!**
+
  Typ    | P
 --------|----------------
 Einfach |      2x B, 2x C

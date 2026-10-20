@@ -13,16 +13,16 @@ Ausrüstung                 | Einfach | Normal | Gut/Spezialisiert
 [Verbrauchsgegenstände](#verbrauchsgegenstände) (x3) | 1       | 2      | 3
 [Energiequelle](#energiequelle)              | 2       | 4      | 6
 [Cyborg-Körperteil](#cyborg-körperteil)[¹](#chargen-1)         | 2       | 3      | 5
-Cyborg-Komplettkörper[²](#chargen-2)     | 8       | 12     | 20
+Cyborg-Komplettkörper[²](#chargen-2)     | 6       | 9      | 15
 [Drohne](#drohnen)                     | 2       | 4      | 8
 [DiMES](#dimes)[⁴](#chargen-4)                     | 0       | 1      | 2
 
 ::: {#chargen-1}
-_¹ Für Cyborg-Beine kostet ein zweites dazu passendes, identisch gebautes Bein nur 1 Punkt._
+_¹ Für Cyborg-Arme/Beine kann wahlweise ein zweites dazu passendes, identisch gebautes Körperteil kostenlos dazu genommen werden._
 :::
 
 ::: {#chargen-2}
-_² Beinhaltet Arme, Beine, Torso und Kopf (aber keine Energiequelle), mit der selben Qualitätsstufe._
+_² Beinhaltet Arme, Beine, Torso und Kopf (aber keine Energiequelle), mit der selben Qualitätsstufe, Arme und Beine müssen jeweils identisch gebaut sein.
 :::
 
 ::: {#chargen-3}
