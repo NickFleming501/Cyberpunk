@@ -246,27 +246,27 @@ Spezial | 10 oder 6\|6 Wechselt zwischen zwei Erweiterungs-Sets
 
 Verbrauchsgegenstände werden einmalig gekauft, und stehen dann während einer Mission in entsprechender Anzahl zur Verfügung. Zwischen Missionen können die Verbrauchsgegenstände kostenlos wieder aufgefüllt werden.
 
-### Granaten & Minen
+### Granaten
 
-Eine Granate können wahlweise als Minen erstellt werden, welche den Effekt der Granate über den Zünder einer Mine auslöst.
+Granaten können auf Gegner geworfen werden. Bei Granaten die Schaden verursachen wird jeder Schadenspunkt zufällig verteilt (d12 Treffer)
 
 P | Effektstärke | Radius
 --|--------------|--------
-A | 3            | d5+3
-B | 2            | d3+1
-C | 1            | d2
+A | 4            | d5+3
+B | 3            | d3+1
+C | 2            | d2
 
 - Effekt:
     - Rauch: Gibt Deckung und versteckt alle Charaktere im Rauch vor Sicht (inkl. Nacht- u. Wärmesicht). Effekt gilt in beide Richtungen (in Rauch rein/heraus)
     - Fragment: Explosion
     - Spezial: Flash, AP, EMP
 - Effektstärke (N):
-    - Rauch*: Erhöhte Deckung & Schwierigkeit für Intuition (der Rauch selbst ist offensichtlich)
-    - Fragment: x3 Schaden, Rüstung wird um 1 höher betrachtet
+    - Rauch*: Erhöhte Deckung (Minimum 2) & Schwierigkeit für Intuition (+2) (der Rauch selbst ist offensichtlich), hält für Effektstärke x5 Ticks
+    - Fragment: x3 Schaden, Rüstung wird um 1 höher betrachtet, sofern vorhanden
     - Spezial:
-        - Flash: x8 Ticks, die Charaktere ausgeknockt werden
-		- EMP: x3 Schaden gegen Cyborgs/Drohnen, sonst 0 Schaden
-        - AP: x2 Schaden, Rüstung wird um 1 niedriger betrachtet
+        - Flash: x3 Ticks, die Charaktere ausgeknockt werden
+		- EMP: x3+2 Schaden gegen Cyborgs/Drohnen, sonst 0 Schaden
+        - AP: x3 Schaden, Rüstung wird um 1 niedriger betrachtet
 - Radius: Es können nur Charaktere innerhalb einer Zone oder in der Nähe eines Interaktionspunktes getroffen werden. Anzahl der Charaktere die vom Effekt maximal betroffen sein können. Bei Rauchgranaten beschränkt dies die Größe der entstehenden Rauch-Zone, bei anderen Effekten ist es die maximale Anzahl betroffener Charaktere. Welche Charaktere genau getroffenen werden, wird vom Spielleiter final entschieden.
 
  Typ    | P
@@ -291,6 +291,7 @@ Einfach | 2
 	- Fokus-Boost: Stellt Effektstärke Fokus sofort her, auch über das Maximum heraus
 	- Stamina-Boost: Stellt Effektstärke Stamina sofort her, auch über das Maximum heraus
 - Effektstärke: Menge an Stress/Gesamtschmerz/Fokus/Stamina die reduziert/wiederhergestellt wird
+- Aktivierung: 1 Tick
 
 ### Wanzen
 
@@ -382,7 +383,7 @@ Datenbank                       | -1        | 500   | Beliebig          | Erlaub
 Disko-Modus                     | -1        | 500   | Beliebig          | Macht Licht, bunte Farben und coole Mucke
 Dokumentenscanner               | -1        | 500   | Sicht             | Ermöglicht schnell größere Mengen an Text und Dokumenten zu scannen
 Druckregulator                  | -4        | 2000  | Körper (keine Drohne) | Ermöglicht Aktionen in Situationen mit sehr hohem oder sehr niedrigem Druck (z.B. Ozeantiefe oder außen an einem Flugzeugs)
-Eingebaute Waffe                | -2\>-6\>-10 | 1k\|3k\|5k | Beliebig          | Erlaubt eine einfache\|normale\>gute/spezielle Waffe zu verbauen
+Eingebaute Waffe                | -2\|-6\|-10 | 1k\|3k\|5k | Beliebig          | Erlaubt eine einfache\|normale\>gute/spezielle Waffe zu verbauen
 Fähigkeitsbooster               | -3\|-6     | 1500\|3k  | Spezifisch        | Gibt einen +1 Vorteil auf einen bestimmten Fähigkeitswert der den Booster involviert. Booster für Kampffähigkeiten verbrauchen doppelte Kapazität. Die genaue Art des Boosters sowie die dadurch verbesserte Fähigkeit müssen bei Erwerb festgelegt werden. Beispiel: Fähigkeitsbooster für Schusswaffen könnte ein Ziellaser sein.
 Gasfilter                       | -2        | 1000  | Atmung            | Filtert (giftige) Gase aus der Atemluft
 Gedächtnis-Backup               | -16       | 8000  | Cyborg-Kopf       | Lagert Erinnerungen auf einen externen Speicher aus. Ermöglicht es, sich an viele Sachen zu erinnern oder sogar eine grobe Wiederherstellung des Benutzers nach Terminierung

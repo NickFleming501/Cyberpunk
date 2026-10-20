@@ -61,10 +61,9 @@ Dieser Deckungswert geht davon aus, dass der Charakter Aktionen macht, die auße
 
 Sprintende Charaktere haben 1 Deckung, wenn der Winkel zwischen Laufrichtung und Schusslinie mehr als 45° beträgt.
 
-Charaktere, die sich innerhalb in der Nähe des Schützen aus befinden, können Nahkampfdeckung haben. Die genaue Entfernung für Nahkampfdeckung hängt von der Reichweite der Waffe ab, der Deckungswert von der Nahkampffähigkeit des Ziels. Nahkampfdeckung wird auf normale Deckung addiert, falls vorhanden.
+Charaktere, die sich innerhalb in der Nähe des Schützen aus befinden, können Nahkampfdeckung haben. Die genaue Entfernung für Nahkampfdeckung hängt von der Reichweite der Waffe ab, der Deckungswert von der Nahkampffähigkeit des Ziels. Nahkampfdeckung wird auf normale Deckung addiert, falls vorhanden. Nahkampfdeckung ergibt sich aus dem Nahkampfwert: 0 → 0; 1,2 → 1; 3,4 → 2; 5,6 → 3
 
 <!--Range: (6 → 2, 12 → 3, 18 → 5, Unendlich → 6)-->
-<!--Deckung: (1,2 → 1; 3,4 → 2; 5,6 → 3)-->
 
 Andere Charaktere können ebenfalls als Deckung benutzt werden, aber nur sofern diese keine Deckung haben. Die Deckung entspricht dann der Rüstung des Charakters + 1. Wenn ein Angreifer das Ziel hinter der Deckung verfehlt, wird das Ergebnis des Wurfs mit Schwierigkeit 0 gegen den Deckung gebenden Charakter verwendet.
 

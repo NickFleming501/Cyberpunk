@@ -1134,7 +1134,9 @@ background-color: var(--color-accent);
 @media print {
 .cp-header,
 .cp-sidebar,
-.cp-footer {
+.cp-footer,
+.cp-back-to-top,
+.cp-heading-anchor {
 display: none !important;
 }
 body {
@@ -1323,7 +1325,7 @@ color: inherit;
           <li><a href="#dimes" id="toc-dimes">DiMES</a></li>
           <li><a href="#verbrauchsgegenstände" id="toc-verbrauchsgegenstände">Verbrauchsgegenstände</a>
           <ul>
-          <li><a href="#granaten-minen" id="toc-granaten-minen">Granaten &amp; Minen</a></li>
+          <li><a href="#granaten" id="toc-granaten">Granaten</a></li>
           <li><a href="#stims" id="toc-stims">Stims</a></li>
           <li><a href="#wanzen" id="toc-wanzen">Wanzen</a></li>
           </ul></li>
@@ -2208,9 +2210,8 @@ color: inherit;
           </table>
           <p>Dieser Deckungswert geht davon aus, dass der Charakter Aktionen macht, die außerhalb der Deckung Auswirkung haben, z.B. selbst schießt. Ist dies nicht der Fall, erhält der Charakter +1 Deckung.</p>
           <p>Sprintende Charaktere haben 1 Deckung, wenn der Winkel zwischen Laufrichtung und Schusslinie mehr als 45° beträgt.</p>
-          <p>Charaktere, die sich innerhalb in der Nähe des Schützen aus befinden, können Nahkampfdeckung haben. Die genaue Entfernung für Nahkampfdeckung hängt von der Reichweite der Waffe ab, der Deckungswert von der Nahkampffähigkeit des Ziels. Nahkampfdeckung wird auf normale Deckung addiert, falls vorhanden.</p>
+          <p>Charaktere, die sich innerhalb in der Nähe des Schützen aus befinden, können Nahkampfdeckung haben. Die genaue Entfernung für Nahkampfdeckung hängt von der Reichweite der Waffe ab, der Deckungswert von der Nahkampffähigkeit des Ziels. Nahkampfdeckung wird auf normale Deckung addiert, falls vorhanden. Nahkampfdeckung ergibt sich aus dem Nahkampfwert: 0 → 0; 1,2 → 1; 3,4 → 2; 5,6 → 3</p>
           <!--Range: (6 → 2, 12 → 3, 18 → 5, Unendlich → 6)-->
-          <!--Deckung: (1,2 → 1; 3,4 → 2; 5,6 → 3)-->
           <p>Andere Charaktere können ebenfalls als Deckung benutzt werden, aber nur sofern diese keine Deckung haben. Die Deckung entspricht dann der Rüstung des Charakters + 1. Wenn ein Angreifer das Ziel hinter der Deckung verfehlt, wird das Ergebnis des Wurfs mit Schwierigkeit 0 gegen den Deckung gebenden Charakter verwendet.</p>
           </section>
           </section>
@@ -2443,6 +2444,11 @@ color: inherit;
           <td>2|3</td>
           <td>Positionieren bzw. Bewegung aus einem Nahkampf heraus (weg von einem Nahkämpfer). Erfordet eine erfolgreiche Athletik-Probe, Schwierigkeit ist Erfolge(Nahkampf) des Nahkämpfers. Bei mehreren Nahkämpfern zeählt nur der höchste Nahkampf-Wert.</td>
           </tr>
+          <tr>
+          <td>Zur Seite hechten</td>
+          <td>2</td>
+          <td>Reaktion. Bei Granate kann entschieden werden ob bei Seite springen. Athletikprobe Schwierigkeit 2, bei Erfolg kein Effekt, bei Fehlschlag halber Effekt. Danach keine Deckung/Wache/Ziel/etc. mehr</td>
+          </tr>
           </tbody>
           </table>
           <!--
@@ -2626,7 +2632,7 @@ color: inherit;
           <tr>
           <td>Tackle</td>
           <td>2 + Waffe</td>
-          <td>Dauer entspricht Sprint + Angriff, Angreifer bewegt sich bis zu 3/2 Felder zum Ziel und führt zusätzlich einen Nahkampfangriff aus. Ist das Ziel in Verteidigungsstellung gibt es Nachteil -1, ansonsten Vorteil +1. Benötigt <strong>1 Stamina</strong></td>
+          <td>Dauer entspricht Sprint + Angriff, Angreifer bewegt sich bis zu 1 Zone zum Ziel und führt zusätzlich einen Nahkampfangriff aus. Ist das Ziel in Verteidigungsstellung gibt es Nachteil -1, ansonsten Vorteil +1. Benötigt <strong>1 Stamina</strong></td>
           </tr>
           <tr>
           <td>Verteidigungsstellung</td>
@@ -2669,7 +2675,7 @@ color: inherit;
           <td>Mentale Gegenwehr</td>
           <td>3</td>
           <td>K<a href="#PSI-tick-1">¹</a></td>
-          <td>Kann bei gegnerischen PSI-Treffer eingesetzt durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Verbraucht <strong>1 Fokus</strong>. Reduziert die Erfolge des Gegners um die Erfolge des Konzetrationswurfes. Nur möglich, wenn Intuition größer als die Heimlichkeit des PSI-Verstärker des Angreifers ist.</td>
+          <td>Reaktion. Kann bei gegnerischen PSI-Treffer eingesetzt durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Verbraucht <strong>1 Fokus</strong>. Reduziert die Erfolge des Gegners um die Erfolge des Konzetrationswurfes. Nur möglich, wenn Intuition größer als die Heimlichkeit des PSI-Verstärker des Angreifers ist.</td>
           </tr>
           <tr>
           <td>Vorahnung</td>
@@ -2758,7 +2764,7 @@ color: inherit;
           <tr>
           <td>Warnruf</td>
           <td>1</td>
-          <td>Kann bei einer Aktion eines Gegners gegen einen Verbündeten in Rufweite durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Der Angreifer erhält 1 + Erfolge(Taktik) Nachteil auf die Aktion. Verbraucht <strong>1 Fokus</strong>. Nicht gegen PSI-Aktionen einsetzbar.</td>
+          <td>Reaktion. Kann bei einer Aktion eines Gegners gegen einen Verbündeten in Rufweite durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Der Angreifer erhält 1 + Erfolge(Taktik) Nachteil auf die Aktion. Verbraucht <strong>1 Fokus</strong>. Nicht gegen PSI-Aktionen einsetzbar.</td>
           </tr>
           </tbody>
           </table>
@@ -3623,9 +3629,9 @@ color: inherit;
           <section id="verbrauchsgegenstände" class="level2">
           <h2>Verbrauchsgegenstände</h2>
           <p>Verbrauchsgegenstände werden einmalig gekauft, und stehen dann während einer Mission in entsprechender Anzahl zur Verfügung. Zwischen Missionen können die Verbrauchsgegenstände kostenlos wieder aufgefüllt werden.</p>
-          <section id="granaten-minen" class="level3">
-          <h3>Granaten &amp; Minen</h3>
-          <p>Eine Granate können wahlweise als Minen erstellt werden, welche den Effekt der Granate über den Zünder einer Mine auslöst.</p>
+          <section id="granaten" class="level3">
+          <h3>Granaten</h3>
+          <p>Granaten können auf Gegner geworfen werden. Bei Granaten die Schaden verursachen wird jeder Schadenspunkt zufällig verteilt (d12 Treffer)</p>
           <table>
           <thead>
           <tr>
@@ -3637,17 +3643,17 @@ color: inherit;
           <tbody>
           <tr>
           <td>A</td>
-          <td>3</td>
+          <td>4</td>
           <td>d5+3</td>
           </tr>
           <tr>
           <td>B</td>
-          <td>2</td>
+          <td>3</td>
           <td>d3+1</td>
           </tr>
           <tr>
           <td>C</td>
-          <td>1</td>
+          <td>2</td>
           <td>d2</td>
           </tr>
           </tbody>
@@ -3661,13 +3667,13 @@ color: inherit;
           </ul></li>
           <li>Effektstärke (N):
           <ul>
-          <li>Rauch*: Erhöhte Deckung &amp; Schwierigkeit für Intuition (der Rauch selbst ist offensichtlich)</li>
-          <li>Fragment: x3 Schaden, Rüstung wird um 1 höher betrachtet</li>
+          <li>Rauch*: Erhöhte Deckung (Minimum 2) &amp; Schwierigkeit für Intuition (+2) (der Rauch selbst ist offensichtlich), hält für Effektstärke x5 Ticks</li>
+          <li>Fragment: x3 Schaden, Rüstung wird um 1 höher betrachtet, sofern vorhanden</li>
           <li>Spezial:
           <ul>
-          <li>Flash: x8 Ticks, die Charaktere ausgeknockt werden</li>
-          <li>EMP: x3 Schaden gegen Cyborgs/Drohnen, sonst 0 Schaden</li>
-          <li>AP: x2 Schaden, Rüstung wird um 1 niedriger betrachtet</li>
+          <li>Flash: x3 Ticks, die Charaktere ausgeknockt werden</li>
+          <li>EMP: x3+2 Schaden gegen Cyborgs/Drohnen, sonst 0 Schaden</li>
+          <li>AP: x3 Schaden, Rüstung wird um 1 niedriger betrachtet</li>
           </ul></li>
           </ul></li>
           <li>Radius: Es können nur Charaktere innerhalb einer Zone oder in der Nähe eines Interaktionspunktes getroffen werden. Anzahl der Charaktere die vom Effekt maximal betroffen sein können. Bei Rauchgranaten beschränkt dies die Größe der entstehenden Rauch-Zone, bei anderen Effekten ist es die maximale Anzahl betroffener Charaktere. Welche Charaktere genau getroffenen werden, wird vom Spielleiter final entschieden.</li>
@@ -3729,6 +3735,7 @@ color: inherit;
           <li>Stamina-Boost: Stellt Effektstärke Stamina sofort her, auch über das Maximum heraus</li>
           </ul></li>
           <li>Effektstärke: Menge an Stress/Gesamtschmerz/Fokus/Stamina die reduziert/wiederhergestellt wird</li>
+          <li>Aktivierung: 1 Tick</li>
           </ul>
           </section>
           <section id="wanzen" class="level3">
@@ -4090,7 +4097,7 @@ color: inherit;
           </tr>
           <tr>
           <td>Eingebaute Waffe</td>
-          <td>-2&gt;-6&gt;-10</td>
+          <td>-2|-6|-10</td>
           <td>1k|3k|5k</td>
           <td>Beliebig</td>
           <td>Erlaubt eine einfache|normale&gt;gute/spezielle Waffe zu verbauen</td>

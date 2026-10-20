@@ -14,6 +14,7 @@ In die Hocke gehen | 1      | Gibt +1 Vorteil auf Schüsse
 Hinlegen           | 2      | Gibt +3 Vorteil auf Schüsse, aber Nahkampfdeckung für nahe Ziele ist um 1 erhöht, erfordert Aufstehen
 Aufstehen          | 2      | Aufstehen aus dem Liegen
 Disengage          | 2\|3    | Positionieren bzw. Bewegung aus einem Nahkampf heraus (weg von einem Nahkämpfer). Erfordet eine erfolgreiche Athletik-Probe, Schwierigkeit ist Erfolge(Nahkampf) des Nahkämpfers. Bei mehreren Nahkämpfern zeählt nur der höchste Nahkampf-Wert.
+Zur Seite hechten  | 2      | Reaktion. Bei Granate kann entschieden werden ob bei Seite springen. Athletikprobe Schwierigkeit 2, bei Erfolg kein Effekt, bei Fehlschlag halber Effekt. Danach keine Deckung/Wache/Ziel/etc. mehr
 
 <!--
 Aktion             | Dauer  |Beschreibung
@@ -72,7 +73,7 @@ Schwerer Angriff       | Langsam     | Trifft ein zufälliges Körperteil. Schwi
 Lücken-Angriff         | Schnell     | Trifft ein zufälliges Körperteil. Schwierigkeit ist 0 bei einem Überraschungsangriff, sonst 2. Getragene Rüstung wird ignoriert. Verbraucht **1 Stamina**
 Konter                 | Schnell     | Kann bei gegnerischen Nahkampftreffer durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Verbraucht **1 Stamina**. Schwierigkeit entspricht \#Gegnererfolge. Bei Erfolg wird der Schaden des Konters berechnet, und vom Schaden des Nahkampftreffers abgezogen. Übriger Konterschaden geht gegen ein zufälliges Körperteil des Gegners
 Waffe werfen           | Schnell     | Wirft die Nahkampfwaffe auf ein zufälliges Körperteil. Reichweite ist 1 + Athletik/2 (aufgerundet) Zonen, Schwierigkeit ist Deckung + 2. Verwendet Nahkampf
-Tackle                 | 2 + Waffe   | Dauer entspricht Sprint + Angriff, Angreifer bewegt sich bis zu 3/2 Felder zum Ziel und führt zusätzlich einen Nahkampfangriff aus. Ist das Ziel in Verteidigungsstellung gibt es Nachteil -1, ansonsten Vorteil +1. Benötigt **1 Stamina**
+Tackle                 | 2 + Waffe   | Dauer entspricht Sprint + Angriff, Angreifer bewegt sich bis zu 1 Zone zum Ziel und führt zusätzlich einen Nahkampfangriff aus. Ist das Ziel in Verteidigungsstellung gibt es Nachteil -1, ansonsten Vorteil +1. Benötigt **1 Stamina**
 Verteidigungsstellung  | 3           | Einnehmen einer Verteidigungsstellung gegenüber einem Ziel, gibt dem Angreifer einem -1 Nachteil.
 
 <!--
@@ -87,7 +88,7 @@ PSI-Aktionen werden mit Konzentration, Fühlen oder Manipulieren geworfen. PSI-A
 Aktion                             | Dauer    | Fähigkeit | Beschreibung
 -----------------------------------|----------|-----------|---------------------------------------------
 Tief durchatmen                    | 3        | K[¹](#PSI-tick-1)        | Reduziert Stress um die Anzahl an Erfolgen einer Konzentrationsprobe
-Mentale Gegenwehr                  | 3        | K[¹](#PSI-tick-1)        | Kann bei gegnerischen PSI-Treffer eingesetzt durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Verbraucht **1 Fokus**. Reduziert die Erfolge des Gegners um die Erfolge des Konzetrationswurfes. Nur möglich, wenn Intuition größer als die Heimlichkeit des PSI-Verstärker des Angreifers ist.
+Mentale Gegenwehr                  | 3        | K[¹](#PSI-tick-1)        | Reaktion. Kann bei gegnerischen PSI-Treffer eingesetzt durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Verbraucht **1 Fokus**. Reduziert die Erfolge des Gegners um die Erfolge des Konzetrationswurfes. Nur möglich, wenn Intuition größer als die Heimlichkeit des PSI-Verstärker des Angreifers ist.
 Vorahnung                          | x1       | F         | Gibt Erfolge(Fühlen) Deckung (additiv) für die nächsten 3 Aktionen, sowie die selbe Anzahl an Nachteil für Nahkampfangreifer. Verbraucht **1 Fokus**
 Wahrnehmung übernehmen             | x1+      | F         | Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich, dann kann der Übernehmende alles wahrnehmen, was das Ziel wahrnimmt, anstelle der eigenen Wahrnehmung. Während die Wahrnehmung übernommen ist, können andere Aktionen durchgeführt werden
 Verwirren                          | x1       | M         | Schwierigkeit = Gegenerfolge(Wille), wenn erfolgreich bekommt Ziel 2 Nachteil auf alle Würfe während der nächsten 2 Aktionen. Keine Mentale Gegenwehr möglich.
@@ -119,7 +120,7 @@ Aktion                      | Dauer               | Beschreibung
 Deckungsangriffe            | Schnell+            | Erfordert eine Waffe. Angriffe von Gegnern innerhalb der direkten Waffenreichweite gegen einen bestimmten Verbündeten werden erschwert: Deckung ist mindestens Erfolge(Taktik)/2 (aufgerundet). Verbraucht **1 Stamina**
 Schwachstelle erkennen      | 2                   | Gibt Verbündeten in Rufweite 1+Erfolge(Taktik)/2 (aufgerundet) Vorteil auf die nächste offensive Aktion gegen einen bestimmten Gegner
 Antreiben                   | 2                   | Reduziert die verbleibende Tick-Dauer der aktuellen Aktion eines Verbündeten in Rufweite um 3 + Erfolge(Taktik)/2 (aufgerundet), aber höchstens bis auf 1 Tick. Verbraucht **1 Fokus**
-Warnruf                     | 1                   | Kann bei einer Aktion eines Gegners gegen einen Verbündeten in Rufweite durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Der Angreifer erhält 1 + Erfolge(Taktik) Nachteil auf die Aktion. Verbraucht **1 Fokus**. Nicht gegen PSI-Aktionen einsetzbar.
+Warnruf                     | 1                   | Reaktion. Kann bei einer Aktion eines Gegners gegen einen Verbündeten in Rufweite durchgeführt werden, auch wenn der Charakter nicht am Zug ist. Der Angreifer erhält 1 + Erfolge(Taktik) Nachteil auf die Aktion. Verbraucht **1 Fokus**. Nicht gegen PSI-Aktionen einsetzbar.
 
 ## Verschiedenes
 
