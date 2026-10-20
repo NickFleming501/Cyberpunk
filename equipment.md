@@ -339,11 +339,11 @@ _¹ Wenn der Superkondensator aktiviert wird, erhöht sich der Basisstress von 1
 P | Auffälligkeit | Rüstung | Kapazität | Basisstress
 --|---------------|---------|-----------|-------------
 A | Versteckt     | 1\|1     | +8        | 0
-B | Gewöhnlich    | 0\|1 oder 1\|0 | +4        | 0.5
-C | Auffällig     | 0\\|0 | 0         | 1
+B | Gewöhnlich    | 1\|0     | +4        | 0.5
+C | Auffällig     | 0\|0     | 0         | 1
 
 - Auffälligkeit: Gilt für alle in den Körperteil eingebauten Erweiterungen
-- Rüstung: Eingebaute Rüstung für Nah- bzw. Fernkampf. Bei B kann gewählt werden zwischen Nah- oder Fernkampf.
+- Rüstung: Eingebaute Rüstung für Nah- bzw. Fernkampf. Bei B gibt nur Nahkampf-Rüstung
 - Kapazität: Kapazität für das Körperteil (negative Kapazität senkt die Gesamtkapazität)
 - Basisstress: Erhöht den Basisstress (aufgerundet)
 
