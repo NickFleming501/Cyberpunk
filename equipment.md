@@ -262,7 +262,7 @@ C | 2            | d2
     - Spezial: Flash, AP, EMP
 - Effektstärke (N):
     - Rauch*: Erhöhte Deckung (Minimum 2) & Schwierigkeit für Intuition (+2) (der Rauch selbst ist offensichtlich), hält für Effektstärke x5 Ticks
-    - Fragment: x3 Schaden, Rüstung wird um 1 höher betrachtet, sofern vorhanden
+    - Fragment: x3+2 Schaden
     - Spezial:
         - Flash: x3 Ticks, die Charaktere ausgeknockt werden
 		- EMP: x3+2 Schaden gegen Cyborgs/Drohnen, sonst 0 Schaden
