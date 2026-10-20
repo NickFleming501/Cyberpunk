@@ -383,7 +383,7 @@ Datenbank                       | -1        | 500   | Beliebig          | Erlaub
 Disko-Modus                     | -1        | 500   | Beliebig          | Macht Licht, bunte Farben und coole Mucke
 Dokumentenscanner               | -1        | 500   | Sicht             | Ermöglicht schnell größere Mengen an Text und Dokumenten zu scannen
 Druckregulator                  | -4        | 2000  | Körper (keine Drohne) | Ermöglicht Aktionen in Situationen mit sehr hohem oder sehr niedrigem Druck (z.B. Ozeantiefe oder außen an einem Flugzeugs)
-Eingebaute Waffe                | -2\|-6\|-10 | 1k\|3k\|5k | Beliebig          | Erlaubt eine einfache\|normale\>gute/spezielle Waffe zu verbauen
+Eingebaute Waffe                | -2\|-6\|-10 | 1k\|3k\|5k | Beliebig          | Erlaubt eine Versteckte\|Gewöhnliche\|Aufällige Waffe zu verbauen
 Fähigkeitsbooster               | -3\|-6     | 1500\|3k  | Spezifisch        | Gibt einen +1 Vorteil auf einen bestimmten Fähigkeitswert der den Booster involviert. Booster für Kampffähigkeiten verbrauchen doppelte Kapazität. Die genaue Art des Boosters sowie die dadurch verbesserte Fähigkeit müssen bei Erwerb festgelegt werden. Beispiel: Fähigkeitsbooster für Schusswaffen könnte ein Ziellaser sein.
 Gasfilter                       | -2        | 1000  | Atmung            | Filtert (giftige) Gase aus der Atemluft
 Gedächtnis-Backup               | -16       | 8000  | Cyborg-Kopf       | Lagert Erinnerungen auf einen externen Speicher aus. Ermöglicht es, sich an viele Sachen zu erinnern oder sogar eine grobe Wiederherstellung des Benutzers nach Terminierung

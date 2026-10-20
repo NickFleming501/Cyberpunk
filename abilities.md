@@ -23,8 +23,6 @@ Sonstiges     | Heimlichkeit          | Verstecken, Schleichen, Taschendiebstahl
 <br/>         | Parkour               | Klettern, Abseilen, Parkour
 <br/>         | Charakterhintergrund[⁴](#faehigkeiten-4) | Wissen aus vorherigen Erfahrungen. **Startwert ist 1**
 
-- Heimlichkeit?
-
 ::: {#faehigkeiten-1}
 _¹ Benötigt einen entsprechenden Zugangspunkt_
 :::
